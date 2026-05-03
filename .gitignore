@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+.npm-cache-local/
 
 # Build output
 dist/
