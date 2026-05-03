@@ -1,7 +1,5 @@
 @import "tailwindcss";
-@source "../";
-@source "../components";
-@source "../app";
+@source "../**/*.{js,jsx,ts,tsx}";
 @theme {
   --color-charcoal: #0a0a12;
   --color-terracotta: #C75B39;
