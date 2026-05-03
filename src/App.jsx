@@ -5,6 +5,7 @@ import { ArrowRight, Menu, X, Mail, Github, Linkedin, ExternalLink, ArrowUp } fr
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // Eagerly load Home (LCP route) and lightweight pages
 import Home from './pages/Home';
@@ -422,7 +423,7 @@ const CustomCursor = () => {
   );
 };
 
-// ─────────────────────────────────────────────────────────────────────────────
+// ────────────────────��────────────────────────────────────────────────────────
 // NAVBAR — Floating pill, magnetic
 // ─────────────────────────────────────────────────────────────────────────────
 const Navbar = () => {
@@ -669,6 +670,7 @@ export default function App() {
       <Footer />
       <ScrollToTop />
       <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
