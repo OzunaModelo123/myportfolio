@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, MapPin, ExternalLink, ChevronDown, ChevronUp, GraduationCap, Award, Briefcase } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import SEO from '../components/SEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -247,6 +248,7 @@ export default function About() {
 
   return (
     <div>
+      <SEO title="Daniel Ozoani | About" description="Read about my journey as a Technical Project Manager and Developer." />
 
       {/* ── HERO ──────────────────────────────────────────────────── */}
       <section ref={heroRef} className="relative pt-36 pb-24 px-6 md:px-10 overflow-hidden">

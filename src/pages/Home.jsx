@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, ChevronDown, ExternalLink, Target, Code2, Zap
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import ChessPlayground from '../components/ChessPlayground';
+import SEO from '../components/SEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -508,6 +509,10 @@ export default function Home() {
 
   return (
     <div>
+      <SEO 
+        title="Daniel Ozoani — Builder, TPM & Developer" 
+        description="I'm a Technical Project Manager and developer who loves building products, exploring AI, and thinking in systems." 
+      />
       {/* ═══════════════════════════════════════════════════════════════════
           HERO — Full viewport with background image + physics overlay
           ═══════════════════════════════════════════════════════════════════ */}

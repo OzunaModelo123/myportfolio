@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import SEO from '../components/SEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -37,6 +38,7 @@ export default function WorkIndex() {
 
   return (
     <div>
+      <SEO title="Daniel Ozoani | Projects" description="A collection of my recent projects, from B2B SaaS to Social Wellness apps." />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
           <div className="w-anim sec-tag mb-6 text-white/80">Portfolio Index</div>
