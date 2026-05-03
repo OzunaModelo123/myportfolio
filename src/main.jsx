@@ -5,6 +5,7 @@ import App from './App';
 import './index.css';
 
 import { HelmetProvider } from 'react-helmet-async';
+import { dismissBootSplash } from './bootSplash.js';
 
 createRoot(document.getElementById('root')).render(
   <HelmetProvider>
@@ -13,3 +14,7 @@ createRoot(document.getElementById('root')).render(
     </BrowserRouter>
   </HelmetProvider>
 );
+
+requestAnimationFrame(() => {
+  dismissBootSplash();
+});

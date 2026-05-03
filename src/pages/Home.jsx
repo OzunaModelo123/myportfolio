@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, lazy, Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, ChevronDown, ExternalLink, Target, Code2, Zap, Crown } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import ChessPlayground from '../components/ChessPlayground';
 import SEO from '../components/SEO';
+
+const ChessPlayground = lazy(() => import('../components/ChessPlayground'));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -809,7 +810,21 @@ export default function Home() {
 
           <div className="reveal-item overflow-hidden">
             <div className="transition-all duration-700 ease-in-out" style={{ transform: playgroundMode === 'particles' ? 'none' : 'scale(0.98)', opacity: 1 }}>
-              {playgroundMode === 'particles' ? <ParticlePlayground /> : <ChessPlayground />}
+              {playgroundMode === 'particles' ? (
+                <ParticlePlayground />
+              ) : (
+                <Suspense fallback={(
+                  <div className="min-h-[22rem] flex items-center justify-center rounded-3xl glass border border-white/10">
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="w-10 h-10 border-2 border-[#C75B39] border-t-transparent rounded-full animate-spin" aria-hidden />
+                      <span className="font-mono text-[0.65rem] text-white/35 tracking-[0.2em] uppercase">Loading chess…</span>
+                    </div>
+                  </div>
+                )}
+                >
+                  <ChessPlayground />
+                </Suspense>
+              )}
             </div>
           </div>
         </div>

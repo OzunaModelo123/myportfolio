@@ -15,6 +15,15 @@ html {
   -webkit-font-smoothing: antialiased;
 }
 
+html.boot-pending #root {
+  opacity: 0;
+}
+
+html.boot-complete #root {
+  opacity: 1;
+  transition: opacity 0.48s ease;
+}
+
 body {
   overflow-x: hidden;
   background-color: #1a1a2e;
@@ -70,6 +79,21 @@ select,
 textarea,
 [role="button"] {
   cursor: none;
+}
+
+@media (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  [role="button"] {
+    cursor: pointer;
+  }
 }
 
 /* ── PHYSICS CANVAS ────────────────────────────────── */

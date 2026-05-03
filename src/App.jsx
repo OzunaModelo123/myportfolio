@@ -26,6 +26,14 @@ const DigitalTransformation = lazy(() => import('./pages/research/DigitalTransfo
 
 gsap.registerPlugin(ScrollTrigger);
 
+function isLightweightExperience() {
+  if (typeof window === 'undefined') return false;
+  return (
+    window.matchMedia('(max-width: 768px)').matches ||
+    window.matchMedia('(pointer: coarse)').matches
+  );
+}
+
 // Loading fallback for lazy-loaded pages
 const PageLoader = () => (
   <div className="min-h-[60vh] flex items-center justify-center">
@@ -117,14 +125,18 @@ const RefractiveShape = memo(({ data, mouseRef, isMobile }) => {
 // PHYSICS BACKGROUND — Hybrid DOM/Canvas System
 // ─────────────────────────────────────────────────────────────────────────────
 const PhysicsBackground = () => {
+  const [litePhysics] = useState(() => isLightweightExperience());
   const canvasRef = useRef(null);
   const mouseRef = useRef({ x: -9999, y: -9999, vx: 0, vy: 0 });
   const scrollRef = useRef({ y: 0, velocity: 0 });
   const shapesRef = useRef([]);
   const [shapes, setShapes] = useState([]);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [isMobile, setIsMobile] = useState(() =>
+    litePhysics ? true : typeof window !== 'undefined' && window.innerWidth < 768,
+  );
 
   useEffect(() => {
+    if (litePhysics) return undefined;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -282,7 +294,9 @@ const PhysicsBackground = () => {
       window.removeEventListener('mousemove', onMouse);
       window.removeEventListener('scroll', onScroll);
     };
-  }, []);
+  }, [litePhysics]);
+
+  if (litePhysics) return null;
 
   return (
     <>
@@ -300,10 +314,16 @@ const PhysicsBackground = () => {
 // CUSTOM CURSOR
 // ─────────────────────────────────────────────────────────────────────────────
 const CustomCursor = () => {
+  const skipCursor = useState(() =>
+    typeof window !== 'undefined' &&
+    ((window.matchMedia('(pointer: coarse)').matches) ||
+      (window.matchMedia('(max-width: 768px)').matches)),
+  )[0];
   const cursorRef = useRef(null);
   const dotRef = useRef(null);
 
   useEffect(() => {
+    if (skipCursor) return undefined;
     const cursor = cursorRef.current;
     const dot = dotRef.current;
     if (!cursor || !dot) return;
@@ -359,7 +379,9 @@ const CustomCursor = () => {
       document.removeEventListener('mouseover', handleMouseOver);
       if (rafId) cancelAnimationFrame(rafId);
     };
-  }, []);
+  }, [skipCursor]);
+
+  if (skipCursor) return null;
 
   return (
     <>
