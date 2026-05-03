@@ -636,13 +636,13 @@ export default function Home() {
                 { icon: <Zap className="w-6 h-6" />, title: 'Cinematography', sub: 'Framing the perfect shot', color: '#4A90D9' },
               ].map((c, i) => (
                 <div key={i}
-                  className="glass-light rounded-2xl p-6 flex flex-col gap-3 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]"
+                  className="glass-light rounded-2xl p-6 flex flex-col gap-3 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] min-w-0"
                   style={{ border: `1px solid ${c.color}20` }}>
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500" style={{ background: `radial-gradient(circle at 100% 0%, ${c.color}, transparent)` }} />
-                  <span style={{ color: c.color }} className="group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 w-fit drop-shadow-lg">{c.icon}</span>
-                  <div>
-                    <div className="font-display font-bold text-lg text-white mb-1 tracking-wide">{c.title}</div>
-                    <div className="font-inter text-sm text-white/80 leading-relaxed">{c.sub}</div>
+                  <span style={{ color: c.color }} className="group-hover:scale-110 group-hover:rotate-12 transition-all duration-500 w-fit drop-shadow-lg shrink-0">{c.icon}</span>
+                  <div className="min-w-0">
+                    <div className="font-display font-bold text-lg text-white mb-1 tracking-wide break-words">{c.title}</div>
+                    <div className="font-inter text-sm text-white/80 leading-relaxed break-words">{c.sub}</div>
                   </div>
                 </div>
               ))}
