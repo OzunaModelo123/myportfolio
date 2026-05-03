@@ -3,10 +3,8 @@ import { Analytics } from '@vercel/analytics/next';
 import './tailwind.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import dynamic from 'next/dynamic';
-
-const PhysicsBackground = dynamic(() => import('@/components/PhysicsBackground'), { ssr: false });
-const CustomCursor = dynamic(() => import('@/components/CustomCursor'), { ssr: false });
+import PhysicsBackground from '@/components/PhysicsBackground';
+import CustomCursor from '@/components/CustomCursor';
 import ScrollToTop from '@/components/ScrollToTop';
 
 const inter = Inter({
