@@ -36,7 +36,7 @@ export default function Contact() {
 
   return (
     <div ref={containerRef} className="min-h-screen pt-32 pb-24 px-6 md:px-10 relative overflow-hidden flex items-center justify-center">
-      <SEO title="Daniel Ozoani | Contact" description="Let's build something together. Reach out via email or LinkedIn." />
+      <SEO title="Contact | Daniel Ozoani" description="Let's build something together. Reach out via email or LinkedIn." />
       {/* Background Ambience */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#5B8C6F]/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#C75B39]/10 rounded-full blur-[100px] pointer-events-none" />

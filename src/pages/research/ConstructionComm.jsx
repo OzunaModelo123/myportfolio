@@ -4,8 +4,13 @@ import { ArrowLeft } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import SEO from '../../components/SEO';
+import { buildArticleJsonLd } from '../../utils/structuredData';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const ARTICLE_PATH = '/research/construction-communication';
+const HERO_IMAGE = 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200';
+const PUBLISHED = '2025-05-01T12:00:00.000Z';
 
 export default function ConstructionComm() {
   const heroRef = useRef(null);
@@ -49,8 +54,19 @@ export default function ConstructionComm() {
   return (
     <div>
       <SEO
-        title="The Hidden Cost of Poor Communication — Daniel Ozoani"
+        type="article"
+        publishedTime={PUBLISHED}
+        modifiedTime={PUBLISHED}
+        title="The Hidden Cost of Poor Communication | Daniel Ozoani"
         description="Why tech debt is often talk debt—how information degrades across a product lifecycle and how to fix it before the first line of code."
+        image={HERO_IMAGE}
+        jsonLd={buildArticleJsonLd({
+          headline: 'The Hidden Cost of Poor Communication',
+          description: 'Why tech debt is often talk debt—how information degrades across a product lifecycle and how to fix it before the first line of code.',
+          pathname: ARTICLE_PATH,
+          datePublished: '2025-05-01',
+          image: HERO_IMAGE,
+        })}
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"

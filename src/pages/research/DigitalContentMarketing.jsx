@@ -4,8 +4,13 @@ import { ArrowLeft, ExternalLink } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import SEO from '../../components/SEO';
+import { buildArticleJsonLd } from '../../utils/structuredData';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const ARTICLE_PATH = '/research/digital-content-marketing';
+const HERO_IMAGE = 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=1200';
+const PUBLISHED = '2025-04-01T12:00:00.000Z';
 
 const Ref = ({ href, children }) => (
   <a href={href} target="_blank" rel="noopener noreferrer"
@@ -127,8 +132,19 @@ export default function DigitalContentMarketing() {
   return (
     <div>
       <SEO
-        title="How Digital Content Has Transformed Marketing — Daniel Ozoani"
+        type="article"
+        publishedTime={PUBLISHED}
+        modifiedTime={PUBLISHED}
+        title="How Digital Content Has Transformed Marketing | Daniel Ozoani"
         description="Six eras of digital content and marketing—from the first banner ad to AI-augmented publishing. Research paper, April 2025."
+        image={HERO_IMAGE}
+        jsonLd={buildArticleJsonLd({
+          headline: 'How Digital Content Has Transformed & Reshaped Marketing',
+          description: 'Six eras of digital content and marketing—from the first banner ad to AI-augmented publishing. Comprehensive research paper, April 2025.',
+          pathname: ARTICLE_PATH,
+          datePublished: '2025-04-01',
+          image: HERO_IMAGE,
+        })}
       />
       {/* Hero */}
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">

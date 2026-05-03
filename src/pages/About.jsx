@@ -248,7 +248,7 @@ export default function About() {
 
   return (
     <div>
-      <SEO title="Daniel Ozoani | About" description="Read about my journey as a Technical Project Manager and Developer." />
+      <SEO title="About | Daniel Ozoani" description="Read about my journey as a Technical Project Manager and Developer." />
 
       {/* ── HERO ──────────────────────────────────────────────────── */}
       <section ref={heroRef} className="relative pt-36 pb-24 px-6 md:px-10 overflow-hidden">

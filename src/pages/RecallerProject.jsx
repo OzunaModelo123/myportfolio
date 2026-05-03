@@ -111,7 +111,7 @@ export default function Projects() {
   return (
     <div>
       <SEO
-        title="Recaller — Training intelligence — Daniel Ozoani"
+        title="Recaller | Daniel Ozoani"
         description="Training intelligence that proves ROI. Slack-ready assessments that reveal readiness, risk patterns, and real knowledge retention."
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">

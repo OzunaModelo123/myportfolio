@@ -4,8 +4,13 @@ import { ArrowLeft } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import SEO from '../../components/SEO';
+import { buildArticleJsonLd } from '../../utils/structuredData';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const ARTICLE_PATH = '/research/digital-transformation';
+const HERO_IMAGE = 'https://images.stockcake.com/public/2/6/2/262dff79-4f2d-4d47-aa83-7ce6b2b90730/busy-supermarket-scene-stockcake.jpg';
+const PUBLISHED = '2025-06-01T12:00:00.000Z';
 
 export default function DigitalTransformation() {
   const heroRef = useRef(null);
@@ -49,8 +54,19 @@ export default function DigitalTransformation() {
   return (
     <div>
       <SEO
-        title="Surviving the Retail Tech Refresh — Daniel Ozoani"
+        type="article"
+        publishedTime={PUBLISHED}
+        modifiedTime={PUBLISHED}
+        title="Surviving the Retail Tech Refresh | Daniel Ozoani"
         description="How to upgrade retail store technology without halting revenue, burning out teams, or ruining customer experience."
+        image={HERO_IMAGE}
+        jsonLd={buildArticleJsonLd({
+          headline: 'Surviving the Retail Tech Refresh',
+          description: 'How to upgrade retail store technology without halting revenue, burning out teams, or ruining customer experience.',
+          pathname: ARTICLE_PATH,
+          datePublished: '2025-06-01',
+          image: HERO_IMAGE,
+        })}
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.stockcake.com/public/2/6/2/262dff79-4f2d-4d47-aa83-7ce6b2b90730/busy-supermarket-scene-stockcake.jpg" alt="" aria-hidden="true"

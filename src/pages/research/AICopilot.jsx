@@ -4,8 +4,13 @@ import { ArrowLeft } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import SEO from '../../components/SEO';
+import { buildArticleJsonLd } from '../../utils/structuredData';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const ARTICLE_PATH = '/research/ai-copilot';
+const HERO_IMAGE = 'https://images.unsplash.com/photo-1675271591211-126ad94e495d?auto=format&fit=crop&q=80&w=1200';
+const PUBLISHED = '2025-08-01T12:00:00.000Z';
 
 export default function AICopilot() {
   const heroRef = useRef(null);
@@ -25,8 +30,19 @@ export default function AICopilot() {
   return (
     <div>
       <SEO
-        title="AI as a PM's Co-Pilot — Daniel Ozoani"
+        type="article"
+        publishedTime={PUBLISHED}
+        modifiedTime={PUBLISHED}
+        title="AI as a PM's Co-Pilot | Daniel Ozoani"
         description="Where AI helps project managers—and where it falls short. Data on productivity, adoption, and human judgment in delivery."
+        image={HERO_IMAGE}
+        jsonLd={buildArticleJsonLd({
+          headline: "AI as a PM's Co-Pilot",
+          description: 'Where AI helps project managers—and where it falls short. Data on productivity, adoption, and human judgment in delivery.',
+          pathname: ARTICLE_PATH,
+          datePublished: '2025-08-01',
+          image: HERO_IMAGE,
+        })}
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1675271591211-126ad94e495d?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"

@@ -511,7 +511,7 @@ export default function Home() {
   return (
     <div>
       <SEO
-        title="Daniel Ozoani — Builder, TPM & Developer"
+        title="Builder, TPM & Developer | Daniel Ozoani"
         description="I'm a Technical Project Manager and developer who loves building products, exploring AI, and thinking in systems."
         jsonLd={[
           {

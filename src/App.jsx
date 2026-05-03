@@ -49,8 +49,8 @@ const PageLoader = () => (
 const NotFound = () => (
   <div className="min-h-[70vh] flex items-center justify-center px-6">
     <SEO
-      title="Page not found — Daniel Ozoani"
-      description="This page does not exist on danbuilds.work."
+      title="Page not found | Daniel Ozoani"
+      description="The page you're looking for does not exist on danbuilds.work."
       noIndex
     />
     <div className="text-center">

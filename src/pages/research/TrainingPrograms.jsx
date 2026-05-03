@@ -4,8 +4,13 @@ import { ArrowLeft } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import SEO from '../../components/SEO';
+import { buildArticleJsonLd } from '../../utils/structuredData';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const ARTICLE_PATH = '/research/training-programs';
+const HERO_IMAGE = 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200';
+const PUBLISHED = '2025-04-20T12:00:00.000Z';
 
 export default function TrainingPrograms() {
   const heroRef = useRef(null);
@@ -25,8 +30,19 @@ export default function TrainingPrograms() {
   return (
     <div>
       <SEO
-        title="Why Training Programs Fail — Daniel Ozoani"
+        type="article"
+        publishedTime={PUBLISHED}
+        modifiedTime={PUBLISHED}
+        title="Why Training Programs Fail | Daniel Ozoani"
         description="The science behind skill retention, the forgetting curve, and why most corporate training never sticks—plus what actually works."
+        image={HERO_IMAGE}
+        jsonLd={buildArticleJsonLd({
+          headline: 'Why Training Programs Fail',
+          description: 'The science behind skill retention, the forgetting curve, and why most corporate training never sticks—plus what actually works.',
+          pathname: ARTICLE_PATH,
+          datePublished: '2025-04-20',
+          image: HERO_IMAGE,
+        })}
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"

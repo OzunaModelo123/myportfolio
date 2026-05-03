@@ -15,6 +15,8 @@ export const SITE_URL = 'https://danbuilds.work';
  * @param {string} [props.robots]
  * @param {boolean} [props.noIndex]
  * @param {object|object[]} [props.jsonLd]
+ * @param {string} [props.publishedTime] — ISO8601 when type is article (Open Graph)
+ * @param {string} [props.modifiedTime] — ISO8601 optional article update time
  */
 export default function SEO({
   title,
@@ -25,6 +27,8 @@ export default function SEO({
   robots,
   noIndex,
   jsonLd,
+  publishedTime,
+  modifiedTime,
 }) {
   const location = useLocation();
   const path = location.pathname || '/';
@@ -57,6 +61,14 @@ export default function SEO({
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:locale" content="en_US" />
+
+      {type === 'article' && publishedTime ? (
+        <>
+          <meta property="article:published_time" content={publishedTime} />
+          <meta property="article:modified_time" content={modifiedTime || publishedTime} />
+          <meta property="article:author" content={name} />
+        </>
+      ) : null}
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />

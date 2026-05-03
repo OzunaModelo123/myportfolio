@@ -36,7 +36,7 @@ export default function SocialAppsProject() {
   return (
     <div>
       <SEO
-        title="Social Wellness — Intentional social products — Daniel Ozoani"
+        title="Social Wellness | Daniel Ozoani"
         description="Products that elevate user psychology—FrameDay and experiments in mindful, intentional social experiences."
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">

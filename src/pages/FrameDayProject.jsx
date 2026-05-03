@@ -25,7 +25,7 @@ export default function FrameDayProject() {
   return (
     <div>
       <SEO
-        title="FrameDay — Mindful camera app — Daniel Ozoani"
+        title="FrameDay | Daniel Ozoani"
         description="FrameDay is a mindful camera app that turns daily surroundings into a collaborative visual diary—breaking the endless scroll."
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
