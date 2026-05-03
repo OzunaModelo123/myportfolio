@@ -90,8 +90,8 @@ const getBestMove = (game, depth = 2) => {
 
 // ── PIECE ICONS (Unicode) ───────────────────────────────────────────────────
 const pieceIcons = {
-  w: { p: '♙', n: '♘', b: '♗', r: '♖', q: '♕', k: '♔' },
-  b: { p: '♟', n: '♞', b: '♝', r: '♜', q: '♛', k: '♚' },
+  w: { p: '♙\uFE0E', n: '♘\uFE0E', b: '♗\uFE0E', r: '♖\uFE0E', q: '♕\uFE0E', k: '♔\uFE0E' },
+  b: { p: '♟\uFE0E', n: '♞\uFE0E', b: '♝\uFE0E', r: '♜\uFE0E', q: '♛\uFE0E', k: '♚\uFE0E' },
 };
 
 // ── SQUARE COMPONENT (memoized to avoid 64 re-renders) ──────────────────────
