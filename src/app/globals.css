@@ -38,6 +38,7 @@ body {
   background-attachment: fixed;
   color: #f0f0f0;
   font-family: var(--font-inter);
+  line-height: 1.5;
   cursor: none;
 }
 
@@ -449,6 +450,7 @@ textarea,
 
 /* ── IMAGE PARALLAX CONTAINER ──────────────────────── */
 .parallax-img {
+  position: relative;
   overflow: hidden;
   border-radius: 16px;
 }
