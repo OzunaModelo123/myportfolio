@@ -584,7 +584,7 @@ export default function Home() {
           </div>
 
           <p className="h-anim font-inter text-lg md:text-xl text-white max-w-prose leading-relaxed mb-10 text-shadow-sm">
-            {age}. I run programs as a TPM, dabble in building products on the side, and spend probably too much time reading about AI and LLMs. Toronto-based.
+            {age}. I run programs as a TPM across retail, tech, construction, and a few other industries in between. I also like building cool projects I hope can make an impact one day, and I spend a lot of time on AI and LLMs. Chess is where I'm basically a grandmaster in my head. Toronto-based.
           </p>
 
           <div className="h-anim flex flex-wrap gap-3 mb-10">
@@ -624,19 +624,19 @@ export default function Home() {
             <div>
               <div className="reveal-item sec-tag mb-8 text-white/80">Who I Am</div>
               <h2 className="reveal-item font-display font-bold text-[clamp(2.5rem,6vw,4.5rem)] text-white leading-[0.95] tracking-tight mb-8">
-                I love to <span className="font-serif italic" style={{ color: '#C75B39' }}>build things.</span>
+                A quick <span className="font-serif italic" style={{ color: '#C75B39' }}>introduction.</span>
               </h2>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-5">
-                I’m a TPM. I run programs, manage vendors and stakeholders, and make sure things actually ship. Most of my work has been in retail tech and SaaS.
+                I'm a TPM. I run programs, manage vendors and stakeholders, and make sure things actually ship. I've worked across retail, tech, construction, and related delivery environments among others.
               </p>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-5">
-                On the side I dabble in building products. I spend a lot of time in the AI space, not so much writing every line from scratch but thinking about how models fit into real workflows and building things around that.
+                Outside of day-to-day TPM work I also like to build cool projects I hope can make an impact one day. A lot of that sits in AI: less about writing every line from scratch and more about how models fit into real workflows, then building around that.
               </p>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-5">
-                I also shoot film and do cinematography when time allows. Chess is something I play badly but consistently.
+                I shoot film when I can find the time. Chess is where I'm basically a grandmaster in my head (reality politely disagrees).
               </p>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-10">
-                Hit the link below if you want the full story.
+                Want more detail? The link below has the fuller version.
               </p>
               <div className="reveal-item flex flex-wrap gap-3">
                 <Link to="/about" className="btn-glow">
@@ -654,7 +654,7 @@ export default function Home() {
                 { icon: <Brain className="w-6 h-6" />, title: 'AI Engineering', sub: 'Practical models in workflows', color: '#8B7EC8' },
                 { icon: <Lightbulb className="w-6 h-6" />, title: 'Product Builder', sub: 'Prototype → production hygiene', color: '#E8856E' },
                 { icon: <Target className="w-6 h-6" />, title: 'Systems Design', sub: 'Interfaces that stay observable', color: '#C75B39' },
-                { icon: <Crown className="w-6 h-6" />, title: 'Chess', sub: 'Tactics club, not trophy case', color: '#D4C4A8' },
+                { icon: <Crown className="w-6 h-6" />, title: 'Chess', sub: 'Grandmaster in my head', color: '#D4C4A8' },
                 { icon: <Zap className="w-6 h-6" />, title: 'Filmmaking', sub: 'Image, motion, sequencing', color: '#4A90D9' },
               ].map((c, i) => (
                 <div key={i}
@@ -767,12 +767,22 @@ export default function Home() {
             <h2 className="reveal-item font-display font-bold text-[clamp(2.5rem,7vw,4.5rem)] text-white leading-[0.95] tracking-tight mb-4">
               A spot to <span className="font-serif italic" style={{ color: '#C75B39' }}>kill some time.</span>
             </h2>
-            <p className="reveal-item font-inter text-base text-white/90 max-w-prose mx-auto leading-relaxed mb-8">
-              {playgroundMode === 'particles'
-                ? "Honestly just a fun little thing I put here. Click and drag, watch it go. Nothing to figure out, just a vibe."
-                : "I built a chess bot and it has genuinely no chill. Even the easy mode will catch you slipping. I still lose to it sometimes and I made it, so good luck."
-              }
-            </p>
+            {playgroundMode === 'particles' ? (
+              <p className="reveal-item font-inter text-base text-white/90 max-w-prose mx-auto leading-relaxed mb-8">
+                Honestly just a fun little thing I put here. Click and drag, watch it go. Nothing to figure out, just a vibe.
+              </p>
+            ) : (
+              <div className="reveal-item font-inter text-base text-white/90 max-w-prose mx-auto leading-relaxed mb-8 space-y-4">
+                <p>
+                  I'm not great at chess, so this is basically a public test to see if it's just me. If you lose, don't worry. I do too.
+                </p>
+                <p>
+                  The bot, though? No mercy.{' '}
+                  <span className="text-[#E8856E]">&quot;Easy mode&quot;</span>
+                  {' '}is a scam.
+                </p>
+              </div>
+            )}
 
             {/* Mode Toggle */}
             <div className="reveal-item inline-flex p-1.5 glass rounded-2xl border border-white/05 mb-8">

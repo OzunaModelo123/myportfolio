@@ -296,16 +296,19 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-20 items-start">
             <div>
               <h2 className="sr font-display font-bold text-[clamp(2rem,5vw,3.2rem)] text-white leading-[0.95] tracking-tight mb-7">
-                From roadmap to rollout, and into the code when it helps.
+                What I actually do
               </h2>
               <p className="sr font-inter text-base text-white/75 leading-relaxed mb-4">
-                Most of my work sits where programs meet reality: aligning vendors and internal teams, keeping RAID logs honest, and steering launches so surprises happen in rehearsal, not in production.
+                I take projects from planning through delivery, stepping into the technical side when it actually adds value.
               </p>
               <p className="sr font-inter text-base text-white/75 leading-relaxed mb-4">
-                I'm still hands-on technically when it helps. I prototype integrations, tighten API contracts, or document the fragile parts so they don't get passed down as tribal knowledge.
+                My work sits at the point where plans meet execution: aligning vendors and internal teams, maintaining clear and honest RAID logs, and guiding launches so issues are caught early rather than in production.
+              </p>
+              <p className="sr font-inter text-base text-white/75 leading-relaxed mb-4">
+                I stay hands-on when it matters. That might mean prototyping integrations, refining API contracts, or documenting fragile parts of a system so they don't turn into long-term risks.
               </p>
               <p className="sr font-inter text-base text-white/75 leading-relaxed">
-                Outside work I build smaller products around things I think are broken or could be better. Mostly in the AI and data space. I also shoot film, study chess openings I immediately forget, and read about AI developments probably more than is healthy.
+                Outside of work, I build small products around problems I think are worth solving, mostly in the AI and data space. I also shoot film, study chess openings I immediately forget, and spend a bit too much time keeping up with AI developments.
               </p>
             </div>
             <div className="sr">
