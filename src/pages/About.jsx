@@ -193,21 +193,21 @@ export default function About() {
     {
       title: 'Global Luxury Fashion Brand',
       tag: 'Retail Deployment · 2024',
-      desc: 'Helping a flagship boutique open clean: IT backbone, shiny POS setups, procurement drama contained.',
+      desc: 'Flagship rollout: infrastructure, POS refresh, procurement, and go-live coordination with zero post-launch defects reported.',
       color: '#C75B39',
       to: '/projects',
     },
     {
       title: 'Enterprise SaaS Migration',
       tag: 'Outlook to Freshdesk · 2024 to 2025',
-      desc: 'Six-figure migration from Outlook fumes to Freshdesk workflows. Vendor wrangling plus API babysitting.',
+      desc: 'High-budget migration to Freshdesk workflows: vendor coordination, integration work, disciplined budget tracking, measurable lift in outbound sales attribution post-cutover.',
       color: '#8B7EC8',
       to: '/projects',
     },
     {
       title: 'Multi-Site Retail Buildout',
       tag: 'AG Retail · 2021 to 2023',
-      desc: 'Multi-location retail bootstrapping: drywall dust, cabling, POS rollouts, the whole trilogy.',
+      desc: 'Coordinated construction-adjacent work, cabling, staging, and POS deployment across multiple store openings with centralized reporting.',
       color: '#4A90D9',
       to: '/projects',
     },
@@ -217,21 +217,21 @@ export default function About() {
     {
       title: 'Recaller',
       tag: 'B2B SaaS · Training Intelligence',
-      desc: '10-second Slack pings that quantify who actually remembers the training (not whoever clicked play fastest).',
+      desc: 'Slack and Teams micro-assessments for training readiness and retention—signals L&D teams can cite in reviews, not just completion rates.',
       color: '#C75B39',
       to: '/projects/recaller',
     },
     {
       title: 'API Creations',
       tag: 'Backend Infrastructure',
-      desc: 'Receipt parsing and friends: APIs that ingest chaos and spit out JSON adults can argue about.',
+      desc: 'REST microservices for messy inputs (receipts, reviews, and similar data) with structured JSON outputs; some APIs are live on RapidAPI.',
       color: '#5B8C6F',
       to: '/projects/api-creations',
     },
     {
       title: 'Social Wellness',
       tag: 'Intentional Social · FrameDay',
-      desc: 'Mindfulness-first companions like FrameDay, because doomscrolling deserved a challenger.',
+      desc: 'Calmer social products built around prompts and real-world presence; FrameDay starts with daily photo rituals instead of infinite feeds.',
       color: '#8B7EC8',
       to: '/projects/social-wellness',
     },
@@ -242,13 +242,13 @@ export default function About() {
     { label: 'Education', value: 'BSc Computer Science, Salem University' },
     { label: 'Cert', value: 'Mobile App Dev & Mgmt, Cambrian College' },
     { label: 'Open to', value: 'Full-time · Contract · Collab' },
-    { label: 'Interests', value: 'Chess melodrama, AI rabbit holes, honest cameras' },
+    { label: 'Interests', value: 'Chess, film and cameras, AI tooling' },
     { label: 'Contact', value: 'ozoanibarzali@gmail.com' },
   ];
 
   return (
     <div>
-      <SEO title="About | Daniel Ozoani" description="How a Toronto TPM wound up nerdsniping himself with chess, cinema, code, and very long standups." />
+      <SEO title="About | Daniel Ozoani" description="Toronto-based Technical Project Manager and developer: retail and SaaS delivery, stakeholder communication, and side products in training tech, APIs, and intentional social apps." />
 
       {/* ── HERO ──────────────────────────────────────────────────── */}
       <section ref={heroRef} className="relative pt-36 pb-24 px-6 md:px-10 overflow-hidden">
@@ -257,7 +257,7 @@ export default function About() {
           <div className="h-anim mb-5">
             <div className="status-live inline-flex">
               <span className="status-dot-green" />
-              Open schedules and strong opinions about roadmaps
+              Open to full-time, contract, and collaboration
             </div>
           </div>
           <h1 className="h-anim font-display font-black text-[clamp(3.5rem,9vw,7rem)] text-white leading-[0.87] tracking-tight mb-4">
@@ -281,8 +281,8 @@ export default function About() {
             </a>
           </div>
           <div className="h-anim flex flex-wrap gap-3">
-            <Link to="/contact" className="btn-glow">Loop me in <ArrowRight className="w-4 h-4" /></Link>
-            <Link to="/projects" className="btn-glass">Browse the receipts</Link>
+            <Link to="/contact" className="btn-glow">Contact me <ArrowRight className="w-4 h-4" /></Link>
+            <Link to="/projects" className="btn-glass">View projects</Link>
           </div>
         </div>
       </section>
@@ -296,16 +296,16 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-20 items-start">
             <div>
               <h2 className="sr font-display font-bold text-[clamp(2rem,5vw,3.2rem)] text-white leading-[0.95] tracking-tight mb-7">
-                The messy overlap where roadmaps touch real machines.
+                From roadmap to rollout—and the code path when needed.
               </h2>
               <p className="sr font-inter text-base text-white/75 leading-relaxed mb-4">
-                I like problems that refuse to die in Slack threads. TPM work gives me ownership from "someone please own this" to "we deployed it on Thursday."
+                Most of my work sits where programs meet reality: aligning vendors and internal teams, keeping RAID logs honest, and steering launches so surprises happen in rehearsal, not in production.
               </p>
               <p className="sr font-inter text-base text-white/75 leading-relaxed mb-4">
-                When spreadsheets go quiet I'm usually shipping side code, stressing language models politely, or building internal tools nobody wants to sponsor until they adore them.
+                I'm still hands-on technically when it helps—I prototype integrations, tighten API contracts, or document the fragile parts so nobody has to tribal-knowledge them later.
               </p>
               <p className="sr font-inter text-base text-white/75 leading-relaxed">
-                Off duty I film things, binge openings no one counters, and read release notes because yes, that's entertainment now.
+                Outside client work I build products that scratch operational itches—training telemetry, ingestion APIs, quieter social apps—and I decompress with chess study, filming, and the occasional obsessive documentation deep dive (someone has to enjoy release notes).
               </p>
             </div>
             <div className="sr">
@@ -327,7 +327,7 @@ export default function About() {
         <div className="max-w-5xl mx-auto">
           <div className="sr sec-tag mb-4">Core Skills</div>
           <h2 className="sr font-display font-bold text-[clamp(2rem,5vw,3rem)] text-white tracking-tight mb-12">
-            What survives a scope review with me.
+            What I bring to delivery reviews and exec readouts.
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
             {skillGroups.map(g => (
@@ -349,7 +349,7 @@ export default function About() {
         <div className="max-w-5xl mx-auto">
           <div className="sr sec-tag mb-4">Work Experience</div>
           <h2 className="sr font-display font-bold text-[clamp(2rem,5vw,3rem)] text-white tracking-tight mb-12">
-            Places I've left documentation behind.
+            Where I've delivered.
           </h2>
           <div className="relative">
             <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-[#C75B39]/50 via-[#4A90D9]/30 to-[#5B8C6F]/20" />
@@ -369,7 +369,7 @@ export default function About() {
         <div className="max-w-5xl mx-auto">
           <div className="sr sec-tag mb-4">Corporate Work</div>
           <h2 className="sr font-display font-bold text-[clamp(2rem,5vw,3rem)] text-white tracking-tight mb-10">
-            Quiet flexes with spreadsheets attached.
+            Selected enterprise programs.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-20">
             {corporateProjects.map(p => (
@@ -380,7 +380,7 @@ export default function About() {
           {/* ── PERSONAL PROJECTS ─────────────────────────────────── */}
           <div className="sr sec-tag mb-4">Personal Builds</div>
           <h2 className="sr font-display font-bold text-[clamp(2rem,5vw,3rem)] text-white tracking-tight mb-10">
-            Hobby repos that haunt my sleep.
+            Independent products.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {personalProjects.map(p => (
@@ -433,7 +433,7 @@ export default function About() {
                 <h3 className="font-display font-bold text-white text-lg mb-1">AI for Product Managers</h3>
                 <p className="font-inter text-sm text-white/60 mb-1">Advance Learning (management leadership track)</p>
                 <p className="font-inter text-sm text-white/45 leading-relaxed">
-                  Leveled up on where AI realistically helps PM decisions versus where it politely hallucinates. Think roadmaps plus models without the circus marketing.
+                  Focus on realistic AI assists for discovery, estimation, and communication—along with judgment about where models still need humans in the loop, without leaning on vague vendor hype.
                 </p>
                 <div className="mt-4 flex items-center gap-2 font-inter text-sm text-[#8B7EC8]">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#8B7EC8] animate-pulse" />
@@ -450,16 +450,16 @@ export default function About() {
       {/* ── CTA ───────────────────────────────────────────────────── */}
       <section className="py-24 px-6 md:px-10">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="sr sec-tag justify-center mb-6" style={{ color: '#E8856E' }}>End of scrolling</div>
+          <div className="sr sec-tag justify-center mb-6" style={{ color: '#E8856E' }}>Let's talk</div>
           <h2 className="sr font-display font-bold text-[clamp(2.5rem,7vw,5rem)] text-white leading-[0.9] tracking-tight mb-6">
-            Want to build<br />
-            <span className="font-serif italic" style={{ color: '#E8856E' }}>something that ships?</span>
+            Have a program or product<br />
+            <span className="font-serif italic" style={{ color: '#E8856E' }}>that needs execution?</span>
           </h2>
           <p className="sr font-inter text-base text-white/50 max-w-md mx-auto leading-relaxed mb-10">
-            Big initiatives, chaotic prototypes, or "is this KPI nonsense" chats are all welcome. I reply like a human, not an auto attendant.
+            Send scope, timeline, and what “done” looks like. I answer with specifics—owners, risks, and what I’d validate first.
           </p>
           <div className="sr flex flex-wrap gap-4 justify-center">
-            <Link to="/contact" className="btn-glow">Use my inbox <ArrowRight className="w-4 h-4" /></Link>
+            <Link to="/contact" className="btn-glow">Email me <ArrowRight className="w-4 h-4" /></Link>
             <a href="https://www.linkedin.com/in/daniel-ozoani-b20539252/" target="_blank" rel="noopener noreferrer" className="btn-glass">
               LinkedIn <ExternalLink className="w-3.5 h-3.5" />
             </a>

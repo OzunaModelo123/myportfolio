@@ -26,7 +26,7 @@ export default function FrameDayProject() {
     <div>
       <SEO
         title="FrameDay | Daniel Ozoani"
-        description="A camera habit that steals you back from the infinite feed. Collaborative prompts instead of doomscrolling by default."
+        description="FrameDay sends one thoughtful photo prompt per day—built to encourage presence, gentle collaboration, and a visual journal without addictive feed mechanics."
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1510519133417-2407dcafb440?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"
@@ -41,7 +41,7 @@ export default function FrameDayProject() {
           <h1 className="p-anim font-display font-black text-[clamp(4rem,9vw,7rem)] text-white leading-[0.85] tracking-tight mb-6">FrameDay</h1>
           <div className="p-anim flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
             <p className="font-inter text-base md:text-xl text-white/80 max-w-prose leading-relaxed">
-              Basically a morning push that dares you to notice the hallway light before TikTok steals your ankles again.
+              A structured daily cue to observe your surroundings with a camera before defaulting to feeds. Collaboration stays lightweight: shared prompts, restrained reactions, and optional duets—not endless comparison.
             </p>
             <div className="flex flex-col gap-3 flex-shrink-0">
               <div className="status-live" style={{ color: '#8B7EC8', borderColor: '#8B7EC840' }}>
@@ -61,12 +61,12 @@ export default function FrameDayProject() {
           {/* What is FrameDay */}
           <div className="reveal-item text-center">
             <div className="sec-tag justify-center mb-6">01 · What is FrameDay?</div>
-            <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-8 tracking-tight">Photography homework for your eyeballs.</h2>
+            <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-8 tracking-tight">Guided noticing, one frame at a time.</h2>
             <p className="font-inter text-lg text-white/80 leading-relaxed text-left">
-              <strong>FrameDay</strong> is equal parts journaling and gentle peer pressure: one prompt push per day ("find something pretending to nap", "borrow someone else's shadow story") and you wander outside with purpose. 
+              <strong>FrameDay</strong> pairs journaling with photography: users receive one prompt push per day, respond with an image rooted in real life, and optionally share interpretations with trusted connections.
             </p>
             <p className="font-inter text-lg text-white/80 leading-relaxed text-left mt-6">
-              The win is tactile: fewer autopilot thumbs, more evidence you share a planet with weird textures. Passive feeds still exist elsewhere; FrameDay wants you mildly winded instead of glazed over.
+              The intent is tactile presence—moving through spaces with curiosity—while keeping passive scrolling as an opt-in elsewhere. Mild physical activity and attention to textures or light become the reward, not an engagement score.
             </p>
           </div>
 
@@ -75,9 +75,9 @@ export default function FrameDayProject() {
           {/* Features and Why */}
           <div className="reveal-item">
             <div className="sec-tag mb-4">02 · Mechanics of Mindfulness</div>
-            <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-6 tracking-tight">Why the mechanics feel sneaky-good.</h2>
+            <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-6 tracking-tight">Why the prompts feel purposeful.</h2>
             <p className="font-inter text-lg text-white/80 leading-relaxed max-w-3xl mb-12">
-              Every lever is biased toward wandering with a camera rather than lurking on a leaderboard. Influencer clichés discouraged; curiosity subsidized.
+              Product decisions emphasize wandering with a lens over leaderboard theatrics—lightweight rituals, restrained reactions, and cohort experiences that reinforce curiosity instead of influencer aesthetics.
             </p>
             
             <div className="space-y-12">

@@ -32,7 +32,15 @@ const ShufflerCard = () => {
 };
 
 const TypewriterCard = () => {
-  const lines = ['> Scanning team readiness...', '> ALERT: User #402: 89% confident, 34% accurate', '> Pattern: ERROR-GANCE DETECTED (yeah, that vibe)', '> Topic: Safety Protocol Verification', '> Risk: flagged for a human eye', '> Re-assessment scheduled in 48 hours...', '', '> Scanning next cohort...'];
+  const lines = [
+    '> Scanning cohort readiness…',
+    '> Alert: respondent #402 · self-reported confidence 89%, item accuracy 34%',
+    '> Pattern: high-confidence incorrect responses · topic: Safety Protocol Verification',
+    '> Risk: escalated for manager review',
+    '> Follow-up assessment scheduled · T+48h',
+    '',
+    '> Monitoring next cohort…',
+  ];
   const full = lines.join('\n');
   const [shown, setShown] = useState('');
   const [i, setI] = useState(0);
@@ -67,10 +75,10 @@ export default function Projects() {
   }, []);
 
   const features = [
-    { num: '01', tag: 'Readiness Intelligence', title: 'One score, zero theater', body: "Accuracy, hesitation, refresher cadence, all distilled into something you can screenshot in an exec recap without lying.", card: <ShufflerCard /> },
-    { num: '02', tag: 'Risk Detection', title: 'Spot loud-wrong folks early', body: "The scary ones sound certain and move fast anyway. Recaller tracks high-confidence misses so your incident report isn't someone's surprise debut.", card: <TypewriterCard /> },
+    { num: '01', tag: 'Readiness Intelligence', title: 'A single readiness score stakeholders can interpret', body: 'Accuracy, response time, and follow-up prompts roll into one view so managers see who is field-ready versus who needs coaching—without assembling spreadsheets by hand.', card: <ShufflerCard /> },
+    { num: '02', tag: 'Risk detection', title: 'Surface mis-calibrated confidence early', body: 'When someone answers quickly but misses key items, Recaller highlights the cohort for targeted reinforcement before the gap shows up downstream in operations.', card: <TypewriterCard /> },
     {
-      num: '03', tag: 'Conversational AI', title: 'DM the concierge bot', body: 'Stumped mid-shift? Slack the bot, it hunts the training library instead of burying folks in portals, then drops the timestamped clip that answers the awkward question.',
+      num: '03', tag: 'Conversational assistant', title: 'In-channel guidance to the training source', body: 'Learners stay in Slack or Teams: the assistant finds the clip or checklist that answers their question instead of sending them through a maze of portals.',
       card: <div className="h-52 glass rounded-2xl p-4 flex flex-col gap-3">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: 'rgba(199,91,57,0.12)', border: '1px solid rgba(199,91,57,0.2)' }}>
@@ -89,7 +97,7 @@ export default function Projects() {
       </div>
     },
     {
-      num: '04', tag: 'ROI Proof Engine', title: 'Before / after receipts', body: "Baseline quiz, coursework, chill waiting period, follow-up quiz. The delta becomes the storyline finance recognizes.",
+      num: '04', tag: 'Measured impact', title: 'Before-and-after knowledge deltas', body: 'Baseline check, training window, spaced follow-up assessments. The uplift is summarized for program owners who need quantitative talking points—not anecdotal reassurance.',
       card: <div className="h-52 glass rounded-2xl p-4 flex flex-col justify-between">
         <div className="font-mono text-[0.58rem] text-[#C75B39] tracking-widest mb-3">ROI Dashboard · Knowledge Delta</div>
         {[{ label: 'Safety Protocols', before: 42, after: 88, gain: '+46%' }, { label: 'Product Knowledge', before: 55, after: 91, gain: '+36%' }, { label: 'Compliance Basics', before: 61, after: 94, gain: '+33%' }].map((r, i) => (
@@ -112,7 +120,7 @@ export default function Projects() {
     <div>
       <SEO
         title="Recaller | Daniel Ozoani"
-        description="Ten-second Slack nudges that measure readiness, misplaced confidence, and whether L&D budgets still deserve coffee."
+        description="Recaller sends short Slack and Teams assessments so training teams can measure real readiness and retention—not just course completion rates."
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"
@@ -125,10 +133,10 @@ export default function Projects() {
           </Link>
           <div className="p-anim sec-tag mb-6">B2B SaaS · Training Intelligence</div>
           <h1 className="p-anim font-display font-black text-[clamp(5rem,14vw,10rem)] text-white leading-[0.85] tracking-[-0.04em] mb-4">Recaller</h1>
-          <div className="p-anim font-serif italic text-[clamp(1.5rem,4vw,2.8rem)] text-[#C75B39] leading-[1.1] mb-8">Training ROI nobody can hand-wave away.</div>
+          <div className="p-anim font-serif italic text-[clamp(1.5rem,4vw,2.8rem)] text-[#C75B39] leading-[1.1] mb-8">Training impact you can show in a status meeting.</div>
           <div className="p-anim flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
             <p className="font-inter text-base md:text-xl text-white/80 max-w-prose leading-relaxed">
-              Teams were sinking serious coin into LMS seats without receipts. Recaller tracks what sticks, politely, inside Slack where people actually answer pings.
+              Organizations spend heavily on LMS and workshops, but reporting often stops at completions. Recaller collects lightweight evidence of what employees actually retained—inside Slack or Teams—so readiness is visible before a mistake shows up with a customer.
             </p>
             <div className="flex flex-col gap-3 flex-shrink-0">
               <div className="status-live"><span className="status-dot-green" /> Core stack lives in staging trials</div>
@@ -143,7 +151,7 @@ export default function Projects() {
       {/* Stats */}
       <section className="reveal-section py-16 px-6 md:px-10">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[{ val: '10s', l: 'Per micro-assessment' }, { val: '3', l: 'Platforms supported' }, { val: '0', l: 'New logins required' }, { val: '∞', l: 'ROI provability' }].map(s => (
+          {[{ val: '10s', l: 'Per micro-assessment' }, { val: '3', l: 'Platforms supported' }, { val: '0', l: 'New logins required' }, { val: 'Δ', l: 'Before / after deltas' }].map(s => (
             <div key={s.l} className="reveal-item glass-light rounded-2xl p-5">
               <div className="font-display font-extrabold text-4xl text-[#C75B39] mb-1">{s.val}</div>
               <div className="font-mono text-[0.6rem] text-white/70 tracking-widest uppercase">{s.l}</div>
@@ -163,9 +171,9 @@ export default function Projects() {
           </div>
           <div className="reveal-item space-y-4">
             <p className="font-inter text-base text-white/90 max-w-prose leading-relaxed">
-              Mostly we celebrate completion percentages and LMS green bars. Rarely anyone asks if someone could actually execute the thing on Tuesday at 9am next to an angry customer.
+              LMS dashboards excel at completions; they rarely show whether someone can apply the lesson under pressure during a Tuesday morning shift change.
             </p>
-            {['Nobody opens the random portal bookmarked in onboarding', 'Confident-but-wrong people hide until KPIs crater', 'Executives suddenly want proof budgets mattered yesterday'].map((t, i) => (
+            {['Employees rarely reopen the onboarding portal after week one', 'High-confidence errors surface only after incidents or QA failures', 'Budget owners ask for proof with little time to instrument something new'].map((t, i) => (
               <div key={i} className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#C75B39] mt-2 flex-shrink-0" />
                 <span className="font-inter text-sm text-white/70">{t}</span>
@@ -179,7 +187,7 @@ export default function Projects() {
       <section className="reveal-section py-20 md:py-28 px-6 md:px-10">
         <div className="max-w-7xl mx-auto">
           <div className="reveal-item sec-tag mb-6">Features</div>
-          <h2 className="reveal-item font-display font-bold text-[clamp(2.5rem,6vw,4rem)] text-white leading-[0.95] tracking-tight mb-16">The parts people actually demo.</h2>
+          <h2 className="reveal-item font-display font-bold text-[clamp(2.5rem,6vw,4rem)] text-white leading-[0.95] tracking-tight mb-16">What the product emphasizes.</h2>
           <div className="space-y-6">
             {features.map((f, i) => (
               <div key={i} className="reveal-item project-card p-8 md:p-10 group">
@@ -205,12 +213,12 @@ export default function Projects() {
       <section className="reveal-section py-20 md:py-28 px-6 md:px-10">
         <div className="max-w-7xl mx-auto">
           <div className="reveal-item sec-tag mb-6">How It Works</div>
-          <h2 className="reveal-item font-display font-bold text-[clamp(2.5rem,6vw,4rem)] text-white leading-[0.95] tracking-tight mb-14">How the loop behaves IRL.</h2>
+          <h2 className="reveal-item font-display font-bold text-[clamp(2.5rem,6vw,4rem)] text-white leading-[0.95] tracking-tight mb-14">How the cadence fits into day-to-day work.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { n: '01', title: 'In-channel micro checks', desc: 'No fresh logins or forgotten passwords. Assessments slap into Slack / Teams because that is honestly where honesty lives.', color: '#C75B39' },
-              { n: '02', title: 'Telemetry becomes a storyline', desc: 'Every tap feeds accuracy, pacing, hesitation. Narratives write themselves.', color: '#8B7EC8' },
-              { n: '03', title: 'Finance gets a numerator', desc: 'Before-after deltas turn “training vibes” into a percentage that survives an audit glare.', color: '#5B8C6F' },
+              { n: '01', title: 'In-channel micro checks', desc: 'No extra logins. Short assessments arrive where people already collaborate so completion rates reflect real workflows, not a forgotten LMS tab.', color: '#C75B39' },
+              { n: '02', title: 'Instrumentation by default', desc: 'Each interaction records accuracy, pacing, and follow-up prompts so patterns are visible programmatically—not only in hindsight after an incident.', color: '#8B7EC8' },
+              { n: '03', title: 'Quantified lift for reviewers', desc: 'Before-after deltas give finance and executives a numerator they can reconcile against program cost, staffing time, or compliance risk.', color: '#5B8C6F' },
             ].map((s, i) => (
               <div key={i} className="reveal-item glass-light rounded-2xl p-7 flex flex-col gap-6 group hover:border-[#C75B39]/20 transition-all duration-500 hoverable">
                 <div className="w-14 h-14 rounded-xl flex items-center justify-center font-display font-black text-xl text-white" style={{ background: s.color }}>{s.n}</div>
@@ -228,13 +236,13 @@ export default function Projects() {
       <section className="py-24 md:py-32 px-6 md:px-10">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-display font-bold text-[clamp(2.5rem,7vw,5rem)] text-white leading-[0.92] tracking-tight mb-6">
-            Want the architecture tour?
+            Interested in architecture or pilots?
           </h2>
           <p className="font-inter text-base text-white/90 max-w-prose mx-auto mb-10 leading-relaxed">
-            Happy to whiteboard ingestion, Slack auth, model guardrails, or why I still mute certain notification sounds.
+            I can walk through ingestion, Slack authentication, retrieval guardrails, and how dashboards map back to remediation workflows.
           </p>
           <Link to="/contact" className="btn-glow">
-            Pull me into a thread <ArrowRight className="w-4 h-4" />
+            Start a conversation <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>

@@ -493,21 +493,21 @@ export default function Home() {
     { icon: <Code2 className="w-5 h-5" />, label: 'Developer', color: '#5B8C6F' },
     { icon: <Brain className="w-5 h-5" />, label: 'AI & Cognition', color: '#8B7EC8' },
     { icon: <Crown className="w-5 h-5" />, label: 'Chess', color: '#E8856E' },
-    { icon: <Zap className="w-5 h-5" />, label: 'Bleeding-edge curiosity', color: '#4A90D9' },
+    { icon: <Zap className="w-5 h-5" />, label: 'Emerging tech', color: '#4A90D9' },
     { icon: <Coffee className="w-5 h-5" />, label: 'Good Coffee', color: '#D4C4A8' },
   ];
 
   const projects = [
     {
       num: '01', name: 'Recaller', tag: 'B2B SaaS',
-      desc: 'Slack quizzes that politely expose who memorized nothing. Training budgets finally get receipts.',
+      desc: 'Micro-assessments inside Slack and Teams so teams can see who actually retained training—not just who clicked “complete.” Built for L&D and operations leaders who need defensible readiness data.',
       color: '#C75B39', href: '/projects/recaller',
       img: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2560',
       icon: <Target className="w-5 h-5" />,
     },
     {
       num: '02', name: 'API Creations', tag: 'Infrastructure',
-      desc: 'Microservices when you need glue between messy data and sane JSON. Receipt parsing already lives on Rapid.',
+      desc: 'Focused REST services that turn noisy real-world inputs into clean JSON—reviews, receipts, and similar pipelines. Several collections are published on RapidAPI; others are staged for release.',
       color: '#5B8C6F', href: '/projects/api-creations',
       img: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=2560',
       icon: <Lightbulb className="w-5 h-5" />,
@@ -516,14 +516,14 @@ export default function Home() {
       num: '03',
       name: 'Learning Lab',
       tag: 'Study apps · Coming soon',
-      desc: 'Apps that trick you into learning without the existential dread PDFs give you.',
+      desc: 'Study tools designed to make revision easier and more efficient: less context-switching, clearer structure, and feedback you can act on—without turning learning into a gimmick.',
       color: '#5EC8D8',
       img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=2560',
       modalKey: 'education',
     },
     {
       num: '04', name: 'Social Wellness', tag: 'Intentional Social',
-      desc: 'Social products that flirt with dopamine thoughtfully. Starting with prompts that drag you outdoors.',
+      desc: 'Social products that prioritize intentional engagement over endless feeds. FrameDay is the first slice: daily photo prompts and lightweight sharing that nudge you toward the real world.',
       color: '#8B7EC8', href: '/projects/social-wellness',
       img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=2560',
       icon: <Brain className="w-5 h-5" />,
@@ -534,13 +534,13 @@ export default function Home() {
     <div>
       <SEO
         title="Builder, TPM & Developer | Daniel Ozoani"
-        description="Twenty-something TPM who still writes code on purpose. I like products that behave in production, chess tantrums, and AI that earns the hype."
+        description="Technical Project Manager and developer in Toronto—delivery, stakeholder clarity, retail and SaaS rollouts, plus products and APIs built on the side."
         jsonLd={[
           {
             '@context': 'https://schema.org',
             '@type': 'WebSite',
             name: 'Daniel Ozoani - Portfolio',
-            description: 'Portfolio of Daniel Ozoani: TPM, ships code too, mildly obsessed with things that ought to scale.',
+            description: 'Portfolio of Daniel Ozoani: TPM and builder focused on dependable delivery and well-explained technical work.',
             url: SITE_URL,
           },
           {
@@ -568,7 +568,7 @@ export default function Home() {
           <div className="h-anim mb-8">
             <div className="status-live inline-flex">
               <span className="status-dot-green" />
-              Open to collaborators who read roadmaps out loud
+              Open to TPM, engineering, and product collaboration
             </div>
           </div>
 
@@ -584,16 +584,16 @@ export default function Home() {
           </div>
 
           <p className="h-anim font-inter text-lg md:text-xl text-white max-w-prose leading-relaxed mb-10 text-shadow-sm">
-            {age}. I glue teams to shipping schedules, poke at neural nets until they cooperate, and still lose bishop pairs for fun.
+            {age}. Technical PM and developer—I run complex rollouts end to end, build when the problem needs code, and use chess and side projects to stay sharp on systems thinking.
           </p>
 
           <div className="h-anim flex flex-wrap gap-3 mb-10">
             <button type="button" className="btn-glow hoverable" onClick={() => setBuildingModal('portfolio')}>
-              Show me what's in the oven
+              What's shipping next
               <ArrowRight className="w-4 h-4" />
             </button>
             <Link to="/contact" className="btn-glass">
-              Toss me a message
+              Get in touch
             </Link>
           </div>
 
@@ -627,16 +627,16 @@ export default function Home() {
                 I love to <span className="font-serif italic" style={{ color: '#C75B39' }}>build things.</span>
               </h2>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-5">
-                I'm a TPM who keeps one foot on the spreadsheet and one foot in the codebase. Watching something go from scribble to production is basically my love language.
+                I’m a Technical Project Manager who still writes software when that’s what moves the needle. Most of my day is aligning stakeholders, timelines, and vendors until something lands in production without surprises.
               </p>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-5">
-                Off-hours I'm usually wrestling LLMs until they behave, tinkering with side projects nobody asked for yet, or reading changelog drama like sport.
+                Away from enterprise roadmaps I build smaller products—training readiness tooling, APIs, learning apps, intentional social experiments—partly because shipping end-to-end keeps my judgment honest.
               </p>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-5">
-                Cinematography and dev work both scratch the itch of "make something that did not exist an hour ago." Same rush, fewer segfaults in video.
+                Cinematography and development both pull me toward the same goal: deliberate craft. One is light and lenses; the other is latency and readability, but both reward patience.
               </p>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-10">
-                Chess is therapy with timers. Results vary. If you vibe with obsessive builders who still joke on calls, we'll get along fine.
+                I play chess for practice, not trophies. If you like direct communication and builders who occasionally laugh on Zoom, we’ll get along.
               </p>
               <div className="reveal-item flex flex-wrap gap-3">
                 <Link to="/about" className="btn-glow">
@@ -650,12 +650,12 @@ export default function Home() {
 
             <div className="grid grid-cols-2 gap-4 reveal-item lg:mt-56">
               {[
-                { icon: <Rocket className="w-6 h-6" />, title: 'Technical Project Manager', sub: 'Schedule whisperer energy', color: '#5B8C6F' },
-                { icon: <Brain className="w-6 h-6" />, title: 'AI Engineering', sub: 'Making models obey reality', color: '#8B7EC8' },
-                { icon: <Lightbulb className="w-6 h-6" />, title: 'Product Builder', sub: 'Ideas that survive QA', color: '#E8856E' },
-                { icon: <Target className="w-6 h-6" />, title: 'Systems Design', sub: 'No duct tape in prod', color: '#C75B39' },
-                { icon: <Crown className="w-6 h-6" />, title: 'Chess', sub: 'Confident mediocrity', color: '#D4C4A8' },
-                { icon: <Zap className="w-6 h-6" />, title: 'Filmmaking', sub: 'Stories with lighting budgets', color: '#4A90D9' },
+                { icon: <Rocket className="w-6 h-6" />, title: 'Technical Project Manager', sub: 'Scope, RAID, stakeholder cadence', color: '#5B8C6F' },
+                { icon: <Brain className="w-6 h-6" />, title: 'AI Engineering', sub: 'Practical models in workflows', color: '#8B7EC8' },
+                { icon: <Lightbulb className="w-6 h-6" />, title: 'Product Builder', sub: 'Prototype → production hygiene', color: '#E8856E' },
+                { icon: <Target className="w-6 h-6" />, title: 'Systems Design', sub: 'Interfaces that stay observable', color: '#C75B39' },
+                { icon: <Crown className="w-6 h-6" />, title: 'Chess', sub: 'Tactics club, not trophy case', color: '#D4C4A8' },
+                { icon: <Zap className="w-6 h-6" />, title: 'Filmmaking', sub: 'Image, motion, sequencing', color: '#4A90D9' },
               ].map((c, i) => (
                 <div key={i}
                   className="glass-light rounded-2xl p-4 sm:p-6 flex flex-col gap-3 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] min-w-0"
@@ -682,8 +682,8 @@ export default function Home() {
             <div>
               <div className="reveal-item sec-tag mb-6 text-white/80">Working On</div>
               <h2 className="reveal-item font-display font-black text-[clamp(2.5rem,7vw,5rem)] text-white leading-[0.92] tracking-tight">
-                Stuff I'm<br />
-                <span className="text-white drop-shadow-lg">shipping next.</span>
+                What I'm<br />
+                <span className="text-white drop-shadow-lg">building next.</span>
               </h2>
             </div>
           </div>
@@ -696,7 +696,7 @@ export default function Home() {
 
           <div className="text-center mt-14">
             <button type="button" className="btn-glass hoverable inline-flex items-center gap-2" onClick={() => setBuildingModal('portfolio')}>
-              Story time on the backlog <ArrowRight className="w-4 h-4" />
+              Backlog and in-progress work <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
@@ -765,12 +765,12 @@ export default function Home() {
           <div className="text-center mb-12">
             <div className="reveal-item sec-tag justify-center mb-6">The Playground</div>
             <h2 className="reveal-item font-display font-bold text-[clamp(2.5rem,7vw,4.5rem)] text-white leading-[0.95] tracking-tight mb-4">
-              Break stuff <span className="font-serif italic" style={{ color: '#C75B39' }}>safely.</span>
+              Play in the <span className="font-serif italic" style={{ color: '#C75B39' }}>sandbox.</span>
             </h2>
             <p className="reveal-item font-inter text-base text-white/90 max-w-prose mx-auto leading-relaxed mb-8">
               {playgroundMode === 'particles'
-                ? "Click-drag confetti nonsense. Totally pointless and weirdly hypnotic (which is honestly the vibe I want portfolios to have)."
-                : "Tiny chess bot with opinions. Adjustable rude levels on the sidebar if you crave pain."
+                ? 'Interactive particles—nothing to optimize, just a small canvas toy. Drag and click around if you want a break before the serious links.'
+                : 'Browser chess against a lightweight engine: pick difficulty on the sidebar. Useful for screenshots, breaks, or testing whether you remembered Nf3.'
               }
             </p>
 
@@ -808,7 +808,7 @@ export default function Home() {
                   <div className="min-h-[22rem] flex items-center justify-center rounded-3xl glass border border-white/10">
                     <div className="flex flex-col items-center gap-3">
                       <div className="w-10 h-10 border-2 border-[#C75B39] border-t-transparent rounded-full animate-spin" aria-hidden />
-                      <span className="font-mono text-[0.65rem] text-white/35 tracking-[0.2em] uppercase">Teaching pawns etiquette…</span>
+                      <span className="font-mono text-[0.65rem] text-white/35 tracking-[0.2em] uppercase">Loading chess module…</span>
                     </div>
                   </div>
                 )}
@@ -826,17 +826,17 @@ export default function Home() {
           ═══════════════════════════════════════════════════════════════════ */}
       <section className="reveal-section py-28 md:py-40 px-6 md:px-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="reveal-item sec-tag justify-center mb-8" style={{ color: '#E8856E' }}>Still here?</div>
+          <div className="reveal-item sec-tag justify-center mb-8" style={{ color: '#E8856E' }}>Next step</div>
           <h2 className="reveal-item font-display font-bold text-[clamp(3rem,8vw,6rem)] text-white leading-[0.88] tracking-tight mb-6">
-            Got an odd idea?<br />
-            <span className="font-serif italic" style={{ color: '#E8856E' }}>Tell me anyway.</span>
+            Working on something<br />
+            <span className="font-serif italic" style={{ color: '#E8856E' }}>that needs a TPM or builder?</span>
           </h2>
           <p className="reveal-item font-inter text-base md:text-xl text-white/30 max-w-lg mx-auto leading-relaxed mb-12">
-            Serious builds, TPM rants, model comparisons, chess lines you think are dubious. I'll actually reply.
+            Full-time roles, contracts, integrations, early products—share context and timelines. I read what you send and answer in plain language.
           </p>
           <div className="reveal-item flex flex-wrap gap-4 justify-center">
             <Link to="/contact" className="btn-glow">
-              Let's get specific <ArrowRight className="w-4 h-4" />
+              Contact <ArrowRight className="w-4 h-4" />
             </Link>
             <a href="https://www.linkedin.com/in/daniel-ozoani-b20539252/" target="_blank" rel="noopener noreferrer" className="btn-glass">
               LinkedIn <ExternalLink className="w-3.5 h-3.5" />
@@ -860,7 +860,7 @@ export default function Home() {
                   className="text-sm font-semibold underline underline-offset-4 decoration-white/25 hover:text-white transition-colors"
                   style={{ color: buildingSoonVariants.portfolio.accentColor }}
                 >
-                  Peep the full Projects page
+                  View full projects list
                 </Link>
                 <button
                   type="button"
@@ -882,7 +882,7 @@ export default function Home() {
                 className="inline-flex text-sm font-semibold underline underline-offset-4 decoration-white/25 hover:text-white transition-colors"
                 style={{ color: buildingSoonVariants.education.accentColor }}
               >
-                More antics on Projects
+                Learning Lab on Projects
               </Link>
             )
           }

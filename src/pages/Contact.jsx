@@ -36,7 +36,7 @@ export default function Contact() {
 
   return (
     <div ref={containerRef} className="min-h-screen pt-32 pb-24 px-6 md:px-10 relative overflow-hidden flex items-center justify-center">
-      <SEO title="Contact | Daniel Ozoani" description="Formal pitch, vague idea, chess trash talk. Two inboxes depending on how serious you need me to behave." />
+      <SEO title="Contact | Daniel Ozoani" description="Reach Daniel Ozoani for TPM work, integrations, or product builds—work email for formal engagements, personal inbox for longer conversations." />
       {/* Background Ambience */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#5B8C6F]/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#C75B39]/10 rounded-full blur-[100px] pointer-events-none" />
@@ -47,7 +47,7 @@ export default function Contact() {
             Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5B8C6F] to-[#8A9A8F]">touch.</span>
           </h1>
           <p className="reveal-item font-inter text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-            Pick the lane that matches your energy: real work inbox, or the personal one where I actually read long threads.
+            Choose the inbox that fits: business and contractual work, or longer-form introductions and exploratory threads.
           </p>
         </div>
 
@@ -60,9 +60,9 @@ export default function Contact() {
               <div className="w-14 h-14 rounded-full bg-[#5B8C6F]/10 flex items-center justify-center text-[#5B8C6F] mb-8 border border-[#5B8C6F]/20">
                 <Briefcase className="w-6 h-6" />
               </div>
-              <h2 className="font-display font-bold text-3xl text-white mb-4">The serious channel</h2>
+              <h2 className="font-display font-bold text-3xl text-white mb-4">Business & engagements</h2>
               <p className="font-inter text-white/60 leading-relaxed mb-8">
-                Contracting, B2B products, timelines, RACI diagrams, budgets, the usual grown-up paperwork.
+                Contracting, B2B products, timelines, RACI, budgets—inquiries that belong on a procurement or vendor record.
               </p>
             </div>
             
@@ -71,14 +71,14 @@ export default function Contact() {
                 href="mailto:bezalel@danbuilds.work" 
                 className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-white/5 hover:bg-[#5B8C6F]/20 border border-white/10 hover:border-[#5B8C6F]/40 text-white font-inter font-medium transition-all duration-300 mb-3"
               >
-                <Mail className="w-4 h-4" /> Compose the email already
+                <Mail className="w-4 h-4" /> Email bezalel@danbuilds.work
               </a>
               <button 
                 onClick={() => handleCopy('bezalel@danbuilds.work', 'work')}
                 className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-transparent hover:bg-white/5 border border-transparent hover:border-white/10 text-white/60 hover:text-white font-inter text-sm transition-all duration-300"
               >
                 {copiedWork ? <CheckCircle2 className="w-4 h-4 text-[#5B8C6F]" /> : <Copy className="w-4 h-4" />}
-                {copiedWork ? 'Copied. Paste it somewhere official.' : 'Copy: bezalel@danbuilds.work'}
+                {copiedWork ? 'Copied to clipboard' : 'Copy: bezalel@danbuilds.work'}
               </button>
             </div>
           </div>
@@ -91,9 +91,9 @@ export default function Contact() {
               <div className="w-14 h-14 rounded-full bg-[#C75B39]/10 flex items-center justify-center text-[#C75B39] mb-8 border border-[#C75B39]/20">
                 <Coffee className="w-6 h-6" />
               </div>
-              <h2 className="font-display font-bold text-3xl text-white mb-4">The casual lane</h2>
+              <h2 className="font-display font-bold text-3xl text-white mb-4">General & personal</h2>
               <p className="font-inter text-white/60 leading-relaxed mb-8">
-                Random ideas, "is this normal in Jira", film recs, introductions that do not include a spreadsheet.
+                Questions about tools, collaboration ideas, film or side projects—or anything that does not need a statement of work yet.
               </p>
             </div>
             
@@ -102,7 +102,7 @@ export default function Contact() {
                 href="mailto:ozoanibarzali@gmail.com"
                 className="w-full flex items-center justify-center gap-2 py-4 px-6 rounded-xl bg-white/5 hover:bg-[#C75B39]/20 border border-white/10 hover:border-[#C75B39]/40 text-white font-inter font-medium transition-all duration-300 mb-3"
               >
-                <Mail className="w-4 h-4" /> Write the chaotic email
+                <Mail className="w-4 h-4" /> Email ozoanibarzali@gmail.com
               </a>
               <button
                 type="button"
@@ -110,7 +110,7 @@ export default function Contact() {
                 className="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-transparent hover:bg-white/5 border border-transparent hover:border-white/10 text-white/60 hover:text-white font-inter text-sm transition-all duration-300"
               >
                 {copiedPersonal ? <CheckCircle2 className="w-4 h-4 text-[#C75B39]" /> : <Copy className="w-4 h-4" />}
-                {copiedPersonal ? 'Copied. Your move.' : 'Copy: ozoanibarzali@gmail.com'}
+                {copiedPersonal ? 'Copied to clipboard' : 'Copy: ozoanibarzali@gmail.com'}
               </button>
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function Contact() {
 
         {/* Social Links */}
         <div className="reveal-item flex flex-col items-center justify-center border-t border-white/10 pt-12">
-          <p className="font-mono text-xs text-white/40 uppercase tracking-widest mb-6">Same person, different URLs</p>
+          <p className="font-mono text-xs text-white/40 uppercase tracking-widest mb-6">Profiles</p>
           <div className="flex gap-4">
             <a 
               href="https://www.linkedin.com/in/daniel-ozoani-b20539252/" 

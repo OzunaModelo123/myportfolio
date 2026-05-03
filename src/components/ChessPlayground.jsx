@@ -225,10 +225,10 @@ export default function ChessPlayground() {
 
   // Status updates
   useEffect(() => {
-    if (game.isCheckmate()) setStatus(game.turn() === 'w' ? 'Checkmate. The bot got you.' : 'Checkmate. Okay, that was clean.');
-    else if (game.isStalemate()) setStatus('Stalemate. Nobody wins, nobody loses.');
-    else if (game.isDraw()) setStatus('Draw. We take those.');
-    else if (game.isCheck()) setStatus('Check. Heads up.');
+    if (game.isCheckmate()) setStatus(game.turn() === 'w' ? 'Checkmate — Black wins.' : 'Checkmate — White wins.');
+    else if (game.isStalemate()) setStatus('Stalemate.');
+    else if (game.isDraw()) setStatus('Draw.');
+    else if (game.isCheck()) setStatus('Check.');
     else setStatus('');
   }, [game]);
 
@@ -402,9 +402,9 @@ export default function ChessPlayground() {
         {/* Status Banner */}
         {status && (
           <div className={`rounded-xl p-4 border text-center transition-all ${
-            status.includes('got you') ? 'border-red-500/40 bg-red-500/10' :
-            status.includes('that was clean') ? 'border-emerald-500/40 bg-emerald-500/10' :
-            status.includes('Heads up') ? 'border-amber-500/40 bg-amber-500/10' :
+            status.startsWith('Checkmate — Black') ? 'border-red-500/40 bg-red-500/10' :
+            status.startsWith('Checkmate — White') ? 'border-emerald-500/40 bg-emerald-500/10' :
+            status === 'Check.' ? 'border-amber-500/40 bg-amber-500/10' :
             'border-white/10 bg-white/5'
           }`}>
             <p className="font-inter text-sm text-white/90 font-medium">{status}</p>
@@ -437,9 +437,9 @@ export default function ChessPlayground() {
           <div className="font-mono text-[0.55rem] text-white/25 uppercase tracking-[0.2em] mb-3">Difficulty</div>
           <div className="flex gap-1.5">
               {[
-              { d: 1, label: 'Chill', sub: 'for coffee' },
-              { d: 2, label: 'Serious', sub: 'default' },
-              { d: 3, label: 'Rude', sub: 'good luck' },
+              { d: 1, label: 'Easier', sub: 'shallow search' },
+              { d: 2, label: 'Standard', sub: 'default' },
+              { d: 3, label: 'Stronger', sub: 'deeper search' },
             ].map(({ d, label, sub }) => (
               <button
                 key={d}
@@ -465,7 +465,7 @@ export default function ChessPlayground() {
           </div>
           <div ref={moveLogRef} className="max-h-[200px] overflow-y-auto pr-1 chess-scroll">
             {moveHistory.length === 0 ? (
-              <div className="text-white/15 font-inter text-xs italic text-center py-4">White to move. No pressure.</div>
+              <div className="text-white/15 font-inter text-xs italic text-center py-4">White to move.</div>
             ) : (
               <div className="space-y-0.5">
                 {Array.from({ length: Math.ceil(moveHistory.length / 2) }).map((_, i) => (
