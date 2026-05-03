@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { Mail, Linkedin, Github } from 'lucide-react';
 
 export default function Footer() {
@@ -18,7 +18,7 @@ export default function Footer() {
                 { icon: <Github className="w-4 h-4" />, href: 'https://github.com/OzunaModelo123', isInternal: false },
               ].map((s, i) => (
                 s.isInternal ? (
-                  <Link key={i} href={s.href}
+                  <Link key={i} to={s.href}
                     className="w-10 h-10 rounded-full glass-light flex items-center justify-center text-white/70 hover:text-white hover:border-white transition-all">
                     {s.icon}
                   </Link>
@@ -41,7 +41,7 @@ export default function Footer() {
                 {col.items.map(item => (
                   <li key={item.l}>
                     {item.href.startsWith('/') ? (
-                      <Link href={item.href} className="font-inter text-sm text-white/70 hover:text-white transition-colors">{item.l}</Link>
+                      <Link to={item.href} className="font-inter text-sm text-white/70 hover:text-white transition-colors">{item.l}</Link>
                     ) : (
                       <a href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined}
                         rel="noopener noreferrer" className="font-inter text-sm text-white/70 hover:text-white transition-colors">{item.l}</a>

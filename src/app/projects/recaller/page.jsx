@@ -1,7 +1,5 @@
-'use client';
-
 import React, { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, MessageSquare } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -118,7 +116,7 @@ export default function Projects() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a12] via-[#0a0a12]/60 to-[#0a0a12]" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
-          <Link href="/projects" className="p-anim inline-flex items-center gap-2 font-inter text-sm text-white/70 hover:text-[#C75B39] transition-colors mb-10 group">
+          <Link to="/projects" className="p-anim inline-flex items-center gap-2 font-inter text-sm text-white/70 hover:text-[#C75B39] transition-colors mb-10 group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Projects
           </Link>
           <div className="p-anim sec-tag mb-6">B2B SaaS · Training Intelligence</div>
@@ -229,7 +227,7 @@ export default function Projects() {
           <p className="font-inter text-base text-white/90 max-w-prose mx-auto mb-10 leading-relaxed">
             I'm always happy to walk through the architecture, discuss a potential pilot, or just geek out about the code.
           </p>
-          <Link href="/contact" className="btn-glow">
+          <Link to="/contact" className="btn-glow">
             Get in touch <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

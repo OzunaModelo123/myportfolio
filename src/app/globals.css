@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@source "../**/*.{js,jsx,ts,tsx}";
 @theme {
   --color-charcoal: #0a0a12;
   --color-terracotta: #C75B39;
@@ -9,10 +8,10 @@
   --color-peach: #F5C5A3;
   --color-sand: #D4C4A8;
 
-  --font-display: var(--font-next-display, "Outfit"), sans-serif;
-  --font-serif: var(--font-next-serif, "Crimson Pro"), serif;
-  --font-inter: var(--font-next-inter, "Inter"), sans-serif;
-  --font-mono: var(--font-next-mono, "JetBrains Mono"), monospace;
+  --font-display: "Outfit", sans-serif;
+  --font-serif: "Crimson Pro", serif;
+  --font-inter: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
 *,
@@ -39,6 +38,7 @@ body {
   color: #f0f0f0;
   font-family: var(--font-inter);
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
   cursor: none;
 }
 

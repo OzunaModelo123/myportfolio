@@ -1,7 +1,5 @@
-'use client';
-
 import React, { useEffect, useRef } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Camera } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -38,7 +36,7 @@ export default function SocialAppsProject() {
     <div>
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
-          <Link href="/projects" className="p-anim inline-flex items-center gap-2 font-inter text-sm text-white/70 hover:text-white transition-colors mb-10 group">
+          <Link to="/projects" className="p-anim inline-flex items-center gap-2 font-inter text-sm text-white/70 hover:text-white transition-colors mb-10 group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Projects
           </Link>
           <div className="p-anim sec-tag mb-6" style={{ color: '#8B7EC8', borderColor: '#8B7EC840' }}>Social Wellness</div>
@@ -55,7 +53,7 @@ export default function SocialAppsProject() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           {apps.map((app, i) => (
-            <Link key={i} href={app.href} className="reveal-item block group">
+            <Link key={i} to={app.href} className="reveal-item block group">
                <div className="glass h-full rounded-[2rem] p-8 md:p-12 border border-white/10 relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(139,126,200,0.15)]">
                  
                  {/* Background Glow on Hover */}

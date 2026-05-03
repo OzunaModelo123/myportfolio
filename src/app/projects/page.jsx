@@ -1,7 +1,5 @@
-'use client';
-
 import React, { useEffect, useRef } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -55,7 +53,7 @@ export default function WorkIndex() {
       <section className="py-20 px-6 md:px-10">
         <div className="max-w-7xl mx-auto space-y-6">
           {projects.map((p, i) => (
-            <Link key={i} href={p.href} className="block project-card group overflow-hidden rounded-3xl border border-white/20 transition-all duration-500 hover:border-white/40">
+            <Link key={i} to={p.href} className="block project-card group overflow-hidden rounded-3xl border border-white/20 transition-all duration-500 hover:border-white/40">
               <div className="card-glow" style={{ background: `radial-gradient(circle at 50% 50%, ${p.color}08, transparent 70%)` }} />
               <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-0">
                 <div className="h-56 md:h-full w-full">

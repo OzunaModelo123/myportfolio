@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { Chess } from 'chess.js';
 import { RotateCcw, Brain, User, Trophy, Undo2 } from 'lucide-react';

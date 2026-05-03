@@ -1,12 +1,10 @@
 # Dependencies
 node_modules/
 
-# Next.js
+# Build output
+dist/
 .next/
 out/
-
-# Build artifacts
-dist/
 
 # Environment variables
 .env
@@ -30,4 +28,3 @@ npm-debug.log*
 
 # Misc
 *.tsbuildinfo
-next-env.d.ts

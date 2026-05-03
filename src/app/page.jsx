@@ -1,15 +1,12 @@
-'use client';
-
-import React, { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import React, { Suspense, useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, ChevronDown, ExternalLink, Target, Code2, Zap, Crown } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import dynamic from 'next/dynamic';
 
-const ChessPlayground = dynamic(() => import('@/components/ChessPlayground'), { ssr: false });
-const ParticlePlayground = dynamic(() => import('@/components/ParticlePlayground'), { ssr: false });
-const AnimatedAtom = dynamic(() => import('@/components/AnimatedAtom'), { ssr: false });
+const ChessPlayground = React.lazy(() => import('@/components/ChessPlayground'));
+const ParticlePlayground = React.lazy(() => import('@/components/ParticlePlayground'));
+const AnimatedAtom = React.lazy(() => import('@/components/AnimatedAtom'));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -180,7 +177,7 @@ export default function Home() {
           ═══════════════════════════════════════════════════════════════════ */}
       <section ref={heroRef} onMouseMove={handleMouseMove} className="relative min-h-[100dvh] flex items-end pb-16 md:pb-24 overflow-hidden">
         {/* Animated Custom Atom Simulation replacing the camera image */}
-        <AnimatedAtom atomRef={atomRef} />
+        <Suspense fallback={null}><AnimatedAtom atomRef={atomRef} /></Suspense>
         <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] via-[#1a1a2e]/50 to-transparent pointer-events-none" />
 
         <div className="relative z-10 px-6 md:px-10 lg:px-16 max-w-7xl w-full">
@@ -207,11 +204,11 @@ export default function Home() {
           </p>
 
           <div className="h-anim flex flex-wrap gap-3 mb-10">
-            <Link href="/projects" className="btn-glow">
+            <Link to="/projects" className="btn-glow">
               See what I'm building
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/contact" className="btn-glass">
+            <Link to="/contact" className="btn-glass">
               Say hi
             </Link>
           </div>
@@ -258,10 +255,10 @@ export default function Home() {
                 Oh, and I play chess. Still terrible at it, but I keep playing. At the end of the day I'm just someone who loves to create, loves to learn, and wants to be involved in building things that matter.
               </p>
               <div className="reveal-item flex flex-wrap gap-3">
-                <Link href="/about" className="btn-glow">
+                <Link to="/about" className="btn-glow">
                   Full story <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link href="/contact" className="btn-glass">
+                <Link to="/contact" className="btn-glass">
                   Drop me a message
                 </Link>
               </div>
@@ -311,7 +308,7 @@ export default function Home() {
             {projects.map((p, i) => (
               <div key={i} className="reveal-item">
                 {p.href ? (
-                  <Link href={p.href} className="block project-card group overflow-hidden rounded-3xl border border-white/20 transition-all duration-500 hover:border-white/40">
+                  <Link to={p.href} className="block project-card group overflow-hidden rounded-3xl border border-white/20 transition-all duration-500 hover:border-white/40">
                     <div className="card-glow" style={{ background: `radial-gradient(circle at 50% 50%, ${p.color}08, transparent 70%)` }} />
                     <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-0">
                       {/* Image side */}
@@ -365,7 +362,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-14">
-            <Link href="/projects" className="btn-glass hoverable">
+            <Link to="/projects" className="btn-glass hoverable">
               See project deep-dive <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -384,7 +381,7 @@ export default function Home() {
                 Thinking out loud.
               </h2>
             </div>
-            <Link href="/research" className="reveal-item btn-glass hidden md:inline-flex">
+            <Link to="/research" className="reveal-item btn-glass hidden md:inline-flex">
               All research <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -404,7 +401,7 @@ export default function Home() {
                 img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=600', color: '#5B8C6F', status: 'Published', link: '/research/training-programs'
               },
             ].map((r, i) => (
-              <Link href={r.link} key={i}
+              <Link to={r.link} key={i}
                 className="reveal-item project-card group flex flex-col h-full overflow-hidden">
                 <div className="card-glow" style={{ background: `radial-gradient(circle at 50% 0%, ${r.color}15, transparent 70%)` }} />
                 <div className="parallax-img h-48">
@@ -471,7 +468,7 @@ export default function Home() {
 
           <div className="reveal-item overflow-hidden">
             <div className="transition-all duration-700 ease-in-out" style={{ transform: playgroundMode === 'particles' ? 'none' : 'scale(0.98)', opacity: 1 }}>
-              {playgroundMode === 'particles' ? <ParticlePlayground /> : <ChessPlayground />}
+              {playgroundMode === 'particles' ? <Suspense fallback={null}><ParticlePlayground /></Suspense> : <Suspense fallback={null}><ChessPlayground /></Suspense>}
             </div>
           </div>
         </div>
@@ -491,7 +488,7 @@ export default function Home() {
             Whether it's a project collab, a TPM conversation, AI chat, or a chess match — I'm always down.
           </p>
           <div className="reveal-item flex flex-wrap gap-4 justify-center">
-            <Link href="/contact" className="btn-glow">
+            <Link to="/contact" className="btn-glow">
               Get in touch <ArrowRight className="w-4 h-4" />
             </Link>
             <a href="https://www.linkedin.com/in/daniel-ozoani-b20539252/" target="_blank" rel="noopener noreferrer" className="btn-glass">

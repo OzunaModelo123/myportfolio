@@ -1,7 +1,5 @@
-'use client';
-
 import React, { useEffect, useRef } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -62,7 +60,7 @@ export default function Research() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a12] via-[#0a0a12]/50 to-transparent pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
-          <Link href="/" className="r-anim inline-flex items-center gap-2 font-inter text-sm text-white/70 hover:text-[#C75B39] transition-colors mb-10 group">
+          <Link to="/" className="r-anim inline-flex items-center gap-2 font-inter text-sm text-white/70 hover:text-[#C75B39] transition-colors mb-10 group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back home
           </Link>
           <div className="r-anim sec-tag mb-6">Research & Writing</div>
@@ -83,7 +81,7 @@ export default function Research() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {papers.map((p, i) => (
-              <Link href={p.link} key={i} className="reveal-item project-card group overflow-hidden rounded-3xl border border-white/20 transition-all duration-500 hover:border-white/40 flex flex-col">
+              <Link to={p.link} key={i} className="reveal-item project-card group overflow-hidden rounded-3xl border border-white/20 transition-all duration-500 hover:border-white/40 flex flex-col">
                 <div className="card-glow" style={{ background: `radial-gradient(circle at 50% 0%, ${p.color}08, transparent 70%)` }} />
                 <div className="h-48 relative flex-shrink-0">
                   <img src={p.img} alt={p.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
@@ -114,7 +112,7 @@ export default function Research() {
           <p className="font-inter text-base text-white/90 max-w-prose mx-auto leading-relaxed mb-10">
             If you want, just shoot me an email and I'll notify you whenever I post something new. I completely hate newsletter spam, so don't worry about that.
           </p>
-          <Link href="/contact" className="btn-glow">
+          <Link to="/contact" className="btn-glow">
             Count me in <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

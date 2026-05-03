@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useEffect, useRef } from 'react';
 import { Mail, Briefcase, Coffee, Github, Linkedin, Copy, CheckCircle2 } from 'lucide-react';
 import gsap from 'gsap';

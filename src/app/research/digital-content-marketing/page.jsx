@@ -1,7 +1,5 @@
-'use client';
-
 import React, { useEffect, useRef } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -137,7 +135,7 @@ export default function DigitalContentMarketing() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a12] via-[#0a0a12]/60 to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
-          <Link href="/research" className="p-anim inline-flex items-center gap-2 font-inter text-sm text-white/70 hover:text-[#8B7EC8] transition-colors mb-10 group">
+          <Link to="/research" className="p-anim inline-flex items-center gap-2 font-inter text-sm text-white/70 hover:text-[#8B7EC8] transition-colors mb-10 group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Research
           </Link>
           <div className="p-anim sec-tag mb-6" style={{ color: '#8B7EC8', borderColor: '#8B7EC8' }}>Research · Digital Marketing</div>

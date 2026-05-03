@@ -1,7 +1,5 @@
-'use client';
-
 import React, { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { ArrowLeft, ChevronDown, ExternalLink, Server, Database, Activity } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -88,7 +86,7 @@ export default function ApiCreationsProject() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a12] via-[#0a0a12]/50 to-transparent" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
-          <Link href="/" className="p-anim inline-flex items-center gap-2 font-inter text-sm text-white/70 hover:text-[#5B8C6F] transition-colors mb-10 group">
+          <Link to="/" className="p-anim inline-flex items-center gap-2 font-inter text-sm text-white/70 hover:text-[#5B8C6F] transition-colors mb-10 group">
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Home
           </Link>
           <div className="p-anim sec-tag mb-6" style={{ color: '#5B8C6F', borderColor: '#5B8C6F40' }}>API Creations & Infrastructure</div>
@@ -165,7 +163,7 @@ export default function ApiCreationsProject() {
                 I regularly build specialized integrations, scrapers, and data pipelines for evolving business needs. Let's see if we can solve your data problem.
               </p>
             </div>
-            <Link href="/contact" className="btn-glow flex-shrink-0" style={{ '--glow-color': '#5B8C6F' }}>
+            <Link to="/contact" className="btn-glow flex-shrink-0" style={{ '--glow-color': '#5B8C6F' }}>
               Discuss Architecture <ExternalLink className="w-4 h-4 ml-2" />
             </Link>
           </div>

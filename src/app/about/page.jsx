@@ -1,7 +1,5 @@
-'use client';
-
 import React, { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, MapPin, ExternalLink, ChevronDown, ChevronUp, GraduationCap, Award, Briefcase } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -79,7 +77,7 @@ const TimelineCard = ({ company, role, period, summary, bullets, color, index })
 
 const ProjectCard = ({ title, tag, desc, color, to, external }) => (
   <Link
-    href={to}
+    to={to}
     target={external ? '_blank' : undefined}
     rel={external ? 'noopener noreferrer' : undefined}
     className="group block glass-light rounded-2xl p-6 border transition-all duration-500 hover:-translate-y-2 relative overflow-hidden"
@@ -282,8 +280,8 @@ export default function About() {
             </a>
           </div>
           <div className="h-anim flex flex-wrap gap-3">
-            <Link href="/contact" className="btn-glow">Get in touch <ArrowRight className="w-4 h-4" /></Link>
-            <Link href="/projects" className="btn-glass">See my work</Link>
+            <Link to="/contact" className="btn-glow">Get in touch <ArrowRight className="w-4 h-4" /></Link>
+            <Link to="/projects" className="btn-glass">See my work</Link>
           </div>
         </div>
       </section>
@@ -460,7 +458,7 @@ export default function About() {
             Whether it's a project collab, a TPM conversation, or just a good AI debate — I'm always down.
           </p>
           <div className="sr flex flex-wrap gap-4 justify-center">
-            <Link href="/contact" className="btn-glow">Get in touch <ArrowRight className="w-4 h-4" /></Link>
+            <Link to="/contact" className="btn-glow">Get in touch <ArrowRight className="w-4 h-4" /></Link>
             <a href="https://www.linkedin.com/in/daniel-ozoani-b20539252/" target="_blank" rel="noopener noreferrer" className="btn-glass">
               LinkedIn <ExternalLink className="w-3.5 h-3.5" />
             </a>
