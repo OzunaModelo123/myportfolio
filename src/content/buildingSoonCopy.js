@@ -17,7 +17,7 @@ export const buildingSoonVariants = {
     accentColor: '#5EC8D8',
     description:
       "I'm building tools to make studying less of a chore: clearer structure, less context-switching, and feedback that actually tells you something. Not live yet, but coming.",
-    confirmLabel: 'Got it, I'll check back',
+    confirmLabel: "Got it, I'll check back",
   },
 };
 
