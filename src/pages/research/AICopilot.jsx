@@ -1,0 +1,173 @@
+import React, { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function AICopilot() {
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const els = heroRef.current?.querySelectorAll('.p-anim');
+    if (els) { gsap.set(els, { opacity: 0, y: 40 }); gsap.to(els, { opacity: 1, y: 0, stagger: 0.12, duration: 1, ease: 'power3.out', delay: 0.15 }); }
+  }, []);
+
+  useEffect(() => {
+    document.querySelectorAll('.reveal-section').forEach(section => {
+      const els = section.querySelectorAll('.reveal-item');
+      if (els.length) { gsap.set(els, { opacity: 0, y: 45 }); ScrollTrigger.create({ trigger: section, start: 'top 80%', onEnter: () => gsap.to(els, { opacity: 1, y: 0, stagger: 0.12, duration: 0.9, ease: 'power3.out' }), once: true }); }
+    });
+  }, []);
+
+  return (
+    <div>
+      <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1675271591211-126ad94e495d?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a12] via-[#0a0a12]/50 to-transparent" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
+          <Link to="/research" className="p-anim inline-flex items-center gap-2 font-inter text-sm text-white/70 hover:text-[#C75B39] transition-colors mb-10 group">
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Research
+          </Link>
+          <div className="p-anim sec-tag mb-6">Research · AI Systems</div>
+          <h1 className="p-anim font-display font-black text-[clamp(2.5rem,7vw,5rem)] text-white leading-[0.95] tracking-tight mb-4">AI as a Project<br/><span className="text-[#C75B39]">Manager's Co-Pilot</span></h1>
+          <div className="p-anim flex flex-col md:flex-row md:items-end gap-8 md:gap-16 mt-8">
+            <p className="font-inter text-base md:text-xl text-white/80 max-w-prose leading-relaxed">
+              A balanced analysis of tools like Claude, Copilot, and Notion AI in real project workflows. Does AI improve delivery timelines? Does it miss the human judgment calls?
+            </p>
+            <div className="flex flex-col gap-3 flex-shrink-0">
+              <div className="status-live"><span className="status-dot-green" /> Published Research</div>
+              <div className="flex flex-wrap gap-2">
+                {['AI', 'Project Management', 'Analysis'].map(t => <span key={t} className="chip-dark border-[#C75B39]/30" style={{color: '#C75B39'}}>{t}</span>)}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="reveal-section py-20 px-6 md:px-10">
+        <div className="max-w-4xl mx-auto space-y-20">
+          <div>
+            <h2 className="reveal-item font-display font-bold text-3xl md:text-4xl text-white mb-6 tracking-tight">The Reality of AI Assisted Management.</h2>
+            <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
+              Let me be upfront about something before we get into this. I use AI tools in my work. Regularly. And I think anyone in project management who is not at least experimenting with them right now is falling behind. But I also think a lot of the conversation around AI and project management is either pure hype or pure fear, and neither of those is useful to the people actually doing the job.
+            </p>
+            <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
+              So this is my attempt at an honest take. What AI genuinely helps with, where it falls short, and what I think the role of a project manager actually looks like in a world where these tools are only getting better.
+            </p>
+          </div>
+
+          <div>
+            <div className="reveal-item sec-tag mb-4">The Data</div>
+            <h3 className="reveal-item font-display font-bold text-2xl text-white mb-4">The Numbers Are Hard to Ignore</h3>
+            <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
+              Let's start with what the data is actually saying. <a href="https://www.epicflow.com/blog/ai-in-project-management-is-the-future-already-here/" target="_blank" rel="noopener noreferrer" className="text-[#C75B39] hover:underline">According to KPMG research</a>, companies investing in AI report an average 15% productivity improvement across their projects. <a href="https://journal.hep.com.cn/fem/EN/10.1007/s42524-025-5015-0" target="_blank" rel="noopener noreferrer" className="text-[#C75B39] hover:underline">A 2025 study by Brynjolfsson et al.</a> found similar results, with GenAI tools increasing worker productivity by an average of 15% across measured tasks.
+            </p>
+            <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
+              And adoption is accelerating fast. <a href="https://mem.grad.ncsu.edu/2026/04/14/ai-in-project-management-building-the-future/" target="_blank" rel="noopener noreferrer" className="text-[#C75B39] hover:underline">Research from the Association for Project Management</a> found that in 2023, only 6% of project managers believed AI would have a "very positive" impact on their field. By 2025 that number had jumped to 62%. Not a gradual shift. A complete reversal in two years. So yes, something real is happening here. The question is what exactly.
+            </p>
+          </div>
+
+          <div>
+            <div className="reveal-item sec-tag mb-4">The Strengths</div>
+            <h3 className="reveal-item font-display font-bold text-2xl text-white mb-4">What AI Actually Does Well</h3>
+            <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
+              If you strip away the marketing language, AI tools are genuinely good at a specific category of work: tasks that are repetitive, data-heavy, and do not require reading a room.
+            </p>
+            <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
+              Status reports. Meeting summaries. Risk pattern identification. Schedule modelling. Resource allocation forecasting. Documentation drafts. These are the things that quietly eat up hours of a project manager's week, and AI handles them well. <a href="https://www.getharvest.com/blog/the-definitive-list-of-ai-tools-for-project-management-in-2025" target="_blank" rel="noopener noreferrer" className="text-[#C75B39] hover:underline">According to Wrike</a>, AI integration in project tools can automate up to 80% of repetitive tasks. Tools like Asana, <a href="https://monday.com/" target="_blank" rel="noopener noreferrer" className="text-[#C75B39] hover:underline">Monday.com</a>, and Jira have embedded AI features that detect blockers, flag risks, and surface insights that would take a human much longer to spot manually.
+            </p>
+            <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
+              I have used AI to draft stakeholder update emails in a fraction of the time, build out project documentation from rough notes, and pressure-test timelines by asking it to identify gaps I might have missed. In those contexts it is genuinely useful. It is like having a very fast, very thorough assistant who never complains about doing the boring parts. But here is where people start getting it wrong.
+            </p>
+          </div>
+
+          <div>
+            <div className="reveal-item sec-tag mb-4">The Weaknesses</div>
+            <h3 className="reveal-item font-display font-bold text-2xl text-white mb-4">Where It Falls Apart</h3>
+            <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
+              AI is good at patterns. It is not good at people. <a href="https://thedigitalprojectmanager.com/productivity/what-ai-still-gets-wrong-about-project-management-work/" target="_blank" rel="noopener noreferrer" className="text-[#C75B39] hover:underline">The Digital Project Manager</a> put it plainly in a recent piece: AI cannot empathise with a nervous stakeholder, produce a trustworthy plan from scratch, or fix a process that was broken before it arrived. Schedules and budgets matter, but so do fear, politics, ego, and history — and AI has no framework for any of that.
+            </p>
+            <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
+              I have experienced this directly. There was a point during a system rollout where a key stakeholder was quietly resistant to the new platform. Not openly, not in any way that would show up in a report. It was something you could only read if you were paying attention to how they showed up in conversations, what they were not saying, how they responded to updates. No AI tool would have caught that. But catching it early and addressing it before it became a real problem was the difference between a smooth cutover and a messy one.
+            </p>
+            <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
+              The project managers who will get the most from AI are not the ones who trust it most. They are the ones who understand exactly where it falls short. <a href="https://www.apm.org.uk/blog/ai-vs-human-intuition-how-project-managers-can-make-smarter-decisions/" target="_blank" rel="noopener noreferrer" className="text-[#C75B39] hover:underline">The Association for Project Management makes the point well</a>: when projects face conditions with no historical precedent, human intuition is what navigates uncharted territory. AI optimises based on what has happened before. It has no instinct for what has never happened yet.
+            </p>
+            <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
+              There is also the overconfidence problem. AI tools can confidently generate incorrect outputs without signalling that they are wrong. If you are not experienced enough to spot the gap, you might not catch it until it matters. This is not a reason to avoid these tools. It is a reason to use them with your eyes open.
+            </p>
+          </div>
+
+          <div>
+            <div className="reveal-item sec-tag mb-4">The Future</div>
+            <h3 className="reveal-item font-display font-bold text-2xl text-white mb-4">So What Does This Mean for the Role?</h3>
+            <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
+              Here is my actual view: the project manager role is not disappearing. It is shifting.
+            </p>
+            <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
+              <a href="https://www.accelo.com/post/ai-project-management-for-professional-services" target="_blank" rel="noopener noreferrer" className="text-[#C75B39] hover:underline">Accelo framed this well</a> — AI redistributes the work toward more strategic tasks. Less time on administrative load, more time on stakeholder communication, risk judgement, and making sure the right things are actually getting built. The PM role becomes less about managing tasks and more about managing intent.
+            </p>
+            <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
+              That means the skills that matter most going forward are not the ones AI can replicate. Emotional intelligence. Stakeholder navigation. The ability to make a call when the data is incomplete. The trust you build with a team over time. These are not soft skills in a dismissive sense. They are the actual differentiators.
+            </p>
+            <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
+              <a href="https://halfdoubleinstitute.org/project-management-time-ai" target="_blank" rel="noopener noreferrer" className="text-[#C75B39] hover:underline">Half Double Institute</a> said something that stuck with me: the future belongs to project managers who can harness AI's efficiency while driving impact through intuition, empathy, and strong stakeholder engagement. That is not a threat. That is good news for anyone willing to develop both sides.
+            </p>
+          </div>
+
+          <div className="reveal-item p-8 glass-light rounded-2xl border border-white/10">
+            <h3 className="font-display font-bold text-xl text-white mb-4">Sources & References</h3>
+            <ul className="space-y-3 font-inter text-sm text-white/70">
+              <li>
+                <span className="text-white/50 mr-2">1.</span>
+                <a href="https://www.epicflow.com/blog/ai-in-project-management-is-the-future-already-here/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">KPMG / Epicflow — AI productivity improvement in project management</a>
+              </li>
+              <li>
+                <span className="text-white/50 mr-2">2.</span>
+                <a href="https://journal.hep.com.cn/fem/EN/10.1007/s42524-025-5015-0" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Brynjolfsson et al. (2025) — GenAI productivity study</a>
+              </li>
+              <li>
+                <span className="text-white/50 mr-2">3.</span>
+                <a href="https://mem.grad.ncsu.edu/2026/04/14/ai-in-project-management-building-the-future/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Association for Project Management — AI adoption in project management</a>
+              </li>
+              <li>
+                <span className="text-white/50 mr-2">4.</span>
+                <a href="https://www.getharvest.com/blog/the-definitive-list-of-ai-tools-for-project-management-in-2025" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Wrike / Harvest — AI automation of repetitive tasks</a>
+              </li>
+              <li>
+                <span className="text-white/50 mr-2">5.</span>
+                <a href="https://thedigitalprojectmanager.com/productivity/what-ai-still-gets-wrong-about-project-management-work/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">The Digital Project Manager — Where AI falls short</a>
+              </li>
+              <li>
+                <span className="text-white/50 mr-2">6.</span>
+                <a href="https://www.apm.org.uk/blog/ai-vs-human-intuition-how-project-managers-can-make-smarter-decisions/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Association for Project Management — Human intuition vs AI</a>
+              </li>
+              <li>
+                <span className="text-white/50 mr-2">7.</span>
+                <a href="https://www.accelo.com/post/ai-project-management-for-professional-services" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Accelo — The evolving PM role in an AI world</a>
+              </li>
+              <li>
+                <span className="text-white/50 mr-2">8.</span>
+                <a href="https://halfdoubleinstitute.org/project-management-time-ai" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Half Double Institute — Leadership in the age of AI</a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="reveal-item p-10 glass-light rounded-3xl border border-white/10 text-center">
+            <h3 className="font-display font-bold text-2xl text-white mb-4">Final Thoughts</h3>
+            <p className="font-inter text-white/80 leading-relaxed mb-6">
+              AI is not coming for your job. But a project manager who knows how to use AI well might be competing for the same role as one who doesn't — and that gap is only going to widen. Use it for the tasks that drain your time and do not require judgment. Guard the parts of the role that are genuinely human. And be honest about the difference between the two.
+            </p>
+            <p className="font-inter text-white/80 leading-relaxed">
+              The co-pilot analogy is the right one. A co-pilot helps you fly faster and safer. But if something unexpected happens mid-flight, you still want a human hand on the controls.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
