@@ -26,7 +26,7 @@ export default function FrameDayProject() {
     <div>
       <SEO
         title="FrameDay | Daniel Ozoani"
-        description="FrameDay is a mindful camera app that turns daily surroundings into a collaborative visual diary—breaking the endless scroll."
+        description="A camera habit that steals you back from the infinite feed. Collaborative prompts instead of doomscrolling by default."
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1510519133417-2407dcafb440?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"
@@ -41,7 +41,7 @@ export default function FrameDayProject() {
           <h1 className="p-anim font-display font-black text-[clamp(4rem,9vw,7rem)] text-white leading-[0.85] tracking-tight mb-6">FrameDay</h1>
           <div className="p-anim flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
             <p className="font-inter text-base md:text-xl text-white/80 max-w-prose leading-relaxed">
-              An application built to fix the way we look at our phones by challenging us to look at the world around us instead.
+              Basically a morning push that dares you to notice the hallway light before TikTok steals your ankles again.
             </p>
             <div className="flex flex-col gap-3 flex-shrink-0">
               <div className="status-live" style={{ color: '#8B7EC8', borderColor: '#8B7EC840' }}>
@@ -61,12 +61,12 @@ export default function FrameDayProject() {
           {/* What is FrameDay */}
           <div className="reveal-item text-center">
             <div className="sec-tag justify-center mb-6">01 · What is FrameDay?</div>
-            <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-8 tracking-tight">Breaking the scroll cycle.</h2>
+            <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-8 tracking-tight">Photography homework for your eyeballs.</h2>
             <p className="font-inter text-lg text-white/80 leading-relaxed text-left">
-              <strong>FrameDay</strong> is a daily photography habit disguised as a social platform. Every morning, you receive a single push notification with a creative prompt—like <em>"Find something that looks like it's sleeping"</em> or <em>"Capture a shadow that tells a story."</em> 
+              <strong>FrameDay</strong> is equal parts journaling and gentle peer pressure: one prompt push per day ("find something pretending to nap", "borrow someone else's shadow story") and you wander outside with purpose. 
             </p>
             <p className="font-inter text-lg text-white/80 leading-relaxed text-left mt-6">
-              The goal is simple: rather than immediately opening an app to consume content, you are challenged to go out and notice your surroundings intentionally. FrameDay is beneficial because it disrupts the passive consumption loop. It transforms your phone from an endless distraction into a tool that anchors you to your physical reality, creating a mindful moment in your day.
+              The win is tactile: fewer autopilot thumbs, more evidence you share a planet with weird textures. Passive feeds still exist elsewhere; FrameDay wants you mildly winded instead of glazed over.
             </p>
           </div>
 
@@ -75,9 +75,9 @@ export default function FrameDayProject() {
           {/* Features and Why */}
           <div className="reveal-item">
             <div className="sec-tag mb-4">02 · Mechanics of Mindfulness</div>
-            <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-6 tracking-tight">How the features force you to look up.</h2>
+            <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-6 tracking-tight">Why the mechanics feel sneaky-good.</h2>
             <p className="font-inter text-lg text-white/80 leading-relaxed max-w-3xl mb-12">
-              Every feature in FrameDay is deliberately engineered to pull your attention away from the screen and into your environment, avoiding the traps of traditional follower games.
+              Every lever is biased toward wandering with a camera rather than lurking on a leaderboard. Influencer clichés discouraged; curiosity subsidized.
             </p>
             
             <div className="space-y-12">

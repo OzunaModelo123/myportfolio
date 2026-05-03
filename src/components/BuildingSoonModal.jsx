@@ -12,7 +12,7 @@ export default function BuildingSoonModal({
   description,
   accentColor = '#C75B39',
   IconComponent = Sparkles,
-  confirmLabel = "Sounds good — I'll wait",
+  confirmLabel = "Sounds good, I'll wait",
   secondarySlot = null,
   titleId = 'building-soon-title',
 }) {

@@ -193,21 +193,21 @@ export default function About() {
     {
       title: 'Global Luxury Fashion Brand',
       tag: 'Retail Deployment · 2024',
-      desc: 'Supported end-to-end coordination of a high-profile luxury store opening. Assisted with IT, POS, procurement, and vendor management from pre-build through handover.',
+      desc: 'Helping a flagship boutique open clean: IT backbone, shiny POS setups, procurement drama contained.',
       color: '#C75B39',
       to: '/projects',
     },
     {
       title: 'Enterprise SaaS Migration',
       tag: 'Outlook to Freshdesk · 2024 to 2025',
-      desc: 'Key contributor to the delivery of a CRM platform migration. Supported vendor selection, a multiple six-figure budget, API config, data migration, and staff training.',
+      desc: 'Six-figure migration from Outlook fumes to Freshdesk workflows. Vendor wrangling plus API babysitting.',
       color: '#8B7EC8',
       to: '/projects',
     },
     {
       title: 'Multi-Site Retail Buildout',
       tag: 'AG Retail · 2021 to 2023',
-      desc: 'Collaborated on the full lifecycle build across multiple locations. This encompassed building works, POS implementation, technology rollout, and post-launch upgrade cycles.',
+      desc: 'Multi-location retail bootstrapping: drywall dust, cabling, POS rollouts, the whole trilogy.',
       color: '#4A90D9',
       to: '/projects',
     },
@@ -217,21 +217,21 @@ export default function About() {
     {
       title: 'Recaller',
       tag: 'B2B SaaS · Training Intelligence',
-      desc: '10-second Slack assessments that prove training ROI and identify who actually retained their knowledge.',
+      desc: '10-second Slack pings that quantify who actually remembers the training (not whoever clicked play fastest).',
       color: '#C75B39',
       to: '/projects/recaller',
     },
     {
       title: 'API Creations',
       tag: 'Backend Infrastructure',
-      desc: 'Scalable, secure microservice APIs, including a receipt/invoice parser built for marketplace-grade reliability.',
+      desc: 'Receipt parsing and friends: APIs that ingest chaos and spit out JSON adults can argue about.',
       color: '#5B8C6F',
       to: '/projects/api-creations',
     },
     {
       title: 'Social Wellness',
       tag: 'Intentional Social · FrameDay',
-      desc: 'Building products that elevate user psychology. Focusing on mindfulness and intentional interaction through daily photography.',
+      desc: 'Mindfulness-first companions like FrameDay, because doomscrolling deserved a challenger.',
       color: '#8B7EC8',
       to: '/projects/social-wellness',
     },
@@ -242,13 +242,13 @@ export default function About() {
     { label: 'Education', value: 'BSc Computer Science, Salem University' },
     { label: 'Cert', value: 'Mobile App Dev & Mgmt, Cambrian College' },
     { label: 'Open to', value: 'Full-time · Contract · Collab' },
-    { label: 'Interests', value: 'AI, Product, Chess, Cinematography' },
+    { label: 'Interests', value: 'Chess melodrama, AI rabbit holes, honest cameras' },
     { label: 'Contact', value: 'ozoanibarzali@gmail.com' },
   ];
 
   return (
     <div>
-      <SEO title="About | Daniel Ozoani" description="Read about my journey as a Technical Project Manager and Developer." />
+      <SEO title="About | Daniel Ozoani" description="How a Toronto TPM wound up nerdsniping himself with chess, cinema, code, and very long standups." />
 
       {/* ── HERO ──────────────────────────────────────────────────── */}
       <section ref={heroRef} className="relative pt-36 pb-24 px-6 md:px-10 overflow-hidden">
@@ -257,7 +257,7 @@ export default function About() {
           <div className="h-anim mb-5">
             <div className="status-live inline-flex">
               <span className="status-dot-green" />
-              Open to new opportunities
+              Open schedules and strong opinions about roadmaps
             </div>
           </div>
           <h1 className="h-anim font-display font-black text-[clamp(3.5rem,9vw,7rem)] text-white leading-[0.87] tracking-tight mb-4">
@@ -281,8 +281,8 @@ export default function About() {
             </a>
           </div>
           <div className="h-anim flex flex-wrap gap-3">
-            <Link to="/contact" className="btn-glow">Get in touch <ArrowRight className="w-4 h-4" /></Link>
-            <Link to="/projects" className="btn-glass">See my work</Link>
+            <Link to="/contact" className="btn-glow">Loop me in <ArrowRight className="w-4 h-4" /></Link>
+            <Link to="/projects" className="btn-glass">Browse the receipts</Link>
           </div>
         </div>
       </section>
@@ -296,16 +296,16 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-20 items-start">
             <div>
               <h2 className="sr font-display font-bold text-[clamp(2rem,5vw,3.2rem)] text-white leading-[0.95] tracking-tight mb-7">
-                Bridging <span className="font-serif italic" style={{ color: '#C75B39' }}>tech and delivery.</span>
+                The messy overlap where roadmaps touch real machines.
               </h2>
               <p className="sr font-inter text-base text-white/75 leading-relaxed mb-4">
-                As a Technical Project Manager, I thrive in the space where complex problems meet practical solutions. I enjoy taking a messy, early-stage idea and figuring out the moving parts needed to bring it to life. I don't just track tasks; I work closely with teams to clear roadblocks and keep momentum going.
+                I like problems that refuse to die in Slack threads. TPM work gives me ownership from "someone please own this" to "we deployed it on Thursday."
               </p>
               <p className="sr font-inter text-base text-white/75 leading-relaxed mb-4">
-                When I'm not managing projects, I'm usually writing code. I build custom tools, experiment with new AI models, and explore how technology can solve everyday inefficiencies. Having hands-on technical experience helps me bridge the gap between engineering teams and stakeholders.
+                When spreadsheets go quiet I'm usually shipping side code, stressing language models politely, or building internal tools nobody wants to sponsor until they adore them.
               </p>
               <p className="sr font-inter text-base text-white/75 leading-relaxed">
-                Off the clock, you can find me playing chess (I'm still terrible, but I keep trying), shooting video, and staying curious about where the tech industry is heading next.
+                Off duty I film things, binge openings no one counters, and read release notes because yes, that's entertainment now.
               </p>
             </div>
             <div className="sr">
@@ -327,7 +327,7 @@ export default function About() {
         <div className="max-w-5xl mx-auto">
           <div className="sr sec-tag mb-4">Core Skills</div>
           <h2 className="sr font-display font-bold text-[clamp(2rem,5vw,3rem)] text-white tracking-tight mb-12">
-            What I bring to the table.
+            What survives a scope review with me.
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
             {skillGroups.map(g => (
@@ -349,7 +349,7 @@ export default function About() {
         <div className="max-w-5xl mx-auto">
           <div className="sr sec-tag mb-4">Work Experience</div>
           <h2 className="sr font-display font-bold text-[clamp(2rem,5vw,3rem)] text-white tracking-tight mb-12">
-            Where I've worked.
+            Places I've left documentation behind.
           </h2>
           <div className="relative">
             <div className="absolute left-[7px] top-2 bottom-2 w-px bg-gradient-to-b from-[#C75B39]/50 via-[#4A90D9]/30 to-[#5B8C6F]/20" />
@@ -369,7 +369,7 @@ export default function About() {
         <div className="max-w-5xl mx-auto">
           <div className="sr sec-tag mb-4">Corporate Work</div>
           <h2 className="sr font-display font-bold text-[clamp(2rem,5vw,3rem)] text-white tracking-tight mb-10">
-            Projects I've delivered.
+            Quiet flexes with spreadsheets attached.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-20">
             {corporateProjects.map(p => (
@@ -380,7 +380,7 @@ export default function About() {
           {/* ── PERSONAL PROJECTS ─────────────────────────────────── */}
           <div className="sr sec-tag mb-4">Personal Builds</div>
           <h2 className="sr font-display font-bold text-[clamp(2rem,5vw,3rem)] text-white tracking-tight mb-10">
-            Things I've built.
+            Hobby repos that haunt my sleep.
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {personalProjects.map(p => (
@@ -431,9 +431,9 @@ export default function About() {
                   <span className="font-mono text-[0.55rem] px-2 py-0.5 rounded-full border border-[#8B7EC830] text-[#8B7EC8]">Active</span>
                 </div>
                 <h3 className="font-display font-bold text-white text-lg mb-1">AI for Product Managers</h3>
-                <p className="font-inter text-sm text-white/60 mb-1">Advance Learning — Management, Leadership & Strategy</p>
+                <p className="font-inter text-sm text-white/60 mb-1">Advance Learning (management leadership track)</p>
                 <p className="font-inter text-sm text-white/45 leading-relaxed">
-                  Deepened understanding of how AI and machine learning are transforming product strategy — from NLP for customer insights to real-world AI applications in product decision-making.
+                  Leveled up on where AI realistically helps PM decisions versus where it politely hallucinates. Think roadmaps plus models without the circus marketing.
                 </p>
                 <div className="mt-4 flex items-center gap-2 font-inter text-sm text-[#8B7EC8]">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#8B7EC8] animate-pulse" />
@@ -450,16 +450,16 @@ export default function About() {
       {/* ── CTA ───────────────────────────────────────────────────── */}
       <section className="py-24 px-6 md:px-10">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="sr sec-tag justify-center mb-6" style={{ color: '#E8856E' }}>Let's Connect</div>
+          <div className="sr sec-tag justify-center mb-6" style={{ color: '#E8856E' }}>End of scrolling</div>
           <h2 className="sr font-display font-bold text-[clamp(2.5rem,7vw,5rem)] text-white leading-[0.9] tracking-tight mb-6">
-            Got something<br />
-            <span className="font-serif italic" style={{ color: '#E8856E' }}>worth building?</span>
+            Want to build<br />
+            <span className="font-serif italic" style={{ color: '#E8856E' }}>something that ships?</span>
           </h2>
           <p className="sr font-inter text-base text-white/50 max-w-md mx-auto leading-relaxed mb-10">
-            Whether it's a project collab, a TPM conversation, or just a good AI debate — I'm always down.
+            Big initiatives, chaotic prototypes, or "is this KPI nonsense" chats are all welcome. I reply like a human, not an auto attendant.
           </p>
           <div className="sr flex flex-wrap gap-4 justify-center">
-            <Link to="/contact" className="btn-glow">Get in touch <ArrowRight className="w-4 h-4" /></Link>
+            <Link to="/contact" className="btn-glow">Use my inbox <ArrowRight className="w-4 h-4" /></Link>
             <a href="https://www.linkedin.com/in/daniel-ozoani-b20539252/" target="_blank" rel="noopener noreferrer" className="btn-glass">
               LinkedIn <ExternalLink className="w-3.5 h-3.5" />
             </a>

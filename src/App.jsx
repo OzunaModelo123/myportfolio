@@ -41,7 +41,7 @@ const PageLoader = () => (
   <div className="min-h-[60vh] flex items-center justify-center">
     <div className="flex flex-col items-center gap-4">
       <div className="w-8 h-8 border-2 border-[#C75B39] border-t-transparent rounded-full animate-spin" />
-      <span className="font-mono text-xs text-white/30 tracking-widest uppercase">Loading</span>
+      <span className="font-mono text-xs text-white/30 tracking-widest uppercase">Fetching the pixels</span>
     </div>
   </div>
 );
@@ -51,13 +51,13 @@ const NotFound = () => (
   <div className="min-h-[70vh] flex items-center justify-center px-6">
     <SEO
       title="Page not found | Daniel Ozoani"
-      description="The page you're looking for does not exist on danbuilds.work."
+      description="That URL wandered off somewhere. Heads up if you pasted it from Slack."
       noIndex
     />
     <div className="text-center">
       <h1 className="font-display font-black text-[clamp(5rem,15vw,10rem)] text-white/10 leading-none">404</h1>
-      <p className="font-inter text-lg text-white/60 mb-8">This page doesn't exist.</p>
-      <Link to="/" className="btn-glow">Go home <ArrowRight className="w-4 h-4" /></Link>
+      <p className="font-inter text-lg text-white/60 mb-8">Either I moved it or the link is pretending to work.</p>
+      <Link to="/" className="btn-glow">Back to the main stage <ArrowRight className="w-4 h-4" /></Link>
     </div>
   </div>
 );
@@ -470,7 +470,7 @@ const Navbar = () => {
         ))}
         <div className="w-px h-5 bg-white/20 mx-2" />
         <Link to="/contact" className="px-5 py-2 rounded-full text-xs font-mono tracking-widest uppercase text-white/70 hover:bg-[#C75B39] hover:text-white transition-all duration-300">
-          Contact
+          Say hi
         </Link>
       </div>
 
@@ -500,7 +500,7 @@ const Navbar = () => {
             )
           ))}
           <Link to="/contact" onClick={() => setMobileOpen(false)} className="btn-glow mt-4 px-8 py-4 text-base">
-            Let's Talk
+            Hit me up
           </Link>
         </div>
       )}
@@ -518,7 +518,7 @@ const Footer = () => (
         <div className="md:col-span-2">
           <div className="font-display font-black text-2xl tracking-tight text-white mb-4">Daniel Ozoani</div>
           <p className="font-inter text-sm text-white/70 max-w-sm leading-relaxed mb-6">
-            Developer, builder, chess player. Working on things that matter.
+            TPM by day, side projects by night, chess when I forget how bad I am at it. Mostly building stuff that survives a demo.
           </p>
           <div className="flex gap-3">
             {[
@@ -565,7 +565,7 @@ const Footer = () => (
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="status-live bg-white/10 px-3 py-1.5 rounded-full border border-white/20 text-white/80">
           <span className="status-dot-green" />
-          Available for opportunities
+          Open to roles that involve shipping something real
         </div>
         <div className="font-mono text-[0.65rem] text-white/50 tracking-widest">
           © {new Date().getFullYear()} Daniel Ozoani

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 /**
- * Homepage / project-index magazine row — wraps a route link or teaser button.
+ * Homepage / project-index magazine row. Wraps a route link or teaser button.
  */
 export default function FeaturedMagazineRow({ project: p, onOpenModal }) {
   const shell = (
@@ -23,7 +23,7 @@ export default function FeaturedMagazineRow({ project: p, onOpenModal }) {
             <p className="font-inter text-base text-white/90 leading-relaxed max-w-prose">{p.desc}</p>
           </div>
           <div className="flex items-center gap-2 font-inter text-sm font-semibold mt-6" style={{ color: p.color }}>
-            {p.modalKey ? 'Inside scoop →' : 'Deep dive'}
+            {p.modalKey ? 'Spoiler-ish details →' : 'See the nerdy breakdown'}
             <ArrowRight className={`w-4 h-4 ${p.modalKey ? '' : 'group-hover:translate-x-2'} transition-transform`} />
           </div>
         </div>

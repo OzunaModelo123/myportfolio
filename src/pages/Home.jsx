@@ -376,7 +376,7 @@ const ParticlePlayground = () => {
 
       <div className="absolute top-6 right-6 flex items-center gap-4 z-20">
         <div className="flex flex-col items-end">
-          <span className="font-mono text-[0.6rem] text-[#8B7EC8] uppercase tracking-[0.2em] font-bold">Neural Load</span>
+          <span className="font-mono text-[0.6rem] text-[#8B7EC8] uppercase tracking-[0.2em] font-bold">Particle count</span>
           <span className="font-mono text-xs text-white/40">{count} / {MAX_PARTICLES}</span>
         </div>
         <button
@@ -390,11 +390,11 @@ const ParticlePlayground = () => {
       <div className="absolute bottom-6 left-6 hidden md:flex gap-8 z-20">
         <div className="flex flex-col gap-1">
           <span className="font-mono text-[0.55rem] text-white/20 uppercase tracking-widest">Hover</span>
-          <span className="font-mono text-[0.62rem] text-white/60">Singularity Mode</span>
+          <span className="font-mono text-[0.62rem] text-white/60">Magnet glide</span>
         </div>
         <div className="flex flex-col gap-1">
           <span className="font-mono text-[0.55rem] text-white/20 uppercase tracking-widest">Drag</span>
-          <span className="font-mono text-[0.62rem] text-white/60">Neural Emission</span>
+          <span className="font-mono text-[0.62rem] text-white/60">Tap spray</span>
         </div>
       </div>
 
@@ -493,21 +493,21 @@ export default function Home() {
     { icon: <Code2 className="w-5 h-5" />, label: 'Developer', color: '#5B8C6F' },
     { icon: <Brain className="w-5 h-5" />, label: 'AI & Cognition', color: '#8B7EC8' },
     { icon: <Crown className="w-5 h-5" />, label: 'Chess', color: '#E8856E' },
-    { icon: <Zap className="w-5 h-5" />, label: 'Emerging Tech', color: '#4A90D9' },
+    { icon: <Zap className="w-5 h-5" />, label: 'Bleeding-edge curiosity', color: '#4A90D9' },
     { icon: <Coffee className="w-5 h-5" />, label: 'Good Coffee', color: '#D4C4A8' },
   ];
 
   const projects = [
     {
       num: '01', name: 'Recaller', tag: 'B2B SaaS',
-      desc: 'Training intelligence that proves ROI. 10-second Slack assessments reveal who actually knows their stuff.',
+      desc: 'Slack quizzes that politely expose who memorized nothing. Training budgets finally get receipts.',
       color: '#C75B39', href: '/projects/recaller',
       img: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2560',
       icon: <Target className="w-5 h-5" />,
     },
     {
       num: '02', name: 'API Creations', tag: 'Infrastructure',
-      desc: 'Architecting robust, scalable, and secure backend microservices for enterprise-level applications.',
+      desc: 'Microservices when you need glue between messy data and sane JSON. Receipt parsing already lives on Rapid.',
       color: '#5B8C6F', href: '/projects/api-creations',
       img: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=2560',
       icon: <Lightbulb className="w-5 h-5" />,
@@ -516,14 +516,14 @@ export default function Home() {
       num: '03',
       name: 'Learning Lab',
       tag: 'Study apps · Coming soon',
-      desc: 'Working on some genuinely fun tools so studying and leveling up feels less miserable. Stay tuned!',
+      desc: 'Apps that trick you into learning without the existential dread PDFs give you.',
       color: '#5EC8D8',
       img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=2560',
       modalKey: 'education',
     },
     {
       num: '04', name: 'Social Wellness', tag: 'Intentional Social',
-      desc: 'Building products that elevate user psychology. Focusing on mindfulness and intentional interaction through daily photography.',
+      desc: 'Social products that flirt with dopamine thoughtfully. Starting with prompts that drag you outdoors.',
       color: '#8B7EC8', href: '/projects/social-wellness',
       img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=2560',
       icon: <Brain className="w-5 h-5" />,
@@ -534,13 +534,13 @@ export default function Home() {
     <div>
       <SEO
         title="Builder, TPM & Developer | Daniel Ozoani"
-        description="I'm a Technical Project Manager and developer who loves building products, exploring AI, and thinking in systems."
+        description="Twenty-something TPM who still writes code on purpose. I like products that behave in production, chess tantrums, and AI that earns the hype."
         jsonLd={[
           {
             '@context': 'https://schema.org',
             '@type': 'WebSite',
-            name: 'Daniel Ozoani — Portfolio',
-            description: 'Portfolio of Daniel Ozoani — Technical Project Manager and developer.',
+            name: 'Daniel Ozoani - Portfolio',
+            description: 'Portfolio of Daniel Ozoani: TPM, ships code too, mildly obsessed with things that ought to scale.',
             url: SITE_URL,
           },
           {
@@ -568,7 +568,7 @@ export default function Home() {
           <div className="h-anim mb-8">
             <div className="status-live inline-flex">
               <span className="status-dot-green" />
-              Open to new projects
+              Open to collaborators who read roadmaps out loud
             </div>
           </div>
 
@@ -584,16 +584,16 @@ export default function Home() {
           </div>
 
           <p className="h-anim font-inter text-lg md:text-xl text-white max-w-prose leading-relaxed mb-10 text-shadow-sm">
-            I’m a {age}-year-old developer and builder who genuinely just loves making things. I get wildly excited about exploring new AI patterns, whole product lifecycles, and a good game of chess.
+            {age}. I glue teams to shipping schedules, poke at neural nets until they cooperate, and still lose bishop pairs for fun.
           </p>
 
           <div className="h-anim flex flex-wrap gap-3 mb-10">
             <button type="button" className="btn-glow hoverable" onClick={() => setBuildingModal('portfolio')}>
-              See what I'm building
+              Show me what's in the oven
               <ArrowRight className="w-4 h-4" />
             </button>
             <Link to="/contact" className="btn-glass">
-              Say hi
+              Toss me a message
             </Link>
           </div>
 
@@ -627,16 +627,16 @@ export default function Home() {
                 I love to <span className="font-serif italic" style={{ color: '#C75B39' }}>build things.</span>
               </h2>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-5">
-                I'm a Technical Project Manager by trade, but what really drives me is being part of the full journey of a product. From the early ideas all the way to seeing it actually ship and live in the world. That whole process genuinely excites me.
+                I'm a TPM who keeps one foot on the spreadsheet and one foot in the codebase. Watching something go from scribble to production is basically my love language.
               </p>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-5">
-                I spend a lot of my free time researching AI. Not just reading the news about it, but actually digging into how it works, what people are building with it, and where it's all going. It's a pretty exciting time to be paying attention to that space and I'm all in on it.
+                Off-hours I'm usually wrestling LLMs until they behave, tinkering with side projects nobody asked for yet, or reading changelog drama like sport.
               </p>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-5">
-                I also enjoy coding and cinematography. Two pretty different things, but they scratch the same itch for me. Creating something from nothing, whether it's a working piece of software or a well put together shot.
+                Cinematography and dev work both scratch the itch of "make something that did not exist an hour ago." Same rush, fewer segfaults in video.
               </p>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-10">
-                Oh, and I play chess. Still terrible at it, but I keep playing. At the end of the day I'm just someone who loves to create, loves to learn, and wants to be involved in building things that matter.
+                Chess is therapy with timers. Results vary. If you vibe with obsessive builders who still joke on calls, we'll get along fine.
               </p>
               <div className="reveal-item flex flex-wrap gap-3">
                 <Link to="/about" className="btn-glow">
@@ -650,12 +650,12 @@ export default function Home() {
 
             <div className="grid grid-cols-2 gap-4 reveal-item lg:mt-56">
               {[
-                { icon: <Rocket className="w-6 h-6" />, title: 'Technical Project Manager', sub: 'Driving product lifecycles', color: '#5B8C6F' },
-                { icon: <Brain className="w-6 h-6" />, title: 'AI Engineering', sub: 'LLMs and cognitive intelligence', color: '#8B7EC8' },
-                { icon: <Lightbulb className="w-6 h-6" />, title: 'Product Builder', sub: 'Taking ideas to deployment', color: '#E8856E' },
-                { icon: <Target className="w-6 h-6" />, title: 'Systems Design', sub: 'Architecting for the long term', color: '#C75B39' },
-                { icon: <Crown className="w-6 h-6" />, title: 'Chess', sub: 'Terrible at it, but love it', color: '#D4C4A8' },
-                { icon: <Zap className="w-6 h-6" />, title: 'Filmmaking', sub: 'Framing the perfect shot', color: '#4A90D9' },
+                { icon: <Rocket className="w-6 h-6" />, title: 'Technical Project Manager', sub: 'Schedule whisperer energy', color: '#5B8C6F' },
+                { icon: <Brain className="w-6 h-6" />, title: 'AI Engineering', sub: 'Making models obey reality', color: '#8B7EC8' },
+                { icon: <Lightbulb className="w-6 h-6" />, title: 'Product Builder', sub: 'Ideas that survive QA', color: '#E8856E' },
+                { icon: <Target className="w-6 h-6" />, title: 'Systems Design', sub: 'No duct tape in prod', color: '#C75B39' },
+                { icon: <Crown className="w-6 h-6" />, title: 'Chess', sub: 'Confident mediocrity', color: '#D4C4A8' },
+                { icon: <Zap className="w-6 h-6" />, title: 'Filmmaking', sub: 'Stories with lighting budgets', color: '#4A90D9' },
               ].map((c, i) => (
                 <div key={i}
                   className="glass-light rounded-2xl p-4 sm:p-6 flex flex-col gap-3 group relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] min-w-0"
@@ -682,8 +682,8 @@ export default function Home() {
             <div>
               <div className="reveal-item sec-tag mb-6 text-white/80">Working On</div>
               <h2 className="reveal-item font-display font-black text-[clamp(2.5rem,7vw,5rem)] text-white leading-[0.92] tracking-tight">
-                Projects I am<br />
-                <span className="text-white drop-shadow-lg">working on.</span>
+                Stuff I'm<br />
+                <span className="text-white drop-shadow-lg">shipping next.</span>
               </h2>
             </div>
           </div>
@@ -696,7 +696,7 @@ export default function Home() {
 
           <div className="text-center mt-14">
             <button type="button" className="btn-glass hoverable inline-flex items-center gap-2" onClick={() => setBuildingModal('portfolio')}>
-              See project deep-dive <ArrowRight className="w-4 h-4" />
+              Story time on the backlog <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
@@ -765,12 +765,12 @@ export default function Home() {
           <div className="text-center mb-12">
             <div className="reveal-item sec-tag justify-center mb-6">The Playground</div>
             <h2 className="reveal-item font-display font-bold text-[clamp(2.5rem,7vw,4.5rem)] text-white leading-[0.95] tracking-tight mb-4">
-              Go ahead, <span className="font-serif italic" style={{ color: '#C75B39' }}>play.</span>
+              Break stuff <span className="font-serif italic" style={{ color: '#C75B39' }}>safely.</span>
             </h2>
             <p className="reveal-item font-inter text-base text-white/90 max-w-prose mx-auto leading-relaxed mb-8">
-              {playgroundMode === 'particles' 
-                ? "Click and drag to create an explosive gravity-powered particle painting. I think every portfolio needs a little interactive fun."
-                : "Think you can beat the machine? Play a game of chess against my lightweight AI engine. (Fair warning: I'm still teaching it to be merciful.)"
+              {playgroundMode === 'particles'
+                ? "Click-drag confetti nonsense. Totally pointless and weirdly hypnotic (which is honestly the vibe I want portfolios to have)."
+                : "Tiny chess bot with opinions. Adjustable rude levels on the sidebar if you crave pain."
               }
             </p>
 
@@ -808,7 +808,7 @@ export default function Home() {
                   <div className="min-h-[22rem] flex items-center justify-center rounded-3xl glass border border-white/10">
                     <div className="flex flex-col items-center gap-3">
                       <div className="w-10 h-10 border-2 border-[#C75B39] border-t-transparent rounded-full animate-spin" aria-hidden />
-                      <span className="font-mono text-[0.65rem] text-white/35 tracking-[0.2em] uppercase">Loading chess…</span>
+                      <span className="font-mono text-[0.65rem] text-white/35 tracking-[0.2em] uppercase">Teaching pawns etiquette…</span>
                     </div>
                   </div>
                 )}
@@ -826,17 +826,17 @@ export default function Home() {
           ═══════════════════════════════════════════════════════════════════ */}
       <section className="reveal-section py-28 md:py-40 px-6 md:px-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="reveal-item sec-tag justify-center mb-8" style={{ color: '#E8856E' }}>Let's Connect</div>
+          <div className="reveal-item sec-tag justify-center mb-8" style={{ color: '#E8856E' }}>Still here?</div>
           <h2 className="reveal-item font-display font-bold text-[clamp(3rem,8vw,6rem)] text-white leading-[0.88] tracking-tight mb-6">
-            Got an idea?<br />
-            <span className="font-serif italic" style={{ color: '#E8856E' }}>Let's talk about it.</span>
+            Got an odd idea?<br />
+            <span className="font-serif italic" style={{ color: '#E8856E' }}>Tell me anyway.</span>
           </h2>
           <p className="reveal-item font-inter text-base md:text-xl text-white/30 max-w-lg mx-auto leading-relaxed mb-12">
-            Whether it's a project collab, a TPM conversation, AI chat, or a chess match — I'm always down.
+            Serious builds, TPM rants, model comparisons, chess lines you think are dubious. I'll actually reply.
           </p>
           <div className="reveal-item flex flex-wrap gap-4 justify-center">
             <Link to="/contact" className="btn-glow">
-              Get in touch <ArrowRight className="w-4 h-4" />
+              Let's get specific <ArrowRight className="w-4 h-4" />
             </Link>
             <a href="https://www.linkedin.com/in/daniel-ozoani-b20539252/" target="_blank" rel="noopener noreferrer" className="btn-glass">
               LinkedIn <ExternalLink className="w-3.5 h-3.5" />
@@ -860,7 +860,7 @@ export default function Home() {
                   className="text-sm font-semibold underline underline-offset-4 decoration-white/25 hover:text-white transition-colors"
                   style={{ color: buildingSoonVariants.portfolio.accentColor }}
                 >
-                  Peep everything on Projects
+                  Peep the full Projects page
                 </Link>
                 <button
                   type="button"
@@ -872,7 +872,7 @@ export default function Home() {
                   }}
                   className="text-sm text-white/55 hover:text-white underline underline-offset-4 decoration-transparent hover:decoration-white/35 transition-colors"
                 >
-                  Scroll down to what's on this page
+                  Jump to the list on this page
                 </button>
               </div>
             ) : (
@@ -882,7 +882,7 @@ export default function Home() {
                 className="inline-flex text-sm font-semibold underline underline-offset-4 decoration-white/25 hover:text-white transition-colors"
                 style={{ color: buildingSoonVariants.education.accentColor }}
               >
-                More chaos on the Projects page
+                More antics on Projects
               </Link>
             )
           }

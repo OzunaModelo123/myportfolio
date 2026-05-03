@@ -111,7 +111,7 @@ export default function ApiCreationsProject() {
     <div>
       <SEO
         title="API Creations & Microservices | Daniel Ozoani"
-        description="Robust REST and MCP-ready APIs—enterprise microservices for data pipelines, scraping, sentiment, reviews, receipts, compliance, and AI agents."
+        description="REST + MCP-ish glue for reviews, receipts, sentiment, scraping, alerts, agents. Opinionated infra, politely documented."
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"
@@ -120,16 +120,16 @@ export default function ApiCreationsProject() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
           <Link to="/" className="p-anim inline-flex items-center gap-2 font-inter text-sm text-white/70 hover:text-[#5B8C6F] transition-colors mb-10 group">
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back to Home
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" /> Back home
           </Link>
           <div className="p-anim sec-tag mb-6" style={{ color: '#5B8C6F', borderColor: '#5B8C6F40' }}>API Creations & Infrastructure</div>
           <h1 className="p-anim font-display font-black text-[clamp(4rem,9vw,7rem)] text-white leading-[0.85] tracking-tight mb-6">Backend Systems & <br />Microservices</h1>
           <div className="p-anim flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
             <p className="font-inter text-base md:text-xl text-white/80 max-w-prose leading-relaxed">
-              Architecting robust, scalable, and secure backend microservices designed for enterprise-level applications and AI-driven automation.
+              Tiny services that do one gnarly job really well so your product team stops duct-taping bash scripts together at 11pm.
             </p>
             <div className="flex flex-col gap-3 flex-shrink-0">
-              <div className="status-live"><span className="status-dot-green" /> Production Ready</div>
+              <div className="status-live"><span className="status-dot-green" /> Live where it counts</div>
               <div className="flex flex-wrap gap-2">
                 {['REST API', 'Node.js', 'Python', 'Webhooks'].map(t => <span key={t} className="chip-dark">{t}</span>)}
               </div>
@@ -143,9 +143,9 @@ export default function ApiCreationsProject() {
           
           <div>
             <div className="reveal-item sec-tag mb-4">01 · The Approach</div>
-            <h2 className="reveal-item font-display font-bold text-3xl md:text-5xl text-white mb-6 tracking-tight">Built for scale.</h2>
+            <h2 className="reveal-item font-display font-bold text-3xl md:text-5xl text-white mb-6 tracking-tight">Small pieces, stubborn uptime.</h2>
             <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
-              When building data pipelines and microservices, latency and reliability are non-negotiable. I focus on developing decoupled APIs that do one thing exceptionally well—whether it's scraping volatile niche news sources or providing a stable MCP layer for AI agents.
+              Latency and reliability aren't buzzwords here. Each service picks a lane (parse receipts, tame scrapers, give agents a doorway) so when something screams at 3am you know exactly which container to yell at.
             </p>
             
             <div className="reveal-item grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
@@ -165,9 +165,9 @@ export default function ApiCreationsProject() {
 
           <div id="api-collection">
             <div className="reveal-item sec-tag mb-4">02 · API Collection</div>
-            <h2 className="reveal-item font-display font-bold text-3xl md:text-5xl text-white mb-6 tracking-tight">The Services I've Built.</h2>
+            <h2 className="reveal-item font-display font-bold text-3xl md:text-5xl text-white mb-6 tracking-tight">APIs I've actually babysat.</h2>
             <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-12">
-              A curated suite of specialized APIs designed for robust data extraction, aggregation, and AI augmentation. Click to explore the underlying functionality of each service.
+              Each tile explodes open with nerd details. Rapid links work today; anything else politely asks you to ping me because I'm still debating pricing with myself.
             </p>
             
             <div className="flex flex-col gap-2">
@@ -192,13 +192,13 @@ export default function ApiCreationsProject() {
           <div className="absolute inset-0 bg-gradient-to-br from-[#5B8C6F]/10 to-transparent pointer-events-none" />
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
             <div>
-              <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-4">Need a custom API?</h2>
+              <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-4">Got a haunted data pipe?</h2>
               <p className="font-inter text-white/70 max-w-md">
-                I regularly build specialized integrations, scrapers, and data pipelines for evolving business needs. Let's see if we can solve your data problem.
+                Fancy integrations and scrapers are my love language when they're documented. Pitch the mess, I'll sketch the architecture adult-style.
               </p>
             </div>
             <Link to="/contact" className="btn-glow flex-shrink-0" style={{ '--glow-color': '#5B8C6F' }}>
-              Discuss Architecture <ExternalLink className="w-4 h-4 ml-2" />
+              Roast your idea on a call <ExternalLink className="w-4 h-4 ml-2" />
             </Link>
           </div>
         </div>

@@ -32,7 +32,7 @@ const ShufflerCard = () => {
 };
 
 const TypewriterCard = () => {
-  const lines = ['> Scanning team readiness...', '> ALERT: User #402: 89% confident, 34% accurate', '> Pattern: ERROR-GANCE DETECTED ⚠', '> Topic: Safety Protocol Verification', '> Risk: CRITICAL, auto-escalated to manager', '> Re-assessment scheduled in 48 hours...', '', '> Scanning next cohort...'];
+  const lines = ['> Scanning team readiness...', '> ALERT: User #402: 89% confident, 34% accurate', '> Pattern: ERROR-GANCE DETECTED (yeah, that vibe)', '> Topic: Safety Protocol Verification', '> Risk: flagged for a human eye', '> Re-assessment scheduled in 48 hours...', '', '> Scanning next cohort...'];
   const full = lines.join('\n');
   const [shown, setShown] = useState('');
   const [i, setI] = useState(0);
@@ -67,10 +67,10 @@ export default function Projects() {
   }, []);
 
   const features = [
-    { num: '01', tag: 'Readiness Intelligence', title: 'The Readiness Score', body: "Instead of just checking off who watched a video, Recaller figures out an actual Readiness Score. It tracks accuracy and retention, turning it into one metric you can trust.", card: <ShufflerCard /> },
-    { num: '02', tag: 'Risk Detection', title: '"Error-gance" Radar', body: "The scariest employee isn't the one who admits they don't know something, it's the one who is completely wrong but entirely confident. Recaller points out these dangerous high-confidence / low-accuracy patterns before they become an issue.", card: <TypewriterCard /> },
+    { num: '01', tag: 'Readiness Intelligence', title: 'One score, zero theater', body: "Accuracy, hesitation, refresher cadence, all distilled into something you can screenshot in an exec recap without lying.", card: <ShufflerCard /> },
+    { num: '02', tag: 'Risk Detection', title: 'Spot loud-wrong folks early', body: "The scary ones sound certain and move fast anyway. Recaller tracks high-confidence misses so your incident report isn't someone's surprise debut.", card: <TypewriterCard /> },
     {
-      num: '03', tag: 'Conversational AI', title: 'Just DM the Bot', body: 'If an employee gets stuck, they can just DM the Recaller bot directly in Slack. The AI digs through the company training library and instantly replies with the exact video clip they need. No context switching, just quick answers.',
+      num: '03', tag: 'Conversational AI', title: 'DM the concierge bot', body: 'Stumped mid-shift? Slack the bot, it hunts the training library instead of burying folks in portals, then drops the timestamped clip that answers the awkward question.',
       card: <div className="h-52 glass rounded-2xl p-4 flex flex-col gap-3">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-full flex items-center justify-center" style={{ background: 'rgba(199,91,57,0.12)', border: '1px solid rgba(199,91,57,0.2)' }}>
@@ -79,7 +79,7 @@ export default function Projects() {
           <span className="font-mono text-[0.58rem] text-white/70">Recaller Bot · Slack</span>
         </div>
         <div className="flex-1 space-y-2.5 overflow-hidden">
-          {[{ me: true, text: "I'm confused about the safety verification step" }, { me: false, text: '⚡ Found it. Jump to 3:42 in "Site Safety Module 2". The step is at 4:18 with examples.' }].map((m, i) => (
+          {[{ me: true, text: "I'm confused about the safety verification step" }, { me: false, text: 'Found it. Jump to 3:42 in "Site Safety Module 2". Step with examples kicks in around 4:18.' }].map((m, i) => (
             <div key={i} className={`flex ${m.me ? 'justify-end' : 'justify-start'}`}>
               <div className={`px-3 py-2.5 rounded-2xl text-[0.7rem] font-inter max-w-[80%] leading-relaxed ${m.me ? 'bg-[#C75B39]/20 text-white/90' : 'glass-light text-white/80'}`}>{m.text}</div>
             </div>
@@ -89,7 +89,7 @@ export default function Projects() {
       </div>
     },
     {
-      num: '04', tag: 'ROI Proof Engine', title: 'Actually prove it works', body: "We test employees before a course, let them learn, wait a few weeks, and then test them again. The final result is a verifiable percentage showing exactly how much knowledge they actually retained.",
+      num: '04', tag: 'ROI Proof Engine', title: 'Before / after receipts', body: "Baseline quiz, coursework, chill waiting period, follow-up quiz. The delta becomes the storyline finance recognizes.",
       card: <div className="h-52 glass rounded-2xl p-4 flex flex-col justify-between">
         <div className="font-mono text-[0.58rem] text-[#C75B39] tracking-widest mb-3">ROI Dashboard · Knowledge Delta</div>
         {[{ label: 'Safety Protocols', before: 42, after: 88, gain: '+46%' }, { label: 'Product Knowledge', before: 55, after: 91, gain: '+36%' }, { label: 'Compliance Basics', before: 61, after: 94, gain: '+33%' }].map((r, i) => (
@@ -112,7 +112,7 @@ export default function Projects() {
     <div>
       <SEO
         title="Recaller | Daniel Ozoani"
-        description="Training intelligence that proves ROI. Slack-ready assessments that reveal readiness, risk patterns, and real knowledge retention."
+        description="Ten-second Slack nudges that measure readiness, misplaced confidence, and whether L&D budgets still deserve coffee."
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"
@@ -125,13 +125,13 @@ export default function Projects() {
           </Link>
           <div className="p-anim sec-tag mb-6">B2B SaaS · Training Intelligence</div>
           <h1 className="p-anim font-display font-black text-[clamp(5rem,14vw,10rem)] text-white leading-[0.85] tracking-[-0.04em] mb-4">Recaller</h1>
-          <div className="p-anim font-serif italic text-[clamp(1.5rem,4vw,2.8rem)] text-[#C75B39] leading-[1.1] mb-8">Training ROI & Readiness Intelligence.</div>
+          <div className="p-anim font-serif italic text-[clamp(1.5rem,4vw,2.8rem)] text-[#C75B39] leading-[1.1] mb-8">Training ROI nobody can hand-wave away.</div>
           <div className="p-anim flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
             <p className="font-inter text-base md:text-xl text-white/80 max-w-prose leading-relaxed">
-              I noticed companies were burning millions on training without actually knowing if any of it worked. So, I built Recaller to figure that out.
+              Teams were sinking serious coin into LMS seats without receipts. Recaller tracks what sticks, politely, inside Slack where people actually answer pings.
             </p>
             <div className="flex flex-col gap-3 flex-shrink-0">
-              <div className="status-live"><span className="status-dot-green" /> Core platform built · In staging</div>
+              <div className="status-live"><span className="status-dot-green" /> Core stack lives in staging trials</div>
               <div className="flex flex-wrap gap-2">
                 {['Slack', 'MS Teams', 'Email', 'AI'].map(t => <span key={t} className="chip-dark">{t}</span>)}
               </div>
@@ -162,8 +162,10 @@ export default function Projects() {
             </h2>
           </div>
           <div className="reveal-item space-y-4">
-            <p className="font-inter text-base text-white/90 max-w-prose leading-relaxed">Usually, L&D teams just throw training videos into clunky portals and measure 'success' by whether someone clicked play. But honestly, almost nobody is measuring if that knowledge actually stuck or changed behavior.</p>
-            {['Employees ignore separate training portals', "Confidence gaps go undetected until it's too late", "L&D can't prove their impact with data"].map((t, i) => (
+            <p className="font-inter text-base text-white/90 max-w-prose leading-relaxed">
+              Mostly we celebrate completion percentages and LMS green bars. Rarely anyone asks if someone could actually execute the thing on Tuesday at 9am next to an angry customer.
+            </p>
+            {['Nobody opens the random portal bookmarked in onboarding', 'Confident-but-wrong people hide until KPIs crater', 'Executives suddenly want proof budgets mattered yesterday'].map((t, i) => (
               <div key={i} className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#C75B39] mt-2 flex-shrink-0" />
                 <span className="font-inter text-sm text-white/70">{t}</span>
@@ -177,7 +179,7 @@ export default function Projects() {
       <section className="reveal-section py-20 md:py-28 px-6 md:px-10">
         <div className="max-w-7xl mx-auto">
           <div className="reveal-item sec-tag mb-6">Features</div>
-          <h2 className="reveal-item font-display font-bold text-[clamp(2.5rem,6vw,4rem)] text-white leading-[0.95] tracking-tight mb-16">What Recaller actually does.</h2>
+          <h2 className="reveal-item font-display font-bold text-[clamp(2.5rem,6vw,4rem)] text-white leading-[0.95] tracking-tight mb-16">The parts people actually demo.</h2>
           <div className="space-y-6">
             {features.map((f, i) => (
               <div key={i} className="reveal-item project-card p-8 md:p-10 group">
@@ -203,12 +205,12 @@ export default function Projects() {
       <section className="reveal-section py-20 md:py-28 px-6 md:px-10">
         <div className="max-w-7xl mx-auto">
           <div className="reveal-item sec-tag mb-6">How It Works</div>
-          <h2 className="reveal-item font-display font-bold text-[clamp(2.5rem,6vw,4rem)] text-white leading-[0.95] tracking-tight mb-14">The Recaller loop.</h2>
+          <h2 className="reveal-item font-display font-bold text-[clamp(2.5rem,6vw,4rem)] text-white leading-[0.95] tracking-tight mb-14">How the loop behaves IRL.</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
-              { n: '01', title: 'It lives in Slack & Teams', desc: 'No new portal. 10-second assessments arrive where employees already are.', color: '#C75B39' },
-              { n: '02', title: 'Data maps the gap', desc: 'Every response (accuracy, confidence, speed) feeds the readiness engine.', color: '#8B7EC8' },
-              { n: '03', title: 'ROI gets a number', desc: 'Before/after testing produces a hard knowledge-gain percentage.', color: '#5B8C6F' },
+              { n: '01', title: 'In-channel micro checks', desc: 'No fresh logins or forgotten passwords. Assessments slap into Slack / Teams because that is honestly where honesty lives.', color: '#C75B39' },
+              { n: '02', title: 'Telemetry becomes a storyline', desc: 'Every tap feeds accuracy, pacing, hesitation. Narratives write themselves.', color: '#8B7EC8' },
+              { n: '03', title: 'Finance gets a numerator', desc: 'Before-after deltas turn “training vibes” into a percentage that survives an audit glare.', color: '#5B8C6F' },
             ].map((s, i) => (
               <div key={i} className="reveal-item glass-light rounded-2xl p-7 flex flex-col gap-6 group hover:border-[#C75B39]/20 transition-all duration-500 hoverable">
                 <div className="w-14 h-14 rounded-xl flex items-center justify-center font-display font-black text-xl text-white" style={{ background: s.color }}>{s.n}</div>
@@ -226,13 +228,13 @@ export default function Projects() {
       <section className="py-24 md:py-32 px-6 md:px-10">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-display font-bold text-[clamp(2.5rem,7vw,5rem)] text-white leading-[0.92] tracking-tight mb-6">
-            Curious to see<br />more of Recaller?
+            Want the architecture tour?
           </h2>
           <p className="font-inter text-base text-white/90 max-w-prose mx-auto mb-10 leading-relaxed">
-            I'm always happy to walk through the architecture, discuss a potential pilot, or just geek out about the code.
+            Happy to whiteboard ingestion, Slack auth, model guardrails, or why I still mute certain notification sounds.
           </p>
           <Link to="/contact" className="btn-glow">
-            Get in touch <ArrowRight className="w-4 h-4" />
+            Pull me into a thread <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>

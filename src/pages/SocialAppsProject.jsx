@@ -30,7 +30,7 @@ export default function SocialAppsProject() {
       name: 'FrameDay',
       tag: 'Mindful Camera',
       color: '#8B7EC8',
-      desc: 'A thoughtful mobile application designed to break the endless scroll cycle by turning daily surroundings into a collaborative, mindful visual diary.',
+      desc: 'Daily photo prompts engineered to unplug the autopilot doomscroll. Collaboration without clout-farming.',
       href: '/projects/social-wellness/frameday',
       icon: <Camera className="w-8 h-8" />,
     },
@@ -38,7 +38,7 @@ export default function SocialAppsProject() {
       name: 'More mindful experiments',
       tag: 'Social lab · Teaser',
       color: '#C75B39',
-      desc: 'Additional social mechanics and journaling experiments are on the bench—polishing consent flows, copy, and how groups feel on day seven, not just day one.',
+      desc: 'More consent-forward prompts, tiny cohort rituals, journaling experiments that still feel good on day seven, not just launch-day fireworks.',
       icon: <Sparkles className="w-8 h-8" />,
       teaser: true,
     },
@@ -48,7 +48,7 @@ export default function SocialAppsProject() {
     <div>
       <SEO
         title="Social Wellness | Daniel Ozoani"
-        description="Products that elevate user psychology—FrameDay and experiments in mindful, intentional social experiences."
+        description="Social experiments centered on dopamine hygiene. Starting with mindful camera rituals like FrameDay."
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
@@ -59,7 +59,7 @@ export default function SocialAppsProject() {
           <h1 className="p-anim font-display font-black text-[clamp(4rem,9vw,7rem)] text-white leading-[0.85] tracking-tight mb-6">Social Wellness</h1>
           <div className="p-anim flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
             <p className="font-inter text-base md:text-xl text-white/80 max-w-prose leading-relaxed">
-              Experimenting with new mechanics in intentional social. Focusing on products that elevate user psychology rather than exploit it.
+              Petri dishes for humane social UX: timing, consent, boredom treated as signal. First public slice is FrameDay, more weirdness once I trust the infra.
             </p>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function SocialAppsProject() {
                     </p>
                   </div>
                   <div className="mt-12 flex items-center gap-2 font-inter text-sm font-semibold transition-colors duration-300" style={{ color: app.color }}>
-                    {app.teaser ? 'Yo what\'s happening' : 'Dive into app concepts'}
+                    {app.teaser ? 'More soon (no fake doors)' : 'See how FrameDay thinks'}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
