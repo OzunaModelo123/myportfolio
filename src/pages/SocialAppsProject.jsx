@@ -1,14 +1,17 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, Camera } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Camera, Sparkles } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import SEO from '../components/SEO';
+import BuildingSoonModal from '../components/BuildingSoonModal';
+import { buildingSoonVariants } from '../content/buildingSoonCopy';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function SocialAppsProject() {
   const heroRef = useRef(null);
+  const [portfolioPeek, setPortfolioPeek] = useState(false);
 
   useEffect(() => {
     const els = heroRef.current?.querySelectorAll('.p-anim');
@@ -29,8 +32,16 @@ export default function SocialAppsProject() {
       color: '#8B7EC8',
       desc: 'A thoughtful mobile application designed to break the endless scroll cycle by turning daily surroundings into a collaborative, mindful visual diary.',
       href: '/projects/social-wellness/frameday',
-      icon: <Camera className="w-8 h-8" />
-    }
+      icon: <Camera className="w-8 h-8" />,
+    },
+    {
+      name: 'More mindful experiments',
+      tag: 'Social lab · Teaser',
+      color: '#C75B39',
+      desc: 'Additional social mechanics and journaling experiments are on the bench—polishing consent flows, copy, and how groups feel on day seven, not just day one.',
+      icon: <Sparkles className="w-8 h-8" />,
+      teaser: true,
+    },
   ];
 
   return (
@@ -56,46 +67,66 @@ export default function SocialAppsProject() {
 
       <section className="reveal-section py-10 px-6 md:px-10">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
-          
-          {apps.map((app, i) => (
-            <Link key={i} to={app.href} className="reveal-item block group">
-               <div className="glass h-full rounded-[2rem] p-8 md:p-12 border border-white/10 relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(139,126,200,0.15)]">
-                 
-                 {/* Background Glow on Hover */}
-                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ background: `radial-gradient(circle at 100% 100%, ${app.color}15, transparent 70%)` }} />
-                 
-                 <div className="relative z-10 flex flex-col h-full justify-between">
-                   <div>
-                     <div className="flex justify-between items-start mb-8">
-                       <div className="w-16 h-16 rounded-2xl flex items-center justify-center border transition-all duration-500 shadow-lg" style={{ backgroundColor: `${app.color}15`, borderColor: `${app.color}40`, color: app.color }}>
-                         {app.icon}
-                       </div>
-                       <div className="chip-dark text-xs" style={{ borderColor: `${app.color}30`, color: app.color }}>{app.tag}</div>
-                     </div>
-                     
-                     <h2 className="font-display font-bold text-4xl text-white mb-4 transition-colors duration-500" 
-                         style={{ '--hover-color': app.color }}
-                         onMouseEnter={(e) => e.currentTarget.style.color = app.color}
-                         onMouseLeave={(e) => e.currentTarget.style.color = 'white'}>
-                       {app.name}
-                     </h2>
-                     <p className="font-inter text-lg text-white/70 leading-relaxed max-w-md">
-                       {app.desc}
-                     </p>
-                   </div>
-                   
-                   <div className="mt-12 flex items-center gap-2 font-inter text-sm font-semibold transition-colors duration-300" style={{ color: app.color }}>
-                     Dive into app concepts
-                     <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
-                   </div>
-                 </div>
+          {apps.map((app, i) => {
+            const inner = (
+              <div className="glass h-full rounded-[2rem] p-8 md:p-12 border border-white/10 relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_rgba(139,126,200,0.15)]">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ background: `radial-gradient(circle at 100% 100%, ${app.color}15, transparent 70%)` }} />
+                <div className="relative z-10 flex flex-col h-full justify-between">
+                  <div>
+                    <div className="flex justify-between items-start mb-8">
+                      <div className="w-16 h-16 rounded-2xl flex items-center justify-center border transition-all duration-500 shadow-lg" style={{ backgroundColor: `${app.color}15`, borderColor: `${app.color}40`, color: app.color }}>
+                        {app.icon}
+                      </div>
+                      <div className="chip-dark text-xs" style={{ borderColor: `${app.color}30`, color: app.color }}>{app.tag}</div>
+                    </div>
+                    <h2
+                      className="font-display font-bold text-4xl text-white mb-4 transition-colors duration-500"
+                      style={{ '--hover-color': app.color }}
+                      onMouseEnter={(e) => { e.currentTarget.style.color = app.color; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.color = 'white'; }}
+                    >
+                      {app.name}
+                    </h2>
+                    <p className="font-inter text-lg text-white/70 leading-relaxed max-w-md">
+                      {app.desc}
+                    </p>
+                  </div>
+                  <div className="mt-12 flex items-center gap-2 font-inter text-sm font-semibold transition-colors duration-300" style={{ color: app.color }}>
+                    {app.teaser ? 'Peek at the spoiler' : 'Dive into app concepts'}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                  </div>
+                </div>
+              </div>
+            );
 
-               </div>
-            </Link>
-          ))}
-
+            return app.href ? (
+              <Link key={i} to={app.href} className="reveal-item block group">
+                {inner}
+              </Link>
+            ) : (
+              <button key={i} type="button" className="reveal-item block w-full group text-left bg-transparent border-0 p-0 cursor-pointer" onClick={() => setPortfolioPeek(true)}>
+                {inner}
+              </button>
+            );
+          })}
         </div>
       </section>
+
+      <BuildingSoonModal
+        open={portfolioPeek}
+        onClose={() => setPortfolioPeek(false)}
+        {...buildingSoonVariants.portfolio}
+        secondarySlot={(
+          <Link
+            to="/projects"
+            onClick={() => setPortfolioPeek(false)}
+            className="text-sm font-semibold underline underline-offset-4 decoration-white/25 hover:text-white transition-colors"
+            style={{ color: buildingSoonVariants.portfolio.accentColor }}
+          >
+            Back to the full project runway
+          </Link>
+        )}
+      />
     </div>
   );
 }

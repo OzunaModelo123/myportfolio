@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState, lazy, Suspense } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, ChevronDown, ExternalLink, Target, Code2, Zap, Crown } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { ArrowRight, ArrowUpRight, ChevronDown, ExternalLink, Target, Code2, Zap, Crown, Sparkles, GraduationCap } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import SEO, { SITE_URL } from '../components/SEO';
+import BuildingSoonModal from '../components/BuildingSoonModal';
+import FeaturedMagazineRow from '../components/FeaturedMagazineRow';
+import { buildingSoonVariants } from '../content/buildingSoonCopy';
 
 const ChessPlayground = lazy(() => import('../components/ChessPlayground'));
 
@@ -406,9 +409,11 @@ const ParticlePlayground = () => {
 // HOME
 // ─────────────────────────────────────────────────────────────────────────────
 export default function Home() {
+  const location = useLocation();
   const heroRef = useRef(null);
   const atomRef = useRef(null);
   const [playgroundMode, setPlaygroundMode] = useState('particles'); // 'particles' or 'chess'
+  const [buildingModal, setBuildingModal] = useState(null);
 
   // Dynamic age calculation based on Feb 24, 2002
   const age = (() => {
@@ -437,6 +442,14 @@ export default function Home() {
       ease: 'power2.out'
     });
   };
+
+  useEffect(() => {
+    if (location.hash !== '#working-on') return undefined;
+    const tid = window.setTimeout(() => {
+      document.getElementById('working-on')?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+    return () => window.clearTimeout(tid);
+  }, [location.hash, location.pathname]);
 
   // Entrance animations
   useEffect(() => {
@@ -500,7 +513,16 @@ export default function Home() {
       icon: <Lightbulb className="w-5 h-5" />,
     },
     {
-      num: '03', name: 'Social Wellness', tag: 'Intentional Social',
+      num: '03',
+      name: 'Learning Lab',
+      tag: 'Teaching tools · Sneak peek',
+      desc: 'Coming soon: a cheerful batch of helpers for coursework and curiosity—utilities aimed at learners, lecturers, tutors, anyone trying to tighten up how they explain or absorb an idea.',
+      color: '#5EC8D8',
+      img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=2560',
+      modalKey: 'education',
+    },
+    {
+      num: '04', name: 'Social Wellness', tag: 'Intentional Social',
       desc: 'Building products that elevate user psychology. Focusing on mindfulness and intentional interaction through daily photography.',
       color: '#8B7EC8', href: '/projects/social-wellness',
       img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=2560',
@@ -566,10 +588,10 @@ export default function Home() {
           </p>
 
           <div className="h-anim flex flex-wrap gap-3 mb-10">
-            <Link to="/projects" className="btn-glow">
+            <button type="button" className="btn-glow hoverable" onClick={() => setBuildingModal('portfolio')}>
               See what I'm building
               <ArrowRight className="w-4 h-4" />
-            </Link>
+            </button>
             <Link to="/contact" className="btn-glass">
               Say hi
             </Link>
@@ -654,7 +676,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════════════════════════════
           PROJECTS — Magazine cards with images
           ═══════════════════════════════════════════════════════════════════ */}
-      <section className="reveal-section py-24 md:py-40 px-6 md:px-10">
+      <section id="working-on" className="reveal-section py-24 md:py-40 px-6 md:px-10">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
             <div>
@@ -668,65 +690,14 @@ export default function Home() {
 
           <div className="space-y-6">
             {projects.map((p, i) => (
-              <div key={i} className="reveal-item">
-                {p.href ? (
-                  <Link to={p.href} className="block project-card group overflow-hidden rounded-3xl border border-white/20 transition-all duration-500 hover:border-white/40">
-                    <div className="card-glow" style={{ background: `radial-gradient(circle at 50% 50%, ${p.color}08, transparent 70%)` }} />
-                    <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-0">
-                      {/* Image side */}
-                      <div className="h-56 md:h-full w-full">
-                        <img src={p.img} alt={p.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                      </div>
-                      {/* Content side */}
-                      <div className="p-8 md:p-12 flex flex-col justify-between glass-light">
-                        <div>
-                          <div className="flex items-center gap-4 mb-5">
-                            <span className="font-mono text-xs text-white/70 tracking-widest">{p.num}</span>
-                            <div className="chip-dark" style={{ color: p.color, borderColor: `${p.color}40` }}>{p.tag}</div>
-                          </div>
-                          <h3 className="font-display font-bold text-3xl md:text-4xl text-white mb-4 group-hover:text-[#C75B39] transition-colors">
-                            {p.name}
-                          </h3>
-                          <p className="font-inter text-base text-white/90 leading-relaxed max-w-prose">{p.desc}</p>
-                        </div>
-                        <div className="flex items-center gap-2 font-inter text-sm font-semibold mt-6" style={{ color: p.color }}>
-                          Deep dive
-                          <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                ) : (
-                  <div className="project-card opacity-60">
-                    <div className="grid grid-cols-1 md:grid-cols-[1fr_1.2fr] gap-0">
-                      <div className="parallax-img h-56 md:h-72 relative">
-                        <img src={p.img} alt={p.name} className="w-full h-full object-cover grayscale" loading="lazy" />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <span className="font-mono text-[0.7rem] text-white/60 tracking-[0.3em] glass px-4 py-2 rounded-full">COMING SOON</span>
-                        </div>
-                      </div>
-                      <div className="p-8 md:p-10 flex flex-col justify-between">
-                        <div>
-                          <div className="flex items-center gap-4 mb-5">
-                            <span className="font-mono text-[0.6rem] text-white/20 tracking-widest">{p.num}</span>
-                            <div className="chip-dark" style={{ color: p.color, borderColor: `${p.color}25` }}>{p.tag}</div>
-                          </div>
-                          <h3 className="font-display font-bold text-3xl md:text-4xl text-white/40 mb-3">{p.name}</h3>
-                          <p className="font-inter text-sm text-white/20 leading-relaxed max-w-md">{p.desc}</p>
-                        </div>
-                        <div className="font-inter text-xs text-white/15 mt-6">Details dropping soon</div>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
+              <FeaturedMagazineRow key={i} project={p} onOpenModal={setBuildingModal} />
             ))}
           </div>
 
           <div className="text-center mt-14">
-            <Link to="/projects" className="btn-glass hoverable">
+            <button type="button" className="btn-glass hoverable inline-flex items-center gap-2" onClick={() => setBuildingModal('portfolio')}>
               See project deep-dive <ArrowRight className="w-4 h-4" />
-            </Link>
+            </button>
           </div>
         </div>
       </section>
@@ -873,6 +844,50 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {buildingModal && (
+        <BuildingSoonModal
+          open={Boolean(buildingModal)}
+          onClose={() => setBuildingModal(null)}
+          {...buildingSoonVariants[buildingModal]}
+          IconComponent={buildingModal === 'education' ? GraduationCap : Sparkles}
+          secondarySlot={
+            buildingModal === 'portfolio' ? (
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                <Link
+                  to="/projects"
+                  onClick={() => setBuildingModal(null)}
+                  className="text-sm font-semibold underline underline-offset-4 decoration-white/25 hover:text-white transition-colors"
+                  style={{ color: buildingSoonVariants.portfolio.accentColor }}
+                >
+                  Open the annotated project index
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setBuildingModal(null);
+                    requestAnimationFrame(() => {
+                      document.getElementById('working-on')?.scrollIntoView({ behavior: 'smooth' });
+                    });
+                  }}
+                  className="text-sm text-white/55 hover:text-white underline underline-offset-4 decoration-transparent hover:decoration-white/35 transition-colors"
+                >
+                  Jump to previews on this page
+                </button>
+              </div>
+            ) : (
+              <Link
+                to="/projects"
+                onClick={() => setBuildingModal(null)}
+                className="inline-flex text-sm font-semibold underline underline-offset-4 decoration-white/25 hover:text-white transition-colors"
+                style={{ color: buildingSoonVariants.education.accentColor }}
+              >
+                Peek at sibling launches on the Projects page
+              </Link>
+            )
+          }
+        />
+      )}
     </div>
   );
 }

@@ -4,13 +4,24 @@ import { ArrowLeft, ChevronDown, ExternalLink, Server, Database, Activity } from
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import SEO from '../components/SEO';
+import BuildingSoonModal from '../components/BuildingSoonModal';
+import { apiRapidComingSoonCopy } from '../content/buildingSoonCopy';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const APICard = ({ api, isOpen, onToggle, index }) => {
+const APICard = ({ api, isOpen, onToggle, onComingSoon, index }) => {
+  const handleAccess = (e) => {
+    e.stopPropagation();
+    if (api.rapidUrl) {
+      window.open(api.rapidUrl, '_blank', 'noopener,noreferrer');
+    } else {
+      onComingSoon();
+    }
+  };
+
   return (
     <div className={`reveal-item glass-light rounded-2xl overflow-hidden border transition-all duration-500 mb-4 ${isOpen ? 'border-[#5B8C6F]/50 shadow-[0_0_40px_rgba(91,140,111,0.15)] bg-white/[0.03]' : 'border-white/10 hover:border-white/30 hover:bg-white/[0.02]'}`}>
-      <button onClick={onToggle} className="w-full p-6 md:p-8 flex items-center justify-between text-left focus:outline-none group">
+      <button type="button" onClick={onToggle} className="w-full p-6 md:p-8 flex items-center justify-between text-left focus:outline-none group">
         <div className="flex items-center gap-6">
           <span className="font-mono text-sm text-white/30 tracking-widest hidden md:block">
             {String(index + 1).padStart(2, '0')}
@@ -31,9 +42,15 @@ const APICard = ({ api, isOpen, onToggle, index }) => {
               <p className="font-inter text-lg text-white/70 leading-relaxed max-w-3xl">
                 {api.desc}
               </p>
-              <button onClick={(e) => { e.preventDefault(); }} className="btn-glass whitespace-nowrap group/btn relative overflow-hidden" style={{ borderColor: isOpen ? '#5B8C6F40' : undefined }}>
+              <button
+                type="button"
+                onClick={handleAccess}
+                className="btn-glass whitespace-nowrap group/btn relative overflow-hidden"
+                style={{ borderColor: isOpen ? '#5B8C6F40' : undefined }}
+              >
                 <span className="relative z-10 flex items-center gap-2">
-                  Access API <ExternalLink className="w-4 h-4 group-hover/btn:rotate-12 transition-transform" />
+                  {api.rapidUrl ? 'View on RapidAPI' : 'Access API'}
+                  <ExternalLink className="w-4 h-4 group-hover/btn:rotate-12 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-[#5B8C6F]/20 translate-y-[100%] group-hover/btn:translate-y-0 transition-transform duration-300" />
               </button>
@@ -56,6 +73,7 @@ const APICard = ({ api, isOpen, onToggle, index }) => {
 export default function ApiCreationsProject() {
   const heroRef = useRef(null);
   const [openApiId, setOpenApiId] = useState(0);
+  const [showComingSoon, setShowComingSoon] = useState(false);
 
   useEffect(() => {
     const els = heroRef.current?.querySelectorAll('.p-anim');
@@ -70,8 +88,18 @@ export default function ApiCreationsProject() {
   }, []);
 
   const apis = [
-    { id: 0, name: 'Review Aggregation API', desc: 'A high-throughput microservice that seamlessly aggregates user reviews from Google, Yelp, Trustpilot, and custom sources into a standardized, analyzable data stream.' },
-    { id: 1, name: 'Receipt & Invoice Parser API', desc: 'Leverages computer vision and OCR layers to extract structured financial data (totals, taxes, line items, vendors) from raw receipt and invoice images with high fidelity.' },
+    {
+      id: 0,
+      name: 'Review Aggregation API',
+      desc: 'A high-throughput microservice that seamlessly aggregates user reviews from Google, Yelp, Trustpilot, and custom sources into a standardized, analyzable data stream.',
+      rapidUrl: 'https://rapidapi.com/OzunaModelo123/api/review-aggregation',
+    },
+    {
+      id: 1,
+      name: 'Receipt & Invoice Parser API',
+      desc: 'Leverages computer vision and OCR layers to extract structured financial data (totals, taxes, line items, vendors) from raw receipt and invoice images with high fidelity.',
+      rapidUrl: 'https://rapidapi.com/OzunaModelo123/api/receiptparser',
+    },
     { id: 2, name: 'AI Agent Tool API (MCP-ready)', desc: 'A sophisticated toolset built on the Model Context Protocol, allowing autonomous AI agents to easily discover, authenticate, and interact with your backend services.' },
     { id: 3, name: 'Local Business Data API', desc: 'Provides real-time, enriched metadata on local brick-and-mortar businesses, combining geospatial queries with operational metrics.' },
     { id: 4, name: 'Social Sentiment & Mention API', desc: 'Monitors targeted keywords across major social networks, applying NLP to quantify public sentiment, alert spikes, and track brand velocity.' },
@@ -144,12 +172,13 @@ export default function ApiCreationsProject() {
             
             <div className="flex flex-col gap-2">
               {apis.map((api, index) => (
-                <APICard 
-                  key={api.id} 
-                  api={api} 
+                <APICard
+                  key={api.id}
+                  api={api}
                   index={index}
-                  isOpen={openApiId === api.id} 
-                  onToggle={() => setOpenApiId(openApiId === api.id ? null : api.id)} 
+                  isOpen={openApiId === api.id}
+                  onToggle={() => setOpenApiId(openApiId === api.id ? null : api.id)}
+                  onComingSoon={() => setShowComingSoon(true)}
                 />
               ))}
             </div>
@@ -174,6 +203,8 @@ export default function ApiCreationsProject() {
           </div>
         </div>
       </section>
+
+      <BuildingSoonModal open={showComingSoon} onClose={() => setShowComingSoon(false)} {...apiRapidComingSoonCopy} />
 
     </div>
   );
