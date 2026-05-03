@@ -1,6 +1,6 @@
 import { Inter, Outfit, Crimson_Pro, JetBrains_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
-import './tailwind.css';
+import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import PhysicsBackground from '@/components/PhysicsBackground';
