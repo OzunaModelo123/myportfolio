@@ -38,7 +38,7 @@ export default function SocialAppsProject() {
       name: 'More mindful experiments',
       tag: 'Social lab · Teaser',
       color: '#C75B39',
-      desc: 'Additional consent-forward prompts and small-group rituals—in design behind FrameDay once shared infrastructure metrics look stable.',
+      desc: 'More in design behind FrameDay. Small-group rituals and lower-stimulus sharing experiments.',
       icon: <Sparkles className="w-8 h-8" />,
       teaser: true,
     },
@@ -48,7 +48,7 @@ export default function SocialAppsProject() {
     <div>
       <SEO
         title="Social Wellness | Daniel Ozoani"
-        description="Intentional social products with calmer pacing and prompts rooted in presence—starting with FrameDay, a mindful daily photo ritual."
+        description="Intentional social products built around presence and lower-stimulus interactions. FrameDay is the first."
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
@@ -59,7 +59,7 @@ export default function SocialAppsProject() {
           <h1 className="p-anim font-display font-black text-[clamp(4rem,9vw,7rem)] text-white leading-[0.85] tracking-tight mb-6">Social Wellness</h1>
           <div className="p-anim flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
             <p className="font-inter text-base md:text-xl text-white/80 max-w-prose leading-relaxed">
-              Experiments around consent-aware prompts and lower-stimulus timelines. FrameDay is the live slice: structured daily capture with social layers that prioritize reflection over leaderboard pressure. Additional prototypes follow as the foundations harden.
+              I’m building social products that don’t rely on endless feeds or engagement scores. FrameDay is the first: a daily photo prompt with lightweight sharing. More are in the works.
             </p>
           </div>
         </div>

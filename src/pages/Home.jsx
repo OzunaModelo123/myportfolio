@@ -500,14 +500,14 @@ export default function Home() {
   const projects = [
     {
       num: '01', name: 'Recaller', tag: 'B2B SaaS',
-      desc: 'Micro-assessments inside Slack and Teams so teams can see who actually retained training—not just who clicked “complete.” Built for L&D and operations leaders who need defensible readiness data.',
+      desc: 'Micro-assessments inside Slack and Teams that show you who actually retained the training, not just who clicked complete. Built for L&D and ops teams who need real readiness data.',
       color: '#C75B39', href: '/projects/recaller',
       img: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2560',
       icon: <Target className="w-5 h-5" />,
     },
     {
       num: '02', name: 'API Creations', tag: 'Infrastructure',
-      desc: 'Focused REST services that turn noisy real-world inputs into clean JSON—reviews, receipts, and similar pipelines. Several collections are published on RapidAPI; others are staged for release.',
+      desc: 'Focused REST services that take noisy real-world inputs and return clean JSON. Reviews, receipts, and similar pipelines. Several are live on RapidAPI, others are staged.',
       color: '#5B8C6F', href: '/projects/api-creations',
       img: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=2560',
       icon: <Lightbulb className="w-5 h-5" />,
@@ -516,7 +516,7 @@ export default function Home() {
       num: '03',
       name: 'Learning Lab',
       tag: 'Study apps · Coming soon',
-      desc: 'Study tools designed to make revision easier and more efficient: less context-switching, clearer structure, and feedback you can act on—without turning learning into a gimmick.',
+      desc: 'Study tools built to make revision less painful. Clearer structure, less context-switching, feedback that actually tells you something.',
       color: '#5EC8D8',
       img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=2560',
       modalKey: 'education',
@@ -534,7 +534,7 @@ export default function Home() {
     <div>
       <SEO
         title="Builder, TPM & Developer | Daniel Ozoani"
-        description="Technical Project Manager and developer in Toronto—delivery, stakeholder clarity, retail and SaaS rollouts, plus products and APIs built on the side."
+        description="Technical Project Manager and developer in Toronto. I run programs, dabble in building products, and spend a lot of time thinking about AI and how it fits into real workflows."
         jsonLd={[
           {
             '@context': 'https://schema.org',
@@ -568,7 +568,7 @@ export default function Home() {
           <div className="h-anim mb-8">
             <div className="status-live inline-flex">
               <span className="status-dot-green" />
-              Open to TPM, engineering, and product collaboration
+              Open to all work and collaboration
             </div>
           </div>
 
@@ -584,12 +584,12 @@ export default function Home() {
           </div>
 
           <p className="h-anim font-inter text-lg md:text-xl text-white max-w-prose leading-relaxed mb-10 text-shadow-sm">
-            {age}. Technical PM and developer—I run complex rollouts end to end, build when the problem needs code, and use chess and side projects to stay sharp on systems thinking.
+            {age}. I run programs as a TPM, dabble in building products on the side, and spend probably too much time reading about AI and LLMs. Toronto-based.
           </p>
 
           <div className="h-anim flex flex-wrap gap-3 mb-10">
             <button type="button" className="btn-glow hoverable" onClick={() => setBuildingModal('portfolio')}>
-              What's shipping next
+              What I'm building
               <ArrowRight className="w-4 h-4" />
             </button>
             <Link to="/contact" className="btn-glass">
@@ -627,16 +627,16 @@ export default function Home() {
                 I love to <span className="font-serif italic" style={{ color: '#C75B39' }}>build things.</span>
               </h2>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-5">
-                I’m a Technical Project Manager who still writes software when that’s what moves the needle. Most of my day is aligning stakeholders, timelines, and vendors until something lands in production without surprises.
+                I’m a TPM. I run programs, manage vendors and stakeholders, and make sure things actually ship. Most of my work has been in retail tech and SaaS.
               </p>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-5">
-                Away from enterprise roadmaps I build smaller products—training readiness tooling, APIs, learning apps, intentional social experiments—partly because shipping end-to-end keeps my judgment honest.
+                On the side I dabble in building products. I spend a lot of time in the AI space, not so much writing every line from scratch but thinking about how models fit into real workflows and building things around that.
               </p>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-5">
-                Cinematography and development both pull me toward the same goal: deliberate craft. One is light and lenses; the other is latency and readability, but both reward patience.
+                I also shoot film and do cinematography when time allows. Chess is something I play badly but consistently.
               </p>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-10">
-                I play chess for practice, not trophies. If you like direct communication and builders who occasionally laugh on Zoom, we’ll get along.
+                Hit the link below if you want the full story.
               </p>
               <div className="reveal-item flex flex-wrap gap-3">
                 <Link to="/about" className="btn-glow">
@@ -765,12 +765,12 @@ export default function Home() {
           <div className="text-center mb-12">
             <div className="reveal-item sec-tag justify-center mb-6">The Playground</div>
             <h2 className="reveal-item font-display font-bold text-[clamp(2.5rem,7vw,4.5rem)] text-white leading-[0.95] tracking-tight mb-4">
-              Play in the <span className="font-serif italic" style={{ color: '#C75B39' }}>sandbox.</span>
+              A spot to <span className="font-serif italic" style={{ color: '#C75B39' }}>kill some time.</span>
             </h2>
             <p className="reveal-item font-inter text-base text-white/90 max-w-prose mx-auto leading-relaxed mb-8">
               {playgroundMode === 'particles'
-                ? 'Interactive particles—nothing to optimize, just a small canvas toy. Drag and click around if you want a break before the serious links.'
-                : 'Browser chess against a lightweight engine: pick difficulty on the sidebar. Useful for screenshots, breaks, or testing whether you remembered Nf3.'
+                ? "Honestly just a fun little thing I put here. Click and drag, watch it go. Nothing to figure out, just a vibe."
+                : "I built a chess bot and it has genuinely no chill. Even the easy mode will catch you slipping. I still lose to it sometimes and I made it, so good luck."
               }
             </p>
 
@@ -826,13 +826,13 @@ export default function Home() {
           ═══════════════════════════════════════════════════════════════════ */}
       <section className="reveal-section py-28 md:py-40 px-6 md:px-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="reveal-item sec-tag justify-center mb-8" style={{ color: '#E8856E' }}>Next step</div>
+          <div className="reveal-item sec-tag justify-center mb-8" style={{ color: '#E8856E' }}>Get in touch</div>
           <h2 className="reveal-item font-display font-bold text-[clamp(3rem,8vw,6rem)] text-white leading-[0.88] tracking-tight mb-6">
-            Working on something<br />
-            <span className="font-serif italic" style={{ color: '#E8856E' }}>that needs a TPM or builder?</span>
+            Want to work<br />
+            <span className="font-serif italic" style={{ color: '#E8856E' }}>together?</span>
           </h2>
           <p className="reveal-item font-inter text-base md:text-xl text-white/30 max-w-lg mx-auto leading-relaxed mb-12">
-            Full-time roles, contracts, integrations, early products—share context and timelines. I read what you send and answer in plain language.
+            Roles, contracts, collabs, or just a conversation. I actually read what you send and I reply like a normal person.
           </p>
           <div className="reveal-item flex flex-wrap gap-4 justify-center">
             <Link to="/contact" className="btn-glow">

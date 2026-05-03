@@ -111,7 +111,7 @@ export default function ApiCreationsProject() {
     <div>
       <SEO
         title="API Creations & Microservices | Daniel Ozoani"
-        description="Daniel Ozoani builds REST APIs and integration services—for reviews, receipts, agent tooling, scraping, sentiment, alerts, and more—with clear contracts and pragmatic operations."
+        description="REST APIs and backend integration services by Daniel Ozoani. Reviews, receipts, agent tooling, scraping, sentiment, alerts and more."
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"
@@ -126,7 +126,7 @@ export default function ApiCreationsProject() {
           <h1 className="p-anim font-display font-black text-[clamp(4rem,9vw,7rem)] text-white leading-[0.85] tracking-tight mb-6">Backend Systems & <br />Microservices</h1>
           <div className="p-anim flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
             <p className="font-inter text-base md:text-xl text-white/80 max-w-prose leading-relaxed">
-              Narrow, well-owned microservices ingest messy operational inputs and return dependable JSON—so product teams integrate once and troubleshoot in one place instead of patching one-off scripts.
+              Narrow, focused microservices that take messy real-world inputs and return clean JSON. The idea is that product teams integrate once and can actually troubleshoot in one place.
             </p>
             <div className="flex flex-col gap-3 flex-shrink-0">
               <div className="status-live"><span className="status-dot-green" /> Live where it counts</div>
@@ -145,7 +145,7 @@ export default function ApiCreationsProject() {
             <div className="reveal-item sec-tag mb-4">01 · The Approach</div>
             <h2 className="reveal-item font-display font-bold text-3xl md:text-5xl text-white mb-6 tracking-tight">Small pieces, stubborn uptime.</h2>
             <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-6">
-              Each service owns a narrow surface—parse receipts, aggregate reviews, expose agent-friendly tools—so dashboards, alerts, and on-call rotations map cleanly to deployable units.
+              Each service owns a narrow surface: parse receipts, aggregate reviews, expose agent-friendly tools. Keeps dashboards, alerts, and on-call rotations clean.
             </p>
             
             <div className="reveal-item grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
@@ -167,7 +167,7 @@ export default function ApiCreationsProject() {
             <div className="reveal-item sec-tag mb-4">02 · API Collection</div>
             <h2 className="reveal-item font-display font-bold text-3xl md:text-5xl text-white mb-6 tracking-tight">API catalogue</h2>
             <p className="reveal-item font-inter text-lg text-white/80 leading-relaxed mb-12">
-              Each entry expands into purpose, payloads, and where it runs today. Live RapidAPI endpoints open directly; drafts are documented here and available on request while release details are finalized.
+              Each entry covers what it does, what the payloads look like, and where it runs. Live RapidAPI endpoints open directly. Drafts are documented and available on request.
             </p>
             
             <div className="flex flex-col gap-2">
@@ -192,13 +192,13 @@ export default function ApiCreationsProject() {
           <div className="absolute inset-0 bg-gradient-to-br from-[#5B8C6F]/10 to-transparent pointer-events-none" />
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
             <div>
-              <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-4">Integration or ingestion problem?</h2>
+              <h2 className="font-display font-bold text-3xl md:text-4xl text-white mb-4">Have an integration or data problem?</h2>
               <p className="font-inter text-white/70 max-w-md">
-                Share the upstream constraints, SLA, and downstream consumers. I will propose a decomposition, auth model, and monitoring hooks that match how your team ships.
+                Share the upstream constraints, SLA, and what's downstream. I can help figure out decomposition, auth, and monitoring.
               </p>
             </div>
             <Link to="/contact" className="btn-glow flex-shrink-0" style={{ '--glow-color': '#5B8C6F' }}>
-              Discuss an integration <ExternalLink className="w-4 h-4 ml-2" />
+              Get in touch <ExternalLink className="w-4 h-4 ml-2" />
             </Link>
           </div>
         </div>

@@ -75,7 +75,7 @@ export default function Projects() {
   }, []);
 
   const features = [
-    { num: '01', tag: 'Readiness Intelligence', title: 'A single readiness score stakeholders can interpret', body: 'Accuracy, response time, and follow-up prompts roll into one view so managers see who is field-ready versus who needs coaching—without assembling spreadsheets by hand.', card: <ShufflerCard /> },
+    { num: '01', tag: 'Readiness Intelligence', title: 'A single readiness score', body: 'Accuracy, response time, and follow-up prompts roll into one view so managers can see who is field-ready and who needs more coaching, without assembling spreadsheets.', card: <ShufflerCard /> },
     { num: '02', tag: 'Risk detection', title: 'Surface mis-calibrated confidence early', body: 'When someone answers quickly but misses key items, Recaller highlights the cohort for targeted reinforcement before the gap shows up downstream in operations.', card: <TypewriterCard /> },
     {
       num: '03', tag: 'Conversational assistant', title: 'In-channel guidance to the training source', body: 'Learners stay in Slack or Teams: the assistant finds the clip or checklist that answers their question instead of sending them through a maze of portals.',
@@ -97,7 +97,7 @@ export default function Projects() {
       </div>
     },
     {
-      num: '04', tag: 'Measured impact', title: 'Before-and-after knowledge deltas', body: 'Baseline check, training window, spaced follow-up assessments. The uplift is summarized for program owners who need quantitative talking points—not anecdotal reassurance.',
+      num: '04', tag: 'Measured impact', title: 'Before and after knowledge deltas', body: 'Baseline check, training window, follow-up assessments. The uplift is summarized for program owners who need actual numbers.',
       card: <div className="h-52 glass rounded-2xl p-4 flex flex-col justify-between">
         <div className="font-mono text-[0.58rem] text-[#C75B39] tracking-widest mb-3">ROI Dashboard · Knowledge Delta</div>
         {[{ label: 'Safety Protocols', before: 42, after: 88, gain: '+46%' }, { label: 'Product Knowledge', before: 55, after: 91, gain: '+36%' }, { label: 'Compliance Basics', before: 61, after: 94, gain: '+33%' }].map((r, i) => (
@@ -120,7 +120,7 @@ export default function Projects() {
     <div>
       <SEO
         title="Recaller | Daniel Ozoani"
-        description="Recaller sends short Slack and Teams assessments so training teams can measure real readiness and retention—not just course completion rates."
+        description="Recaller sends short assessments through Slack and Teams so training teams can actually see who retained the material, not just who completed the course."
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"
@@ -136,7 +136,7 @@ export default function Projects() {
           <div className="p-anim font-serif italic text-[clamp(1.5rem,4vw,2.8rem)] text-[#C75B39] leading-[1.1] mb-8">Training impact you can show in a status meeting.</div>
           <div className="p-anim flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
             <p className="font-inter text-base md:text-xl text-white/80 max-w-prose leading-relaxed">
-              Organizations spend heavily on LMS and workshops, but reporting often stops at completions. Recaller collects lightweight evidence of what employees actually retained—inside Slack or Teams—so readiness is visible before a mistake shows up with a customer.
+              Organizations spend a lot on LMS platforms and workshops, but reporting usually stops at completions. Recaller fills the gap. It runs short assessments inside Slack or Teams so you can see who actually retained the material before a mistake shows up with a customer.
             </p>
             <div className="flex flex-col gap-3 flex-shrink-0">
               <div className="status-live"><span className="status-dot-green" /> Core stack lives in staging trials</div>
@@ -217,7 +217,7 @@ export default function Projects() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {[
               { n: '01', title: 'In-channel micro checks', desc: 'No extra logins. Short assessments arrive where people already collaborate so completion rates reflect real workflows, not a forgotten LMS tab.', color: '#C75B39' },
-              { n: '02', title: 'Instrumentation by default', desc: 'Each interaction records accuracy, pacing, and follow-up prompts so patterns are visible programmatically—not only in hindsight after an incident.', color: '#8B7EC8' },
+              { n: '02', title: 'Instrumentation by default', desc: 'Each interaction records accuracy, pacing, and follow-up prompts so patterns are visible before an incident, not after.', color: '#8B7EC8' },
               { n: '03', title: 'Quantified lift for reviewers', desc: 'Before-after deltas give finance and executives a numerator they can reconcile against program cost, staffing time, or compliance risk.', color: '#5B8C6F' },
             ].map((s, i) => (
               <div key={i} className="reveal-item glass-light rounded-2xl p-7 flex flex-col gap-6 group hover:border-[#C75B39]/20 transition-all duration-500 hoverable">
@@ -236,13 +236,13 @@ export default function Projects() {
       <section className="py-24 md:py-32 px-6 md:px-10">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-display font-bold text-[clamp(2.5rem,7vw,5rem)] text-white leading-[0.92] tracking-tight mb-6">
-            Interested in architecture or pilots?
+            Want to know more or run a pilot?
           </h2>
           <p className="font-inter text-base text-white/90 max-w-prose mx-auto mb-10 leading-relaxed">
-            I can walk through ingestion, Slack authentication, retrieval guardrails, and how dashboards map back to remediation workflows.
+            I can walk through how ingestion works, how Slack auth is handled, and how the dashboards connect back to actual remediation.
           </p>
           <Link to="/contact" className="btn-glow">
-            Start a conversation <ArrowRight className="w-4 h-4" />
+            Get in touch <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </section>

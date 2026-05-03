@@ -38,7 +38,7 @@ export default function Research() {
       img: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&q=80&w=800', status: 'Published', color: '#C75B39', tags: ['AI', 'Project Management'], link: '/research/ai-copilot'
     },
     {
-      tag: 'Research · Corporate L&D', title: 'Why Training Programs Fail', desc: 'Most corporate training gets forgotten within a week. Research the science behind behavioral change—what makes skills stick.',
+      tag: 'Research · Corporate L&D', title: 'Why Training Programs Fail', desc: 'Most corporate training gets forgotten within a week. Research the science behind behavioral change and what actually makes skills stick.',
       img: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=800', status: 'Published', color: '#5B8C6F', tags: ['L&D', 'Behavioral Science'], link: '/research/training-programs'
     },
     {
@@ -69,7 +69,7 @@ export default function Research() {
             Things I'm<br /><span className="text-[#C75B39] drop-shadow-xl inline-block mt-2">thinking about.</span>
           </h1>
           <p className="r-anim font-inter text-base md:text-xl text-white/80 max-w-prose leading-relaxed">
-            I use this space to dump my research notes, product teardowns, and ongoing case studies. Just raw thoughts, no fluff.
+            These are the things I go deep on when something catches my attention. Some are proper research papers, some are just me thinking out loud.
           </p>
         </div>
       </section>

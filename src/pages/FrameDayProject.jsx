@@ -26,7 +26,7 @@ export default function FrameDayProject() {
     <div>
       <SEO
         title="FrameDay | Daniel Ozoani"
-        description="FrameDay sends one thoughtful photo prompt per day—built to encourage presence, gentle collaboration, and a visual journal without addictive feed mechanics."
+        description="FrameDay is a daily photo prompt app built around presence and intentional sharing, without the addictive feed mechanics."
       />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1510519133417-2407dcafb440?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"
@@ -41,7 +41,7 @@ export default function FrameDayProject() {
           <h1 className="p-anim font-display font-black text-[clamp(4rem,9vw,7rem)] text-white leading-[0.85] tracking-tight mb-6">FrameDay</h1>
           <div className="p-anim flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
             <p className="font-inter text-base md:text-xl text-white/80 max-w-prose leading-relaxed">
-              A structured daily cue to observe your surroundings with a camera before defaulting to feeds. Collaboration stays lightweight: shared prompts, restrained reactions, and optional duets—not endless comparison.
+              One photo prompt a day. You go out, you notice something, you capture it. Sharing is optional and lightweight. The whole point is getting you off the feed, not onto a new one.
             </p>
             <div className="flex flex-col gap-3 flex-shrink-0">
               <div className="status-live" style={{ color: '#8B7EC8', borderColor: '#8B7EC840' }}>
@@ -66,7 +66,7 @@ export default function FrameDayProject() {
               <strong>FrameDay</strong> pairs journaling with photography: users receive one prompt push per day, respond with an image rooted in real life, and optionally share interpretations with trusted connections.
             </p>
             <p className="font-inter text-lg text-white/80 leading-relaxed text-left mt-6">
-              The intent is tactile presence—moving through spaces with curiosity—while keeping passive scrolling as an opt-in elsewhere. Mild physical activity and attention to textures or light become the reward, not an engagement score.
+              The intent is to get people moving through their actual environment with a camera. Passive scrolling is deliberately not a feature here. Noticing light, texture, and small details is the whole reward.
             </p>
           </div>
 
@@ -77,7 +77,7 @@ export default function FrameDayProject() {
             <div className="sec-tag mb-4">02 · Mechanics of Mindfulness</div>
             <h2 className="font-display font-bold text-3xl md:text-5xl text-white mb-6 tracking-tight">Why the prompts feel purposeful.</h2>
             <p className="font-inter text-lg text-white/80 leading-relaxed max-w-3xl mb-12">
-              Product decisions emphasize wandering with a lens over leaderboard theatrics—lightweight rituals, restrained reactions, and cohort experiences that reinforce curiosity instead of influencer aesthetics.
+              The product decisions are intentional: no leaderboards, no follower counts, no algorithmic feed. Lightweight rituals and small-group sharing that reinforce curiosity.
             </p>
             
             <div className="space-y-12">
@@ -111,7 +111,7 @@ export default function FrameDayProject() {
                 </p>
                 <div className="bg-[#8B7EC8]/10 rounded-xl p-4 border border-[#8B7EC8]/20">
                   <p className="font-inter text-sm text-[#8B7EC8]">
-                    <strong>Why it works:</strong> Replacing the dopamine hit of a "like" with genuine emotional resonance shifts the motivation. Users aren't looking for the most flashy, perfectly edited photo—they are looking deeply into the world to find something that provokes a specific human feeling.
+                    <strong>Why it works:</strong> Replacing the dopamine hit of a like with genuine emotional resonance shifts the motivation. Users are looking deeply into the world to find something that provokes a real feeling, not chasing the most edited photo.
                   </p>
                 </div>
               </div>

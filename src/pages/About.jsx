@@ -217,7 +217,7 @@ export default function About() {
     {
       title: 'Recaller',
       tag: 'B2B SaaS · Training Intelligence',
-      desc: 'Slack and Teams micro-assessments for training readiness and retention—signals L&D teams can cite in reviews, not just completion rates.',
+      desc: 'Slack and Teams micro-assessments that give L&D teams actual readiness data, not just completion rates.',
       color: '#C75B39',
       to: '/projects/recaller',
     },
@@ -257,7 +257,7 @@ export default function About() {
           <div className="h-anim mb-5">
             <div className="status-live inline-flex">
               <span className="status-dot-green" />
-              Open to full-time, contract, and collaboration
+              Open to all work and collaboration
             </div>
           </div>
           <h1 className="h-anim font-display font-black text-[clamp(3.5rem,9vw,7rem)] text-white leading-[0.87] tracking-tight mb-4">
@@ -296,16 +296,16 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-20 items-start">
             <div>
               <h2 className="sr font-display font-bold text-[clamp(2rem,5vw,3.2rem)] text-white leading-[0.95] tracking-tight mb-7">
-                From roadmap to rollout—and the code path when needed.
+                From roadmap to rollout, and into the code when it helps.
               </h2>
               <p className="sr font-inter text-base text-white/75 leading-relaxed mb-4">
                 Most of my work sits where programs meet reality: aligning vendors and internal teams, keeping RAID logs honest, and steering launches so surprises happen in rehearsal, not in production.
               </p>
               <p className="sr font-inter text-base text-white/75 leading-relaxed mb-4">
-                I'm still hands-on technically when it helps—I prototype integrations, tighten API contracts, or document the fragile parts so nobody has to tribal-knowledge them later.
+                I'm still hands-on technically when it helps. I prototype integrations, tighten API contracts, or document the fragile parts so they don't get passed down as tribal knowledge.
               </p>
               <p className="sr font-inter text-base text-white/75 leading-relaxed">
-                Outside client work I build products that scratch operational itches—training telemetry, ingestion APIs, quieter social apps—and I decompress with chess study, filming, and the occasional obsessive documentation deep dive (someone has to enjoy release notes).
+                Outside work I build smaller products around things I think are broken or could be better. Mostly in the AI and data space. I also shoot film, study chess openings I immediately forget, and read about AI developments probably more than is healthy.
               </p>
             </div>
             <div className="sr">
@@ -433,7 +433,7 @@ export default function About() {
                 <h3 className="font-display font-bold text-white text-lg mb-1">AI for Product Managers</h3>
                 <p className="font-inter text-sm text-white/60 mb-1">Advance Learning (management leadership track)</p>
                 <p className="font-inter text-sm text-white/45 leading-relaxed">
-                  Focus on realistic AI assists for discovery, estimation, and communication—along with judgment about where models still need humans in the loop, without leaning on vague vendor hype.
+                  Covers where AI actually helps in PM work, where it falls short, and how to think about it without getting swept up in the hype.
                 </p>
                 <div className="mt-4 flex items-center gap-2 font-inter text-sm text-[#8B7EC8]">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#8B7EC8] animate-pulse" />
@@ -456,7 +456,7 @@ export default function About() {
             <span className="font-serif italic" style={{ color: '#E8856E' }}>that needs execution?</span>
           </h2>
           <p className="sr font-inter text-base text-white/50 max-w-md mx-auto leading-relaxed mb-10">
-            Send scope, timeline, and what “done” looks like. I answer with specifics—owners, risks, and what I’d validate first.
+            Send scope, timeline, and what done looks like. I respond with specifics.
           </p>
           <div className="sr flex flex-wrap gap-4 justify-center">
             <Link to="/contact" className="btn-glow">Email me <ArrowRight className="w-4 h-4" /></Link>

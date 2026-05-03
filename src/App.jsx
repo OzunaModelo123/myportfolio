@@ -56,7 +56,7 @@ const NotFound = () => (
     />
     <div className="text-center">
       <h1 className="font-display font-black text-[clamp(5rem,15vw,10rem)] text-white/10 leading-none">404</h1>
-      <p className="font-inter text-lg text-white/60 mb-8">That page isn't here—double-check the link or head back home.</p>
+      <p className="font-inter text-lg text-white/60 mb-8">That page doesn't exist. Check the URL or just go back home.</p>
       <Link to="/" className="btn-glow">Back to home <ArrowRight className="w-4 h-4" /></Link>
     </div>
   </div>
@@ -518,7 +518,7 @@ const Footer = () => (
         <div className="md:col-span-2">
           <div className="font-display font-black text-2xl tracking-tight text-white mb-4">Daniel Ozoani</div>
           <p className="font-inter text-sm text-white/70 max-w-sm leading-relaxed mb-6">
-            Technical PM and developer in Toronto—focused on dependable delivery and products that behave in production.
+            TPM and builder in Toronto. I run programs, ship things, and dabble in building products on the side.
           </p>
           <div className="flex gap-3">
             {[
@@ -565,7 +565,7 @@ const Footer = () => (
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="status-live bg-white/10 px-3 py-1.5 rounded-full border border-white/20 text-white/80">
           <span className="status-dot-green" />
-          Open to roles and contracts with clear outcomes
+          Open to all work and collaboration
         </div>
         <div className="font-mono text-[0.65rem] text-white/50 tracking-widest">
           © {new Date().getFullYear()} Daniel Ozoani

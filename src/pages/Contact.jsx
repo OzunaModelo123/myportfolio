@@ -36,7 +36,7 @@ export default function Contact() {
 
   return (
     <div ref={containerRef} className="min-h-screen pt-32 pb-24 px-6 md:px-10 relative overflow-hidden flex items-center justify-center">
-      <SEO title="Contact | Daniel Ozoani" description="Reach Daniel Ozoani for TPM work, integrations, or product builds—work email for formal engagements, personal inbox for longer conversations." />
+      <SEO title="Contact | Daniel Ozoani" description="Get in touch with Daniel Ozoani. Two inboxes: one for work and contracts, one for everything else." />
       {/* Background Ambience */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#5B8C6F]/10 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#C75B39]/10 rounded-full blur-[100px] pointer-events-none" />
@@ -47,7 +47,7 @@ export default function Contact() {
             Get in <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5B8C6F] to-[#8A9A8F]">touch.</span>
           </h1>
           <p className="reveal-item font-inter text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-            Choose the inbox that fits: business and contractual work, or longer-form introductions and exploratory threads.
+            Two inboxes. Work stuff goes to the work one, everything else goes to the personal one. Both get read.
           </p>
         </div>
 
@@ -62,7 +62,7 @@ export default function Contact() {
               </div>
               <h2 className="font-display font-bold text-3xl text-white mb-4">Business & engagements</h2>
               <p className="font-inter text-white/60 leading-relaxed mb-8">
-                Contracting, B2B products, timelines, RACI, budgets—inquiries that belong on a procurement or vendor record.
+                Contracts, B2B stuff, timelines, RACI, budgets. Basically anything formal.
               </p>
             </div>
             
@@ -93,7 +93,7 @@ export default function Contact() {
               </div>
               <h2 className="font-display font-bold text-3xl text-white mb-4">General & personal</h2>
               <p className="font-inter text-white/60 leading-relaxed mb-8">
-                Questions about tools, collaboration ideas, film or side projects—or anything that does not need a statement of work yet.
+                Questions about tools, collaboration ideas, film, side projects. Anything that doesn’t need a SOW.
               </p>
             </div>
             
