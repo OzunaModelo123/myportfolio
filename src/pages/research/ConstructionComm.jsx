@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import SEO from '../../components/SEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,6 +48,10 @@ export default function ConstructionComm() {
 
   return (
     <div>
+      <SEO
+        title="The Hidden Cost of Poor Communication — Daniel Ozoani"
+        description="Why tech debt is often talk debt—how information degrades across a product lifecycle and how to fix it before the first line of code."
+      />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen" />

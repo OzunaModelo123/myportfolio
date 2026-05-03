@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ChevronDown, ExternalLink, Server, Database, Activity } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import SEO from '../components/SEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,6 +81,10 @@ export default function ApiCreationsProject() {
 
   return (
     <div>
+      <SEO
+        title="API Creations — Backend microservices — Daniel Ozoani"
+        description="Robust REST and MCP-ready APIs—enterprise microservices for data pipelines, scraping, sentiment, reviews, receipts, compliance, and AI agents."
+      />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen grayscale" />

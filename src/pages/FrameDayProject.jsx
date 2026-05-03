@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, Sparkles, MapPin, Users, Heart, Award, Camera, Repeat, Compass } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import SEO from '../components/SEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,6 +24,10 @@ export default function FrameDayProject() {
 
   return (
     <div>
+      <SEO
+        title="FrameDay — Mindful camera app — Daniel Ozoani"
+        description="FrameDay is a mindful camera app that turns daily surroundings into a collaborative visual diary—breaking the endless scroll."
+      />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1510519133417-2407dcafb440?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover opacity-20 mix-blend-screen grayscale" />

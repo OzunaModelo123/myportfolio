@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import SEO from '../../components/SEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -125,6 +126,10 @@ export default function DigitalContentMarketing() {
 
   return (
     <div>
+      <SEO
+        title="How Digital Content Has Transformed Marketing — Daniel Ozoani"
+        description="Six eras of digital content and marketing—from the first banner ad to AI-augmented publishing. Research paper, April 2025."
+      />
       {/* Hero */}
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img

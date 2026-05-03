@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import SEO from '../../components/SEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,6 +24,10 @@ export default function TrainingPrograms() {
 
   return (
     <div>
+      <SEO
+        title="Why Training Programs Fail — Daniel Ozoani"
+        description="The science behind skill retention, the forgetting curve, and why most corporate training never sticks—plus what actually works."
+      />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen" />

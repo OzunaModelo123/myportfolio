@@ -18,14 +18,19 @@ export default function Contact() {
     }
   }, []);
 
-  const handleCopy = (email, type) => {
-    navigator.clipboard.writeText(email);
-    if (type === 'work') {
-      setCopiedWork(true);
-      setTimeout(() => setCopiedWork(false), 2000);
-    } else {
-      setCopiedPersonal(true);
-      setTimeout(() => setCopiedPersonal(false), 2000);
+  const handleCopy = async (email, type) => {
+    try {
+      if (!navigator.clipboard?.writeText) return;
+      await navigator.clipboard.writeText(email);
+      if (type === 'work') {
+        setCopiedWork(true);
+        setTimeout(() => setCopiedWork(false), 2000);
+      } else {
+        setCopiedPersonal(true);
+        setTimeout(() => setCopiedPersonal(false), 2000);
+      }
+    } catch {
+      // Clipboard can fail without user gesture or permissions; fail silently
     }
   };
 

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import SEO from '../../components/SEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,6 +48,10 @@ export default function DigitalTransformation() {
 
   return (
     <div>
+      <SEO
+        title="Surviving the Retail Tech Refresh — Daniel Ozoani"
+        description="How to upgrade retail store technology without halting revenue, burning out teams, or ruining customer experience."
+      />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.stockcake.com/public/2/6/2/262dff79-4f2d-4d47-aa83-7ce6b2b90730/busy-supermarket-scene-stockcake.jpg" alt="" aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-screen" />

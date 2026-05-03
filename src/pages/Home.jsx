@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowUpRight, ChevronDown, ExternalLink, Target, Code2, Zap, Crown } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import SEO from '../components/SEO';
+import SEO, { SITE_URL } from '../components/SEO';
 
 const ChessPlayground = lazy(() => import('../components/ChessPlayground'));
 
@@ -510,9 +510,29 @@ export default function Home() {
 
   return (
     <div>
-      <SEO 
-        title="Daniel Ozoani — Builder, TPM & Developer" 
-        description="I'm a Technical Project Manager and developer who loves building products, exploring AI, and thinking in systems." 
+      <SEO
+        title="Daniel Ozoani — Builder, TPM & Developer"
+        description="I'm a Technical Project Manager and developer who loves building products, exploring AI, and thinking in systems."
+        jsonLd={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'Daniel Ozoani — Portfolio',
+            description: 'Portfolio of Daniel Ozoani — Technical Project Manager and developer.',
+            url: SITE_URL,
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Person',
+            name: 'Daniel Ozoani',
+            url: SITE_URL,
+            jobTitle: 'Technical Project Manager & Developer',
+            sameAs: [
+              'https://www.linkedin.com/in/daniel-ozoani-b20539252/',
+              'https://github.com/OzunaModelo123',
+            ],
+          },
+        ]}
       />
       {/* ═══════════════════════════════════════════════════════════════════
           HERO — Full viewport with background image + physics overlay

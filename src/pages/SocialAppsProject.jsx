@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Camera } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import SEO from '../components/SEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -34,6 +35,10 @@ export default function SocialAppsProject() {
 
   return (
     <div>
+      <SEO
+        title="Social Wellness — Intentional social products — Daniel Ozoani"
+        description="Products that elevate user psychology—FrameDay and experiments in mindful, intentional social experiences."
+      />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
           <Link to="/projects" className="p-anim inline-flex items-center gap-2 font-inter text-sm text-white/70 hover:text-white transition-colors mb-10 group">

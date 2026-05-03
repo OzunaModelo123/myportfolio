@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowLeft, MessageSquare } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import SEO from '../components/SEO';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -109,7 +110,10 @@ export default function Projects() {
 
   return (
     <div>
-      {/* Hero */}
+      <SEO
+        title="Recaller — Training intelligence — Daniel Ozoani"
+        description="Training intelligence that proves ROI. Slack-ready assessments that reveal readiness, risk patterns, and real knowledge retention."
+      />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=2560" alt="" aria-hidden="true"
           className="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-screen" loading="lazy" />
