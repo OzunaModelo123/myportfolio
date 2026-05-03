@@ -3,6 +3,7 @@ import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom'
 import { ArrowRight, Menu, X, Mail, Github, Linkedin, ExternalLink, ArrowUp } from 'lucide-react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { Analytics } from '@vercel/analytics/react';
 
 // Eagerly load Home (LCP route) and lightweight pages
 import Home from './pages/Home';
@@ -597,6 +598,7 @@ export default function App() {
       </main>
       <Footer />
       <ScrollToTop />
+      <Analytics />
     </div>
   );
 }
