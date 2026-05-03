@@ -212,6 +212,150 @@ textarea,
   opacity: 0.6;
 }
 
+/* Lightweight background for coarse-pointer / narrow viewports —
+   gradients + blur only (no canvas, no ticker, no backdrop-filter stacks). */
+.lite-physics-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  min-height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.lite-physics-grid {
+  display: block;
+  position: absolute;
+  inset: 0;
+  opacity: 0.055;
+  background-image:
+    linear-gradient(rgba(199, 91, 57, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(199, 91, 57, 0.4) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 40%, black 25%, transparent 72%);
+}
+
+.lite-physics-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(56px);
+  transform: translate3d(0, 0, 0);
+}
+
+.lite-physics-blob--a {
+  width: min(52vw, 320px);
+  height: min(52vw, 320px);
+  top: -8%;
+  left: -15%;
+  background: radial-gradient(circle, rgba(199, 91, 57, 0.52) 0%, transparent 70%);
+  animation: lite-float-a 28s ease-in-out infinite;
+}
+
+.lite-physics-blob--b {
+  width: min(58vw, 340px);
+  height: min(58vw, 340px);
+  bottom: -6%;
+  right: -18%;
+  background: radial-gradient(circle, rgba(106, 76, 147, 0.45) 0%, transparent 70%);
+  animation: lite-float-b 32s ease-in-out infinite -6s;
+}
+
+.lite-physics-blob--c {
+  width: min(45vw, 260px);
+  height: min(45vw, 260px);
+  top: 38%;
+  right: -8%;
+  background: radial-gradient(circle, rgba(25, 130, 196, 0.38) 0%, transparent 72%);
+  animation: lite-float-c 24s ease-in-out infinite -4s;
+}
+
+.lite-physics-blob--d {
+  width: min(42vw, 240px);
+  height: min(42vw, 240px);
+  bottom: 22%;
+  left: -12%;
+  background: radial-gradient(circle, rgba(138, 201, 38, 0.22) 0%, transparent 72%);
+  animation: lite-float-a 34s ease-in-out infinite -10s reverse;
+}
+
+.lite-physics-accent {
+  position: absolute;
+  width: min(70vw, 420px);
+  height: min(55vw, 320px);
+  top: 8%;
+  right: 5%;
+  border-radius: 40% 60% 55% 45% / 45% 50% 50% 55%;
+  background: radial-gradient(ellipse at 40% 40%, rgba(255, 202, 58, 0.12), transparent 65%);
+  filter: blur(40px);
+  opacity: 0.85;
+  animation: lite-morph 40s ease-in-out infinite;
+}
+
+@keyframes lite-float-a {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(5vw, 4vh, 0) scale(1.06);
+  }
+}
+
+@keyframes lite-float-b {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-6vw, -3vh, 0) scale(1.05);
+  }
+}
+
+@keyframes lite-float-c {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate3d(-5vw, 7vh, 0) scale(1.07);
+  }
+}
+
+@keyframes lite-morph {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    border-radius: 40% 60% 55% 45% / 45% 50% 50% 55%;
+  }
+
+  33% {
+    transform: translate3d(-3vw, 2vh, 0) rotate(5deg) scale(1.04);
+    border-radius: 55% 45% 45% 55% / 55% 45% 55% 45%;
+  }
+
+  66% {
+    transform: translate3d(2vw, -2vh, 0) rotate(-4deg) scale(0.98);
+    border-radius: 48% 52% 60% 40% / 50% 55% 45% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .lite-physics-blob,
+  .lite-physics-accent {
+    animation: none;
+  }
+}
+
 /* ── NAVBAR ────────────────────────────────────────── */
 .nav-container {
   position: fixed;

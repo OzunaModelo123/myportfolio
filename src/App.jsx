@@ -302,7 +302,18 @@ const PhysicsBackground = () => {
     };
   }, [litePhysics]);
 
-  if (litePhysics) return null;
+  if (litePhysics) {
+    return (
+      <div className="lite-physics-bg" aria-hidden="true">
+        <span className="lite-physics-grid" />
+        <span className="lite-physics-blob lite-physics-blob--a" />
+        <span className="lite-physics-blob lite-physics-blob--b" />
+        <span className="lite-physics-blob lite-physics-blob--c" />
+        <span className="lite-physics-blob lite-physics-blob--d" />
+        <span className="lite-physics-accent" />
+      </div>
+    );
+  }
 
   return (
     <>
