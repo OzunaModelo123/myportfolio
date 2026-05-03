@@ -37,7 +37,7 @@ body {
     radial-gradient(circle at 0% 100%, rgba(74, 144, 217, 0.05), transparent 40%);
   background-attachment: fixed;
   color: #f0f0f0;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter);
   cursor: none;
 }
 
@@ -225,7 +225,7 @@ textarea,
 .nav-link-mag {
   position: relative;
   padding: 8px 16px;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter);
   font-weight: 500;
   font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.5);
@@ -248,7 +248,7 @@ textarea,
 
 /* ── HERO TYPOGRAPHY ───────────────────────────────── */
 .hero-mega {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-display);
   font-weight: 900;
   font-size: clamp(4rem, 10vw, 7.5rem);
   line-height: 0.88;
@@ -290,7 +290,7 @@ textarea,
   border-radius: 100px;
   background: linear-gradient(135deg, #C75B39, #E8856E);
   color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter);
   font-weight: 600;
   font-size: 0.9rem;
   text-decoration: none;
@@ -330,7 +330,7 @@ textarea,
   border-radius: 100px;
   background: rgba(255, 255, 255, 0.05);
   color: rgba(255, 255, 255, 0.7);
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-inter);
   font-weight: 600;
   font-size: 0.9rem;
   text-decoration: none;
@@ -351,7 +351,7 @@ textarea,
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.68rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -372,7 +372,7 @@ textarea,
   gap: 6px;
   padding: 6px 14px;
   border-radius: 100px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.62rem;
   letter-spacing: 0.06em;
   background: rgba(255, 255, 255, 0.04);
@@ -387,7 +387,7 @@ textarea,
   gap: 8px;
   padding: 8px 18px;
   border-radius: 100px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.65rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
