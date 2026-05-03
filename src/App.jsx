@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, Suspense, lazy, memo } from 'react';
+import React, { useEffect, useRef, useState, Suspense, lazy, memo, useCallback, useLayoutEffect } from 'react';
 import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import SEO from './components/SEO';
 import { ArrowRight, Menu, X, Mail, Github, Linkedin, ExternalLink, ArrowUp } from 'lucide-react';
@@ -30,6 +30,7 @@ gsap.registerPlugin(ScrollTrigger);
 function isLightweightExperience() {
   if (typeof window === 'undefined') return false;
   return (
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
     window.matchMedia('(max-width: 768px)').matches ||
     window.matchMedia('(pointer: coarse)').matches
   );
@@ -62,66 +63,34 @@ const NotFound = () => (
 );
 
 // ─────────────────────────────────────────────────────────────────────────────
-// REFRACTIVE GLASS SHAPE — Individual premium entity
+// REFRACTIVE GLASS SHAPE — DOM shell (transforms applied inside physics ticker)
 // ─────────────────────────────────────────────────────────────────────────────
-const RefractiveShape = memo(({ data, mouseRef, isMobile }) => {
-  const shapeRef = useRef(null);
+const RefractiveShapePiece = memo(({ particle, bindDom }) => {
+  const shellRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  useEffect(() => {
-    if (!shapeRef.current) return;
-
-    const xSetter = gsap.quickSetter(shapeRef.current, "x", "px");
-    const ySetter = gsap.quickSetter(shapeRef.current, "y", "px");
-    const rotateXSetter = gsap.quickSetter(shapeRef.current, "rotateX", "deg");
-    const rotateYSetter = gsap.quickSetter(shapeRef.current, "rotateY", "deg");
-    const rotateZSetter = gsap.quickSetter(shapeRef.current, "rotateZ", "deg");
-
-    const update = () => {
-      if (!shapeRef.current) return;
-      xSetter(data.x - data.radius);
-      ySetter(data.y - data.radius);
-
-      // Disable 3D tilt on mobile for smoothness/performance
-      if (!isMobile) {
-        const dx = mouseRef.current.x - data.x;
-        const dy = mouseRef.current.y - data.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < 300) {
-          const influence = (300 - dist) / 300;
-          rotateXSetter(-(dy / 300) * 45 * influence);
-          rotateYSetter((dx / 300) * 45 * influence);
-        } else {
-          rotateXSetter(0);
-          rotateYSetter(0);
-        }
-      }
-
-      rotateZSetter(data.rotation * (180 / Math.PI));
-    };
-
-    gsap.ticker.add(update);
-    return () => gsap.ticker.remove(update);
-  }, [data, mouseRef, isMobile]);
+  useLayoutEffect(() => {
+    bindDom(particle.id, shellRef.current);
+    return () => bindDom(particle.id, null);
+  }, [particle.id, bindDom]);
 
   return (
     <div
-      ref={shapeRef}
+      ref={shellRef}
       className={`refractive-glass ${isHovered ? 'glowing' : ''}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
-        width: data.radius * 2,
-        height: data.radius * 2,
-        background: `${data.color}0.005)`,
-        borderRadius: data.type === 'circle' ? '50%' : (data.sides === 3 ? '10%' : '20%'),
-        clipPath: data.type === 'poly' ? (
-          data.sides === 3 ? 'polygon(50% 0%, 0% 100%, 100% 100%)' :
-            data.sides === 4 ? 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' :
+        width: particle.radius * 2,
+        height: particle.radius * 2,
+        background: `${particle.color}0.005)`,
+        borderRadius: particle.type === 'circle' ? '50%' : (particle.sides === 3 ? '10%' : '20%'),
+        clipPath: particle.type === 'poly' ? (
+          particle.sides === 3 ? 'polygon(50% 0%, 0% 100%, 100% 100%)' :
+            particle.sides === 4 ? 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)' :
               'polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)'
         ) : 'none',
-        transform: `translateZ(${data.z}px)`,
+        transform: `translateZ(${particle.z}px)`,
       }}
     />
   );
@@ -136,10 +105,13 @@ const PhysicsBackground = () => {
   const mouseRef = useRef({ x: -9999, y: -9999, vx: 0, vy: 0 });
   const scrollRef = useRef({ y: 0, velocity: 0 });
   const shapesRef = useRef([]);
+  const shapeDomByIdRef = useRef({});
   const [shapes, setShapes] = useState([]);
-  const [isMobile, setIsMobile] = useState(() =>
-    litePhysics ? true : typeof window !== 'undefined' && window.innerWidth < 768,
-  );
+
+  const bindDomShape = useCallback((id, node) => {
+    if (node) shapeDomByIdRef.current[id] = node;
+    else delete shapeDomByIdRef.current[id];
+  }, []);
 
   useEffect(() => {
     if (litePhysics) return undefined;
@@ -148,6 +120,22 @@ const PhysicsBackground = () => {
     const ctx = canvas.getContext('2d');
     let W, H;
     const DPR = Math.min(window.devicePixelRatio || 1, 2);
+
+    const setterCache = new WeakMap();
+    const getDomSetters = (el) => {
+      let ge = setterCache.get(el);
+      if (!ge) {
+        ge = {
+          x: gsap.quickSetter(el, 'x', 'px'),
+          y: gsap.quickSetter(el, 'y', 'px'),
+          rotateX: gsap.quickSetter(el, 'rotateX', 'deg'),
+          rotateY: gsap.quickSetter(el, 'rotateY', 'deg'),
+          rotateZ: gsap.quickSetter(el, 'rotateZ', 'deg'),
+        };
+        setterCache.set(el, ge);
+      }
+      return ge;
+    };
 
     const palettes = [
       'rgba(255, 89, 94, ',  // Red-Pink
@@ -159,9 +147,12 @@ const PhysicsBackground = () => {
       'rgba(175, 252, 255, ' // Crystal
     ];
 
+    let layoutMobile = false;
+
     const createShapes = (w, h) => {
       const mobile = w < 768;
-      const count = mobile ? 6 : 15;
+      layoutMobile = mobile;
+      const count = mobile ? 6 : 10;
       const proximity = mobile ? 150 : 250;
 
       const newShapes = [];
@@ -184,7 +175,6 @@ const PhysicsBackground = () => {
       }
       shapesRef.current = newShapes;
       setShapes([...newShapes]);
-      setIsMobile(mobile);
     };
 
     const resize = () => {
@@ -282,6 +272,30 @@ const PhysicsBackground = () => {
             ctx.lineTo(p2.x | 0, p2.y | 0);
           }
         }
+
+        const shell = shapeDomByIdRef.current[p.id];
+        if (shell) {
+          const gx = getDomSetters(shell);
+          gx.x(p.x - p.radius);
+          gx.y(p.y - p.radius);
+          if (!layoutMobile) {
+            const mdx = mx - p.x;
+            const mdy = my - p.y;
+            const md = Math.sqrt(mdx * mdx + mdy * mdy);
+            if (md < 300 && md > 0) {
+              const influence = (300 - md) / 300;
+              gx.rotateX(-(mdy / 300) * 45 * influence);
+              gx.rotateY((mdx / 300) * 45 * influence);
+            } else {
+              gx.rotateX(0);
+              gx.rotateY(0);
+            }
+          } else {
+            gx.rotateX(0);
+            gx.rotateY(0);
+          }
+          gx.rotateZ(p.rotation * (180 / Math.PI));
+        }
       });
 
       ctx.stroke();
@@ -320,7 +334,7 @@ const PhysicsBackground = () => {
       <canvas ref={canvasRef} className="blueprint-canvas" />
       <div className="glass-background-container">
         {shapes.map(s => (
-          <RefractiveShape key={s.id} data={s} mouseRef={mouseRef} isMobile={isMobile} />
+          <RefractiveShapePiece key={s.id} particle={s} bindDom={bindDomShape} />
         ))}
       </div>
     </>
@@ -564,24 +578,41 @@ const Footer = () => (
 const ScrollToTop = () => {
   const [visible, setVisible] = useState(false);
   const btnRef = useRef(null);
+  const visibleRef = useRef(false);
 
   useEffect(() => {
-    const handleScroll = () => {
+    const btn = btnRef.current;
+    if (!btn) return;
+
+    let scheduled = false;
+
+    const flush = () => {
+      scheduled = false;
       const isVisible = window.scrollY > 400;
-      if (isVisible !== visible) {
-        setVisible(isVisible);
-        gsap.to(btnRef.current, {
-          opacity: isVisible ? 1 : 0,
-          scale: isVisible ? 1 : 0.8,
-          y: isVisible ? 0 : 20,
-          duration: 0.4,
-          ease: 'back.out(1.7)'
-        });
+      if (isVisible === visibleRef.current) return;
+      visibleRef.current = isVisible;
+      setVisible(isVisible);
+      gsap.to(btn, {
+        opacity: isVisible ? 1 : 0,
+        scale: isVisible ? 1 : 0.8,
+        y: isVisible ? 0 : 20,
+        duration: 0.4,
+        ease: 'back.out(1.7)',
+      });
+    };
+
+    const onScroll = () => {
+      if (!scheduled) {
+        scheduled = true;
+        requestAnimationFrame(flush);
       }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [visible]);
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    flush();
+
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <button

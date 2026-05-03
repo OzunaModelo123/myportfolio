@@ -11,8 +11,14 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 html.boot-pending #root {
@@ -31,7 +37,8 @@ body {
     radial-gradient(circle at 50% 0%, rgba(199, 91, 57, 0.08), transparent 50%),
     radial-gradient(circle at 100% 50%, rgba(139, 126, 200, 0.05), transparent 40%),
     radial-gradient(circle at 0% 100%, rgba(74, 144, 217, 0.05), transparent 40%);
-  background-attachment: fixed;
+  /* Scroll attachment avoids expensive repaints on many browsers when content scrolls. */
+  background-attachment: scroll;
   color: #f0f0f0;
   font-family: 'Inter', sans-serif;
   cursor: none;
@@ -182,7 +189,6 @@ textarea,
   transform-style: preserve-3d;
   backface-visibility: hidden;
   transform: translateZ(0);
-  will-change: transform, opacity;
   transition: border-color 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
 }
 
@@ -212,8 +218,8 @@ textarea,
   opacity: 0.6;
 }
 
-/* Lightweight background for coarse-pointer / narrow viewports —
-   gradients + blur only (no canvas, no ticker, no backdrop-filter stacks). */
+/* Lightweight background for reduced motion, coarse pointer, or narrow viewports —
+   gradients only (no canvas ticker, fewer composite layers than full physics). */
 .lite-physics-bg {
   position: fixed;
   inset: 0;
