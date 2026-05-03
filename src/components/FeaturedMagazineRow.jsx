@@ -23,7 +23,7 @@ export default function FeaturedMagazineRow({ project: p, onOpenModal }) {
             <p className="font-inter text-base text-white/90 leading-relaxed max-w-prose">{p.desc}</p>
           </div>
           <div className="flex items-center gap-2 font-inter text-sm font-semibold mt-6" style={{ color: p.color }}>
-            {p.modalKey ? 'Peek at the teaser' : 'Deep dive'}
+            {p.modalKey ? 'Inside scoop →' : 'Deep dive'}
             <ArrowRight className={`w-4 h-4 ${p.modalKey ? '' : 'group-hover:translate-x-2'} transition-transform`} />
           </div>
         </div>

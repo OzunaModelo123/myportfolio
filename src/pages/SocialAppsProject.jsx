@@ -92,7 +92,7 @@ export default function SocialAppsProject() {
                     </p>
                   </div>
                   <div className="mt-12 flex items-center gap-2 font-inter text-sm font-semibold transition-colors duration-300" style={{ color: app.color }}>
-                    {app.teaser ? 'Peek at the spoiler' : 'Dive into app concepts'}
+                    {app.teaser ? 'Yo what\'s happening' : 'Dive into app concepts'}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                   </div>
                 </div>
@@ -123,7 +123,7 @@ export default function SocialAppsProject() {
             className="text-sm font-semibold underline underline-offset-4 decoration-white/25 hover:text-white transition-colors"
             style={{ color: buildingSoonVariants.portfolio.accentColor }}
           >
-            Back to the full project runway
+            Shuffle back to Projects
           </Link>
         )}
       />

@@ -1,31 +1,31 @@
 /**
- * Copy for BuildingSoonModal — portfolio teasers vs API backlog vs ed-tech slate.
+ * Copy for BuildingSoonModal — chill, human, nothing corporate.
  */
 
 export const buildingSoonVariants = {
   portfolio: {
-    eyebrow: 'Portfolio',
-    title: 'Momentum over noise',
+    eyebrow: 'Real quick',
+    title: 'Almost done with this pile',
     accentColor: '#C75B39',
     description:
-      "I'm iterating on prototypes and quieter launches—tightening onboarding, polishing demos, and making sure stories match what actually ships before I blast every label everywhere. Peek at living projects below while the rest climbs out of drafts.",
-    confirmLabel: "Sounds good — I'll keep browsing",
+      "I'm almost done with what's still bubbling in the backlog—few more tweaks, then it ships for real. PROMISE.",
+    confirmLabel: 'Aight, bet',
   },
   education: {
-    eyebrow: 'Ed-tech lab',
-    title: 'Teaching & learning stack',
+    eyebrow: 'Learning Lab',
+    title: 'Still on the stove',
     accentColor: '#5EC8D8',
     description:
-      'I\'m building a constellation of playful utilities for coursework and DIY study stacks—students, professors, tutors, solo learners sharpening the fuzzy bits. Keeping them backstage until QA feels honest, then they graduate to the louder internet.',
-    confirmLabel: "Love it — cheering you on",
+      "I'm building some really cool apps to help people study and actually learn stuff (without the soul-crushing part). Hang tight—they're coming soon. PROMISE.",
+    confirmLabel: 'Say less 👍',
   },
 };
 
 export const apiRapidComingSoonCopy = {
   eyebrow: 'RapidAPI',
-  title: 'Almost shipped',
+  title: 'Same energy',
   accentColor: '#5B8C6F',
   description:
-    "The rest of these endpoints are queued up—I'm tightening docs, auth flows, and examples before they go live. I'd rather publish something dependable than rush something brittle.",
-  confirmLabel: "Sounds good — I'll wait",
+    "Almost done babysitting these endpoints—couple polish passes on docs + auth and they're yours. Drops soon. PROMISE.",
+  confirmLabel: 'We chill',
 };

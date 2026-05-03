@@ -515,8 +515,8 @@ export default function Home() {
     {
       num: '03',
       name: 'Learning Lab',
-      tag: 'Teaching tools · Sneak peek',
-      desc: 'Coming soon: a cheerful batch of helpers for coursework and curiosity—utilities aimed at learners, lecturers, tutors, anyone trying to tighten up how they explain or absorb an idea.',
+      tag: 'Study apps · Coming soon',
+      desc: 'Working on some genuinely fun tools so studying and leveling up feels less miserable. Stay tuned!',
       color: '#5EC8D8',
       img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=2560',
       modalKey: 'education',
@@ -860,7 +860,7 @@ export default function Home() {
                   className="text-sm font-semibold underline underline-offset-4 decoration-white/25 hover:text-white transition-colors"
                   style={{ color: buildingSoonVariants.portfolio.accentColor }}
                 >
-                  Open the annotated project index
+                  Peep everything on Projects
                 </Link>
                 <button
                   type="button"
@@ -872,7 +872,7 @@ export default function Home() {
                   }}
                   className="text-sm text-white/55 hover:text-white underline underline-offset-4 decoration-transparent hover:decoration-white/35 transition-colors"
                 >
-                  Jump to previews on this page
+                  Scroll down to what's on this page
                 </button>
               </div>
             ) : (
@@ -882,7 +882,7 @@ export default function Home() {
                 className="inline-flex text-sm font-semibold underline underline-offset-4 decoration-white/25 hover:text-white transition-colors"
                 style={{ color: buildingSoonVariants.education.accentColor }}
               >
-                Peek at sibling launches on the Projects page
+                More chaos on the Projects page
               </Link>
             )
           }

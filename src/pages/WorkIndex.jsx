@@ -26,8 +26,8 @@ const INDEX_PROJECTS = [
   {
     num: '03',
     name: 'Learning Lab',
-    tag: 'Teaching tools · Sneak peek',
-    desc: 'Coming soon: a cheerful batch of helpers for coursework and curiosity—utilities aimed at learners, lecturers, tutors, anyone trying to tighten up how they explain or absorb an idea.',
+    tag: 'Study apps · Coming soon',
+    desc: 'Working on some genuinely fun tools so studying and leveling up feels less miserable. Stay tuned!',
     color: '#5EC8D8',
     img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=2560',
     modalKey: 'education',
@@ -51,7 +51,7 @@ export default function WorkIndex() {
 
   return (
     <div>
-      <SEO title="Projects | Daniel Ozoani" description="B2B SaaS, infra APIs, learning tools in the oven, plus intentional social products." />
+      <SEO title="Projects | Daniel Ozoani" description="B2B SaaS, APIs I ship, study apps I'm finishing, intentional social experiments." />
       <section ref={heroRef} className="relative pt-28 md:pt-40 pb-16 md:pb-24 overflow-hidden">
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10">
           <div className="w-anim sec-tag mb-6 text-white/80">Portfolio Index</div>
@@ -90,7 +90,7 @@ export default function WorkIndex() {
             className="inline-flex text-sm font-semibold underline underline-offset-4 decoration-white/25 hover:text-white transition-colors"
             style={{ color: buildingSoonVariants.education.accentColor }}
           >
-            Jump to Learning Lab on Home
+            Snag the Learning Lab bit on Home
           </Link>
         )}
       />
