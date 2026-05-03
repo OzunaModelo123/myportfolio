@@ -248,7 +248,7 @@ export default function About() {
 
   return (
     <div>
-      <SEO title="About | Daniel Ozoani" description="Toronto-based Technical Project Manager and developer: retail and SaaS delivery, stakeholder communication, and side products in training tech, APIs, and intentional social apps." />
+      <SEO title="About | Daniel Ozoani" description="Toronto-based technical project manager: cross-sector program delivery in retail, tech, and construction, plus hands-on technical work and side products in AI and data." />
 
       {/* ── HERO ──────────────────────────────────────────────────── */}
       <section ref={heroRef} className="relative pt-36 pb-24 px-6 md:px-10 overflow-hidden">
@@ -299,16 +299,26 @@ export default function About() {
                 What I actually do
               </h2>
               <p className="sr font-inter text-base text-white/75 leading-relaxed mb-4">
-                I take projects from planning through delivery, stepping into the technical side when it actually adds value.
+                I take projects from planning through delivery, and I step into technical work when it actually moves the outcome: integrations, API shape, or documenting the parts of a system nobody wants to learn by accident in week three of a rollout.
               </p>
               <p className="sr font-inter text-base text-white/75 leading-relaxed mb-4">
-                My work sits at the point where plans meet execution: aligning vendors and internal teams, maintaining clear and honest RAID logs, and guiding launches so issues are caught early rather than in production.
+                Most of my TPM work lives where the roadmap meets reality. That means lining up vendors and internal teams, keeping RAID logs useful instead of ornamental, running communications so execs and builders share the same picture, and guiding launches so surprises show up in rehearsal, not the first week customers touch something.
               </p>
+              <p className="sr font-inter text-base text-white/75 leading-relaxed mb-5">
+                I've worked across retail (store and field rollouts, tight cutover windows), tech and SaaS-style product delivery (backlog pressure, release trains, cross-functional dependencies), and construction and capital-style programs (sequencing, contractors, safety and operations constraints). The details change; the job is the same: make the path to "done" visible, owned, and sane for everyone involved.
+              </p>
+              <h3 className="sr font-display font-semibold text-lg text-white/90 tracking-tight mb-3 mt-8">
+                What I handle on programs
+              </h3>
+              <ul className="sr font-inter text-base text-white/70 leading-relaxed mb-6 list-disc pl-5 space-y-2 marker:text-[#C75B39]">
+                <li>Charter, scope, milestones, and RAID: risks, assumptions, issues, dependencies spelled out so priorities don't drift in silence.</li>
+                <li>Vendor and partner coordination: timelines, deliverables, escalation paths, and test evidence that matches what production will look like.</li>
+                <li>Launch and hypercare planning: cutover checklists, rollback thinking, comms to the people who have to run the thing afterward.</li>
+                <li>Stakeholder readouts: translating status into what leaders need to decide, without hiding the ugly parts.</li>
+                <li>Technical depth when it helps: prototyping a handoff, tightening an API contract, or writing the doc that keeps on-call from guessing.</li>
+              </ul>
               <p className="sr font-inter text-base text-white/75 leading-relaxed mb-4">
-                I stay hands-on when it matters. That might mean prototyping integrations, refining API contracts, or documenting fragile parts of a system so they don't turn into long-term risks.
-              </p>
-              <p className="sr font-inter text-base text-white/75 leading-relaxed">
-                Outside of work, I build small products around problems I think are worth solving, mostly in the AI and data space. I also shoot film, study chess openings I immediately forget, and spend a bit too much time keeping up with AI developments.
+                Outside of that day job, I build small products around problems I think are worth solving, mostly in AI and data. I also shoot film, study chess openings I immediately forget, and spend a bit too much time keeping up with AI developments.
               </p>
             </div>
             <div className="sr">

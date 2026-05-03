@@ -584,7 +584,7 @@ export default function Home() {
           </div>
 
           <p className="h-anim font-inter text-lg md:text-xl text-white max-w-prose leading-relaxed mb-10 text-shadow-sm">
-            {age}. I run programs as a TPM across retail, tech, construction, and a few other industries in between. I also like building cool projects I hope can make an impact one day, and I spend a lot of time on AI and LLMs. Chess is where I'm basically a grandmaster in my head. Toronto-based.
+            I like building cool projects I hope can make an impact one day, and I spend a lot of time on AI, LLMs, and how they fit real workflows. I also run programs as a TPM when teams need someone to take a plan all the way to a stable launch.
           </p>
 
           <div className="h-anim flex flex-wrap gap-3 mb-10">
@@ -627,20 +627,21 @@ export default function Home() {
                 A quick <span className="font-serif italic" style={{ color: '#C75B39' }}>introduction.</span>
               </h2>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-5">
-                I'm a TPM. I run programs, manage vendors and stakeholders, and make sure things actually ship. I've worked across retail, tech, construction, and related delivery environments among others.
+                I'm {age}. I'm a technical project manager based in Toronto.
               </p>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-5">
-                Outside of day-to-day TPM work I also like to build cool projects I hope can make an impact one day. A lot of that sits in AI: less about writing every line from scratch and more about how models fit into real workflows, then building around that.
+                I've worked across retail, tech, construction, and other delivery-heavy environments. I like to build cool projects on the side that I hope can make an impact one day. A lot of that sits in AI: less about writing every line from scratch and more about how models fit into real workflows, then building around that.
               </p>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-5">
-                I shoot film when I can find the time. Chess is where I'm basically a grandmaster in my head (reality politely disagrees).
+                I shoot film when I can find the time. Chess is where I'm basically a grandmaster...
+                <span className="block mt-1.5 font-serif italic text-white/85">...in my head.</span>
               </p>
               <p className="reveal-item font-inter text-base md:text-lg text-white/90 max-w-prose leading-relaxed mb-10">
-                Want more detail? The link below has the fuller version.
+                For how I actually run programs, work with vendors, and what TPM delivery looks like in practice, the About page goes deeper.
               </p>
               <div className="reveal-item flex flex-wrap gap-3">
                 <Link to="/about" className="btn-glow">
-                  Full story <ArrowRight className="w-4 h-4" />
+                  More about me <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link to="/contact" className="btn-glass">
                   Drop me a message
